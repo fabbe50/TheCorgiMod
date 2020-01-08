@@ -1,0 +1,12 @@
+[{
+  "modid": "corgis",
+  "name": "The Corgi Mod",
+  "description": "A mod about Corgis",
+  "version": "1.0",
+  "mcversion": "1.14.4",
+  "logoFile": "",
+  "url": "",
+  "updateJSON": "",
+  "authorList": ["fabbe50"],
+  "credits": ""
+}]
