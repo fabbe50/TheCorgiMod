@@ -1,11 +1,13 @@
-package com.fabbe50.corgis.entities;
+package com.fabbe50.corgis.entities.corgis;
 
+import com.fabbe50.corgis.entities.interfaces.ICorgi;
 import com.fabbe50.corgis.entities.ai.BegDecoyGoal;
+import com.fabbe50.corgis.entities.ai.traits.MelonTrait;
 import com.fabbe50.corgis.entities.data.CorgiType;
-import com.fabbe50.corgis.entities.registry.CorgiRegistry;
 import com.fabbe50.corgis.entities.registry.EntityRegistry;
 import com.google.common.base.Predicate;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.AbstractSkeletonEntity;
@@ -38,7 +40,7 @@ import java.util.UUID;
 /**
  * Created by fabbe50 on 19/06/2016.
  */
-public class CorgiEntity extends TameableEntity {
+public class CorgiEntity extends TameableEntity implements ICorgi {
     private static final DataParameter<Float> DATA_HEALTH_ID = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.FLOAT);
     private static final DataParameter<Boolean> BEGGING = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> COLLARCOLOR = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.VARINT);
@@ -63,6 +65,10 @@ public class CorgiEntity extends TameableEntity {
         this.setTamed(false);
     }
 
+    public CorgiEntity(World world) {
+        this(EntityRegistry.CORGI, world);
+    }
+
     protected void registerGoals() {
         this.sitGoal = new SitGoal(this);
         this.goalSelector.addGoal(1, new SwimGoal(this));
@@ -70,18 +76,22 @@ public class CorgiEntity extends TameableEntity {
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
-        this.goalSelector.addGoal(6, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.goalSelector.addGoal(8, new BegDecoyGoal(this, 8.0F));
-        this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
+        this.goalSelector.addGoal(15, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(16, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+        this.goalSelector.addGoal(17, new BegDecoyGoal(this, 8.0F));
+        this.goalSelector.addGoal(18, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.addGoal(18, new LookRandomlyGoal(this));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setCallsForHelp());
         this.targetSelector.addGoal(4, new NonTamedTargetGoal(this, AnimalEntity.class, false, TARGETS));
         this.targetSelector.addGoal(4, new NonTamedTargetGoal(this, TurtleEntity.class, false, TurtleEntity.TARGET_DRY_BABY));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractSkeletonEntity.class, false));
+        this.registerTraits();
+    }
 
+    protected void registerTraits() {
+        this.goalSelector.addGoal(7, new MelonTrait(this, 0.8f));
     }
 
     protected void registerAttributes() {
@@ -142,6 +152,10 @@ public class CorgiEntity extends TameableEntity {
         if (compound.contains("CorgiType", 99)) {
             this.setCorgitype(CorgiType.byDamage(compound.getByte("CorgiType")));
         }
+    }
+
+    public static boolean canSpawnHere(EntityType<CorgiEntity> corgi, IWorld world, SpawnReason reason, BlockPos pos, Random rand) {
+        return world.getBlockState(pos.down()).getBlock() == Blocks.GRASS_BLOCK && world.getLightSubtracted(pos, 0) > 8;
     }
 
     protected SoundEvent getAmbientSound() {
@@ -235,19 +249,24 @@ public class CorgiEntity extends TameableEntity {
         super.onDeath(cause);
     }
 
+    @Override
+    public boolean isBreedingItem(ItemStack stack) {
+        return stack.getItem() == Items.BAKED_POTATO;
+    }
+
     @OnlyIn(Dist.CLIENT)
-    public boolean isCorgiWet() {
+    public boolean isWet() {
         return this.isWet;
     }
 
     @OnlyIn(Dist.CLIENT)
     public float getShadingWhileWet(float shade) {
-        return 0.75F + (this.prevTimeCorgiIsShaking + (this.timeCorgiIsShaking - this.prevTimeCorgiIsShaking) * shade) / 2.0F * 0.25F;
+        return 0.75F + MathHelper.lerp(shade, this.prevTimeCorgiIsShaking, this.timeCorgiIsShaking) / 2.0f * 0.25f;
     }
 
     @OnlyIn(Dist.CLIENT)
     public float getShakeAngle(float f2, float f3) {
-        float f = (this.prevTimeCorgiIsShaking + (this.timeCorgiIsShaking - this.prevTimeCorgiIsShaking) * f2 + f3) / 1.8F;
+        float f = (MathHelper.lerp(f2, this.prevTimeCorgiIsShaking, this.timeCorgiIsShaking) + f3) / 1.8F;
 
         if (f < 0.0F) {
             f = 0.0F;
@@ -355,17 +374,13 @@ public class CorgiEntity extends TameableEntity {
             }
             if (!this.world.isRemote) {
                 if (this.rand.nextInt(3) == 0) {
-                    this.setTamed(true);
+                    this.setTamedBy(player);
                     this.navigator.clearPath();
                     this.setAttackTarget((LivingEntity) null);
                     this.sitGoal.setSitting(true);
-                    this.setHealth(60.0F);
-                    this.setOwnerId(player.getUniqueID());
-                    this.playTameEffect(true);
                     this.world.setEntityState(this, (byte)7);
                 }
                 else {
-                    this.playTameEffect(false);
                     this.world.setEntityState(this, (byte)6);
                 }
             }
@@ -420,6 +435,12 @@ public class CorgiEntity extends TameableEntity {
         livingdata = super.onInitialSpawn(world, difficulty, reason, livingdata, compound);
         this.setCorgitype(getRandomCorgiType(this.world.rand));
         this.setCustomName(new StringTextComponent(upperCaseFirstLetter(this.getCorgiType().getName()) + " Corgi"));
+        /*switch (this.getCorgiType()) {
+            default:
+            case NORMAL: {}
+            case MELON: {
+                this.goalSelector.addGoal(10, new MelonTrait(this, 0.8d));}
+        }*/
         return livingdata;
     }
 
@@ -428,6 +449,7 @@ public class CorgiEntity extends TameableEntity {
         return s1 + str.substring(1);
     }
 
+    @Override
     @OnlyIn(Dist.CLIENT)
     public float getTailRotation() {
         return this.isAngry() ? 1.5393804F : (this.isTamed() ? (0.25F - (this.getMaxHealth() - this.dataManager.get(DATA_HEALTH_ID)) * 0.01F) * (float)Math.PI : ((float)Math.PI / 5F));
@@ -435,7 +457,7 @@ public class CorgiEntity extends TameableEntity {
 
     @SuppressWarnings("NullableProblems")
     public CorgiEntity createChild(AgeableEntity ageable) {
-        CorgiEntity entitycorgi = CorgiRegistry.CORGI.create(this.world);
+        CorgiEntity entitycorgi = EntityRegistry.CORGI.create(this.world);
         UUID uuid = this.getOwnerId();
         if (uuid != null) {
             entitycorgi.setOwnerId(uuid);

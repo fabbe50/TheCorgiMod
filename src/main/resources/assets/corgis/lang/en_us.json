@@ -1,5 +1,7 @@
 {
   "_comment": "Entity",
   "entity.corgis.corgi": "Corgi",
-  "item.corgis.corgi_spawn_egg": "Corgi Spawn Egg"
+  "item.corgis.corgi_spawn_egg": "Corgi Spawn Egg",
+  "item.corgis.zombie_corgi_spawn_egg": "Zombie Corgi Spawn Egg",
+  "item.corgis.creeper_corgi_spawn_egg": "Creeper Corgi Spawn Egg"
 }

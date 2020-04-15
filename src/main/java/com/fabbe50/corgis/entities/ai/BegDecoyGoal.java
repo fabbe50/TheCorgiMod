@@ -1,6 +1,7 @@
 package com.fabbe50.corgis.entities.ai;
 
-import com.fabbe50.corgis.entities.CorgiEntity;
+import com.fabbe50.corgis.entities.corgis.CorgiEntity;
+import net.minecraft.entity.EntityPredicate;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -14,53 +15,61 @@ import java.util.EnumSet;
  * Created by fabbe50 on 23/09/2016.
  */
 public class BegDecoyGoal extends Goal {
-    private final CorgiEntity theCorgi;
-    private PlayerEntity thePlayer;
+    private final CorgiEntity corgi;
+    private PlayerEntity player;
     private final World worldObject;
     private final float minPlayerDistance;
     private int timeoutCounter;
+    private final EntityPredicate predicate;
 
     public BegDecoyGoal(CorgiEntity corgi, float minDistance) {
-        this.theCorgi = corgi;
+        this.corgi = corgi;
         this.worldObject = corgi.world;
         this.minPlayerDistance = minDistance;
-        this.setMutexFlags(EnumSet.of(Flag.LOOK));
+        this.predicate = (new EntityPredicate()).setDistance((double)minDistance).allowInvulnerable().allowFriendlyFire().setSkipAttackChecks();
+        this.setMutexFlags(EnumSet.of(Goal.Flag.LOOK));
     }
 
     public boolean shouldExecute() {
-        this.thePlayer = this.worldObject.getClosestPlayer(this.theCorgi, (double)this.minPlayerDistance);
-        return this.thePlayer == null ? false : this.hasPlayerGotBoneInHand(this.thePlayer);
+        this.player = this.worldObject.getClosestPlayer(this.predicate, this.corgi);
+        return this.player != null && this.hasTemptationItemInHand(this.player);
     }
 
     public boolean shouldContinueExecuting() {
-        return !this.thePlayer.isAlive() ? false : (this.theCorgi.getDistance(this.thePlayer) > (double)(this.minPlayerDistance * this.minPlayerDistance) ? false : this.timeoutCounter > 0 && this.hasPlayerGotBoneInHand(this.thePlayer));
+        if (!this.player.isAlive()) {
+            return false;
+        } else if (this.corgi.getDistanceSq(this.player) > (double)(this.minPlayerDistance * this.minPlayerDistance)) {
+            return false;
+        } else {
+            return this.timeoutCounter > 0 && this.hasTemptationItemInHand(this.player);
+        }
     }
 
     public void startExecuting() {
-        this.theCorgi.setBegging(true);
-        this.timeoutCounter = 40 + this.theCorgi.getRNG().nextInt(40);
+        this.corgi.setBegging(true);
+        this.timeoutCounter = 40 + this.corgi.getRNG().nextInt(40);
     }
 
     public void resetTask() {
-        this.theCorgi.setBegging(false);
-        this.thePlayer = null;
+        this.corgi.setBegging(false);
+        this.player = null;
     }
 
     public void tick() {
-        this.theCorgi.getLookController().setLookPosition(this.thePlayer.getPosition().getX(), this.thePlayer.getPosition().getY() + (double)this.thePlayer.getEyeHeight(), this.thePlayer.getPosition().getZ(), 10.0F, (float)this.theCorgi.getVerticalFaceSpeed());
+        this.corgi.getLookController().setLookPosition(this.player.getPosX(), this.player.getPosYEye(), this.player.getPosZ(), 10.0F, (float)this.corgi.getVerticalFaceSpeed());
         --this.timeoutCounter;
     }
     
-    private boolean hasPlayerGotBoneInHand(PlayerEntity player) {
+    private boolean hasTemptationItemInHand(PlayerEntity player) {
         for (Hand hand : Hand.values()) {
             ItemStack itemstack = player.getHeldItem(hand);
 
-            if (itemstack != null) {
-                if (this.theCorgi.isTamed() && itemstack.getItem() == Items.BONE) {
+            if (itemstack.isEmpty()) {
+                if (this.corgi.isTamed() && itemstack.getItem() == Items.BAKED_POTATO) {
                     return true;
                 }
 
-                if (this.theCorgi.isBreedingItem(itemstack)) {
+                if (this.corgi.isBreedingItem(itemstack)) {
                     return true;
                 }
             }
