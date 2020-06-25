@@ -25,7 +25,7 @@ public class CreeperCorgiModel<T extends CreeperCorgiEntity> extends AbstractCor
         this.Face.setRotationPoint(0F, 15F, -9.5F);
         this.EarLeft.setRotationPoint(0F, 15F, -9.5F);
         this.EarRight.setRotationPoint(0F, 15F, -9.5F);
-        this.MouthUpper.setRotationPoint(0F, 15F, -9.5F);
-        this.MouthLower.setRotationPoint(0F, 15F, -9.5F);
+        this.MouthUpper.showModel = false;
+        this.MouthLower.showModel = false;
     }
 }
