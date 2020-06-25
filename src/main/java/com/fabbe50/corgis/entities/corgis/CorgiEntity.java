@@ -118,6 +118,8 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
     protected void registerTraits() {
         if (Corgis.config.getMelonCorgi().getTraitActive())
             this.goalSelector.addGoal(10, new MelonTrait(this, 0.8f));
+        if (Corgis.config.getRadioactiveCorgi().getTraitActive())
+            this.goalSelector.addGoal(10, new RadioactiveTrait(this));
         if (Corgis.config.getLoveCorgi().getTraitActive())
             this.goalSelector.addGoal(10, new LoveTrait(this));
     }
@@ -292,6 +294,9 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         if (rand.nextInt(8) == 0) {
             if (this.getCorgiType().equals(CorgiType.LOVE) && Corgis.config.getLoveCorgi().getParticleEffect()) {
                 this.world.addParticle(ParticleTypes.HEART, this.getPosX() + rand.nextDouble() - 0.5D, this.getPosY() + rand.nextDouble(), this.getPosZ() + rand.nextDouble() - 0.5D, 0, 0.1D, 0);
+            }
+            if (this.getCorgiType().equals(CorgiType.RADIOACTIVE) && Corgis.config.getRadioactiveCorgi().getParticleEffect()) {
+                this.addPotionEffect(new EffectInstance(Effects.POISON, 8));
             }
         }
 
