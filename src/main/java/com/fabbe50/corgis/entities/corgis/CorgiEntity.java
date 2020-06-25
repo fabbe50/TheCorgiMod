@@ -116,7 +116,8 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
     }
 
     protected void registerTraits() {
-        this.goalSelector.addGoal(7, new MelonTrait(this, 0.8f));
+        if (Corgis.config.getMelonCorgi().getTraitActive())
+            this.goalSelector.addGoal(10, new MelonTrait(this, 0.8f));
         if (Corgis.config.getLoveCorgi().getTraitActive())
             this.goalSelector.addGoal(10, new LoveTrait(this));
     }
