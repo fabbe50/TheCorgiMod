@@ -15,8 +15,8 @@ public class CorgiModel<T extends CorgiEntity> extends AbstractCorgiModel<T> {
             this.Tail.rotateAngleY = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         }
 
-            this.Body.setRotationPoint(-3F, 19F, -6F);
         if (entityIn.func_233684_eK_()) {
+            this.Body.setRotationPoint(-3F, 19F, -5.5F);
             this.Body.rotateAngleX = (0);
             this.Tail.setRotationPoint(-1F, 19F, 10F);
             this.LegFrontRight.setRotationPoint(-3F, 22F, -5F);
@@ -39,7 +39,7 @@ public class CorgiModel<T extends CorgiEntity> extends AbstractCorgiModel<T> {
         } else {
             this.Body.setRotationPoint(-3F, 16F, -8F);
             this.Body.rotateAngleX = (0);//(float)Math.PI / 22F);
-            this.Tail.setRotationPoint(-1F, 16F, 7F);
+            this.Tail.setRotationPoint(-1F, 16F, 8F);
             this.LegFrontRight.setRotationPoint(-3F, 20F, -7F);
             this.LegFrontLeft.setRotationPoint(1F, 20F, -7F);
             this.LegBackRight.setRotationPoint(-3F, 20F, 5F);

@@ -15,6 +15,7 @@ import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.item.ItemEntity;
@@ -544,7 +545,7 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
     @Override
     @OnlyIn(Dist.CLIENT)
     public float getTailRotation() {
-        return this.isAngry() ? 1.5393804F : (this.isTamed() ? (0.25F - (this.getMaxHealth() - this.getHealth() * 0.01F) * (float)Math.PI) : ((float)Math.PI / 5F));
+        return this.isAngry() ? 1.5393804F : (this.isTamed() ? (-1.0F - (this.getMaxHealth() - this.getHealth() * 0.01F) * (float)Math.PI) : ((float)Math.PI / 5F));
     }
 
     @SuppressWarnings("NullableProblems")
