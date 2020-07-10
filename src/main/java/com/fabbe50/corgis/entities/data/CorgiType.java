@@ -17,6 +17,8 @@ public enum CorgiType {
     RADIOACTIVE("radioactive", 10, new ResourceLocation(Reference.MOD_ID, Reference.TEXTURECORGIDIR + "corgi_radioactive.png")),
     HERO("hero", 11, new ResourceLocation(Reference.MOD_ID, Reference.TEXTURECORGIDIR + "corgi_hero.png")),
     NERD("nerd", 12, new ResourceLocation(Reference.MOD_ID, Reference.TEXTURECORGIDIR + "corgi_nerd.png"));
+    /*Farmer Corgi
+    * */
 
 
     private static final CorgiType[] DMG_LOOKUP = new CorgiType[values().length];
