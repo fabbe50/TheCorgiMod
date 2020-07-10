@@ -26,7 +26,7 @@ public abstract class AbstractCorgiModel<T extends LivingEntity> extends TintedA
 
         Tail = new ModelRenderer(this, 83, 10);
         Tail.addBox(0F, 0F, 0F, 2, 2, 4, 0);
-        Tail.setRotationPoint(-1F, 16F, 7F);
+        Tail.setRotationPoint(0F, 16F, 7F);
         Tail.setTextureSize(128, 64);
         Tail.mirror = true;
         setRotation(Tail, 0F, 0F, 0F);

@@ -37,8 +37,8 @@ public class EntityRegistry {
     private static List<Item> spawmEggs = Lists.newArrayList();
 
     public static final EntityType<CorgiEntity> CORGI = createEntity(CorgiEntity.class, CorgiEntity::new, EntityClassification.CREATURE, 0.6875f, 0.5625f, 0xE0BC8D, 0x89644E);
-    public static final EntityType<ZombieCorgiEntity> ZOMBIE_CORGI = createEntity(ZombieCorgiEntity.class, ZombieCorgiEntity::new, EntityClassification.MONSTER, 0.6875f, 0.5625f, 0, 0);
-    public static final EntityType<CreeperCorgiEntity> CREEPER_CORGI = createEntity(CreeperCorgiEntity.class, CreeperCorgiEntity::new, EntityClassification.MONSTER, 0.6875f, 0.5625f, 0, 0);
+    public static final EntityType<ZombieCorgiEntity> ZOMBIE_CORGI = createEntity(ZombieCorgiEntity.class, ZombieCorgiEntity::new, EntityClassification.MONSTER, 0.6875f, 0.5625f, 0x3C8C52, 0x224D2E);
+    public static final EntityType<CreeperCorgiEntity> CREEPER_CORGI = createEntity(CreeperCorgiEntity.class, CreeperCorgiEntity::new, EntityClassification.MONSTER, 0.6875f, 0.5625f, 0x17E833, 0xABB51B);
 
     private static <T extends Entity> EntityType<T> createEntity(Class<T> entityClass, EntityType.IFactory<T> factory, EntityClassification classification, float width, float height, int eggPrimary, int eggSecondary) {
         ResourceLocation location = new ResourceLocation(Reference.MOD_ID, classToString(entityClass));

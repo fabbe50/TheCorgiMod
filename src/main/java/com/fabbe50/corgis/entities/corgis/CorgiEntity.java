@@ -553,7 +553,7 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
     @Override
     @OnlyIn(Dist.CLIENT)
     public float getTailRotation() {
-        return this.isAngry() ? 1.5393804F : (this.isTamed() ? (0.25F - (this.getMaxHealth() - this.getHealth() * 0.01F) * (float)Math.PI) : ((float)Math.PI / 5F));
+        return this.isAngry() ? 1.5393804F : (this.isTamed() ? (-1.0F - (this.getMaxHealth() - this.getHealth() * 0.01F) * (float)Math.PI) : ((float)Math.PI / 5F));
     }
 
     @SuppressWarnings("NullableProblems")
