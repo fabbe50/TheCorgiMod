@@ -30,6 +30,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Collection;
 
+@OnlyIn(
+        value = Dist.CLIENT,
+        _interface = IChargeableMob.class
+)
 public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, IChargeableMob {
     private static final DataParameter<Integer> STATE = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.VARINT);
     private static final DataParameter<Boolean> POWERED = EntityDataManager.createKey(CreeperEntity.class, DataSerializers.BOOLEAN);
@@ -167,6 +171,7 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
     public boolean attackEntityAsMob(Entity entityIn) {
         return true;
     }
+
 
     public boolean func_225509_J__() {
         return this.dataManager.get(POWERED);
