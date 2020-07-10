@@ -7,16 +7,13 @@ import com.fabbe50.corgis.event.ModEventFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.IAttribute;
-import net.minecraft.entity.ai.attributes.IAttributeInstance;
-import net.minecraft.entity.ai.attributes.RangedAttribute;
+import net.minecraft.entity.ai.attributes.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.monster.ZombiePigmanEntity;
 import net.minecraft.entity.monster.ZombieVillagerEntity;
+import net.minecraft.entity.monster.ZombifiedPiglinEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,6 +30,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.*;
+import net.minecraft.world.spawner.WorldEntitySpawner;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeConfig;
@@ -43,7 +41,6 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
-    protected static final IAttribute SPAWN_REINFORCEMENTS_CHANCE = (new RangedAttribute((IAttribute)null, "zombie.spawnReinforcements", 0.0D, 0.0D, 1.0D)).setDescription("Spawn Reinforcements Chance");
     private static final UUID BABY_SPEED_BOOST_ID = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
     private static final AttributeModifier BABY_SPEED_BOOST = new AttributeModifier(BABY_SPEED_BOOST_ID, "Baby speed boost", 0.5D, AttributeModifier.Operation.MULTIPLY_BASE);
     private static final DataParameter<Boolean> IS_CHILD = EntityDataManager.createKey(ZombieCorgiEntity.class, DataSerializers.BOOLEAN);
@@ -71,21 +68,15 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.addGoal(6, new MoveThroughVillageGoal(this, 1.0D, true, 4, this::isBreakDoorsTaskSet));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.2D));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setCallsForHelp(ZombiePigmanEntity.class));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setCallsForHelp(ZombifiedPiglinEntity.class));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolemEntity.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, 10, true, false, TurtleEntity.TARGET_DRY_BABY));
     }
 
-    @Override
-    protected void registerAttributes() {
-        super.registerAttributes();
-        this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(50.0D);
-        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30D);
-        this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
-        this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(1.0D);
-        this.getAttributes().registerAttribute(SPAWN_REINFORCEMENTS_CHANCE).setBaseValue(this.rand.nextDouble() * ForgeConfig.SERVER.zombieBaseSummonChance.get());
+    public static AttributeModifierMap.MutableAttribute getAttributes() {
+        return MonsterEntity.func_234295_eP_().func_233815_a_(Attributes.field_233819_b_, 35.0D).func_233815_a_(Attributes.field_233821_d_, (double)0.23F).func_233815_a_(Attributes.field_233823_f_, 3.0D).func_233815_a_(Attributes.field_233826_i_, 2.0D).func_233814_a_(Attributes.field_233829_l_);
     }
 
     @Override
@@ -134,10 +125,10 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
     public void setChild(boolean child) {
         this.getDataManager().set(IS_CHILD, child);
         if (this.world != null && !this.world.isRemote) {
-            IAttributeInstance attributeInstance = this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED);
+            ModifiableAttributeInstance attributeInstance = this.getAttribute(Attributes.field_233821_d_);
             attributeInstance.removeModifier(BABY_SPEED_BOOST);
             if (child)
-                attributeInstance.applyModifier(BABY_SPEED_BOOST);
+                attributeInstance.func_233767_b_(BABY_SPEED_BOOST);
         }
     }
 
@@ -165,7 +156,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
             ZombieCorgiEntity entity = type.create(this.world);
             entity.copyLocationAndAnglesFrom(this);
             entity.setBreakDoorsAItask(entity.canBreakDoors() && this.isBreakDoorsTaskSet());
-            entity.applyAttributeBonuses(entity.world.getDifficultyForLocation(new BlockPos(entity)).getClampedAdditionalDifficulty());
+            entity.applyAttributeBonuses(entity.world.getDifficultyForLocation(new BlockPos(entity.getPositionUnderneath().up())).getClampedAdditionalDifficulty());
             entity.setChild(this.isChild());
             entity.setNoAI(this.isAIDisabled());
 
@@ -185,7 +176,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
     }
 
     @Override
-    protected boolean processInteract(PlayerEntity player, Hand hand) {
+    protected ActionResultType func_230254_b_(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getHeldItem(hand);
         Item item = itemStack.getItem();
         if (item instanceof SpawnEggItem && ((SpawnEggItem)item).hasType(itemStack.getTag(), this.getType())) {
@@ -201,9 +192,9 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
                         itemStack.shrink(1);
                 }
             }
-            return true;
+            return ActionResultType.SUCCESS;
         } else
-            return super.processInteract(player, hand);
+            return super.func_230254_b_(player, hand);
     }
 
     protected boolean shouldBurnInDay() {
@@ -221,9 +212,9 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
             int j = MathHelper.floor(this.getPosY());
             int k = MathHelper.floor(this.getPosZ());
 
-            ZombieCorgiEvent.SummonAidEvent event = ModEventFactory.fireZombieSummonAid(this, world, i, j, k, livingEntity, this.getAttribute(SPAWN_REINFORCEMENTS_CHANCE).getValue());
+            ZombieCorgiEvent.SummonAidEvent event = ModEventFactory.fireZombieSummonAid(this, world, i, j, k, livingEntity, this.getAttribute(Attributes.field_233829_l_).getValue());
             if (event.getResult() == Event.Result.DENY) return true;
-            if (event.getResult() == Event.Result.ALLOW || livingEntity != null && this.world.getDifficulty() == Difficulty.HARD && (double)this.rand.nextFloat() < this.getAttribute(SPAWN_REINFORCEMENTS_CHANCE).getValue() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
+            if (event.getResult() == Event.Result.ALLOW || livingEntity != null && this.world.getDifficulty() == Difficulty.HARD && (double)this.rand.nextFloat() < this.getAttribute(Attributes.field_233829_l_).getValue() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
                 ZombieCorgiEntity entity = event.getCustomSummonedAid() != null && event.getResult() == Event.Result.ALLOW ? event.getCustomSummonedAid() : EntityRegistry.ZOMBIE_CORGI.create(this.world);
 
                 for (int l = 0; l < 50; l++) {
@@ -231,15 +222,17 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
                     int j1 = j + MathHelper.nextInt(this.rand, 7, 40) * MathHelper.nextInt(this.rand, -1, 1);
                     int k1 = k + MathHelper.nextInt(this.rand, 7, 40) * MathHelper.nextInt(this.rand, -1, 1);
                     BlockPos pos = new BlockPos(i1, j1 - 1, k1);
-                    if (this.world.getBlockState(pos).isTopSolid(this.world, pos, entity) && this.world.getLight(new BlockPos(i1, j1, k1)) < 10) {
+                    EntityType<?> entitytype = entity.getType();
+                    EntitySpawnPlacementRegistry.PlacementType entityspawnplacementregistry$placementtype = EntitySpawnPlacementRegistry.getPlacementType(entitytype);
+                    if (WorldEntitySpawner.canCreatureTypeSpawnAtLocation(entityspawnplacementregistry$placementtype, this.world, pos, entitytype) && EntitySpawnPlacementRegistry.func_223515_a(entitytype, this.world, SpawnReason.REINFORCEMENT, pos, this.world.rand)) {
                         entity.setPosition((double)i1, (double)j1, (double)k1);
-                        if (!this.world.isPlayerWithin((double)i1, (double)j1, (double)k1, 7.0D) && this.world.func_226668_i_(entity) && this.world.func_226669_j_(entity) && !this.world.containsAnyLiquid(entity.getBoundingBox())) {
+                        if (!this.world.isPlayerWithin((double)i1, (double)j1, (double)k1, 7.0D) && this.world.checkNoEntityCollision(entity) && this.world.hasNoCollisions(entity) && !this.world.containsAnyLiquid(entity.getBoundingBox())) {
                             this.world.addEntity(entity);
                             if (livingEntity != null)
                                 entity.setAttackTarget(livingEntity);
-                            entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(entity)), SpawnReason.REINFORCEMENT, null, null);
-                            this.getAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(new AttributeModifier("Reinforcement caller charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
-                            entity.getAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(new AttributeModifier("Reinforcement callee charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
+                            entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(entity.func_233580_cy_()), SpawnReason.REINFORCEMENT, null, null);
+                            this.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement caller charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
+                            entity.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement callee charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
                             break;
                         }
                     }
@@ -254,7 +247,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
     public boolean attackEntityAsMob(Entity entityIn) {
         boolean flag = super.attackEntityAsMob(entityIn);
         if (flag) {
-            float f = this.world.getDifficultyForLocation(new BlockPos(this)).getAdditionalDifficulty();
+            float f = this.world.getDifficultyForLocation(this.func_233580_cy_()).getAdditionalDifficulty();
             if (this.isBurning() && this.rand.nextFloat() < f * 0.3f) {
                 entityIn.setFire(2 * (int)f);
             }
@@ -328,11 +321,11 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
             ZombieVillagerEntity zombieVillager = EntityType.ZOMBIE_VILLAGER.create(this.world);
             zombieVillager.copyLocationAndAnglesFrom(villager);
             villager.remove();
-            zombieVillager.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(zombieVillager)), SpawnReason.CONVERSION, new ZombieCorgiEntity.GroupData(false), null);
-            zombieVillager.func_213792_a(villager.getVillagerData());
-            zombieVillager.func_223727_a(villager.func_223722_es().serialize(NBTDynamicOps.INSTANCE).getValue());
-            zombieVillager.func_213790_g(villager.getOffers().write());
-            zombieVillager.func_213789_a(villager.getXp());
+            zombieVillager.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(zombieVillager.func_233580_cy_())), SpawnReason.CONVERSION, new ZombieCorgiEntity.GroupData(false), null);
+            zombieVillager.setVillagerData(villager.getVillagerData());
+            zombieVillager.setGossips(villager.getGossip().func_234058_a_(NBTDynamicOps.INSTANCE).getValue());
+            zombieVillager.setOffers(villager.getOffers().write());
+            zombieVillager.setEXP(villager.getXp());
             zombieVillager.setChild(villager.isChild());
             zombieVillager.setNoAI(villager.isAIDisabled());
             if (villager.hasCustomName()) {
@@ -345,7 +338,8 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
 
             zombieVillager.setInvulnerable(this.isInvulnerable());
             this.world.addEntity(zombieVillager);
-            this.world.playEvent(null, 1026, new BlockPos(this), 0);
+            if (!this.isSilent())
+                this.world.playEvent(null, 1026, new BlockPos(this.func_233580_cy_()), 0);
         }
     }
 
@@ -376,14 +370,14 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
     }
 
     protected void applyAttributeBonuses(float difficulty) {
-        this.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).applyModifier(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.5D, AttributeModifier.Operation.ADDITION));
+        this.getAttribute(Attributes.field_233820_c_).func_233769_c_(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.5D, AttributeModifier.Operation.ADDITION));
         double d0 = this.rand.nextDouble() * 1.5D * (double)difficulty;
         if (d0 > 1.0D)
-            this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).applyModifier(new AttributeModifier("Random extra-spawn bonus", d0, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            this.getAttribute(Attributes.field_233819_b_).func_233769_c_(new AttributeModifier("Random extra-spawn bonus", d0, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         if (this.rand.nextFloat() < difficulty * 0.05f) {
-            this.getAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(new AttributeModifier("Leader bonus", this.rand.nextDouble() * 0.25D + 0.5D, AttributeModifier.Operation.ADDITION));
-            this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).applyModifier(new AttributeModifier("Leader bonus", this.rand.nextDouble() * 3.0D + 1.0D, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            this.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Leader bonus", this.rand.nextDouble() * 0.25D + 0.5D, AttributeModifier.Operation.ADDITION));
+            this.getAttribute(Attributes.field_233818_a_).func_233769_c_(new AttributeModifier("Leader bonus", this.rand.nextDouble() * 3.0D + 1.0D, AttributeModifier.Operation.MULTIPLY_TOTAL));
             this.setBreakDoorsAItask(this.canBreakDoors());
         }
     }

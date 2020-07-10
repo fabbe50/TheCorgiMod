@@ -21,29 +21,25 @@ public class CatSitOnBlockDecoyGoal extends MoveToBlockGoal {
 
     @Override
     public boolean shouldExecute() {
-        return this.corgi.isTamed() && !this.corgi.isSitting() && this.corgi.getCorgiType().equals(CorgiType.ANTI) && super.shouldExecute();
+        return this.corgi.isTamed() && !this.corgi.func_233684_eK_() && this.corgi.getCorgiType().equals(CorgiType.ANTI) && super.shouldExecute();
     }
 
     @Override
     public void startExecuting() {
         super.startExecuting();
-        this.corgi.getAISit().setSitting(false);
+        this.corgi.func_233686_v_(false);
     }
 
     @Override
     public void resetTask() {
         super.resetTask();
-        this.corgi.setSitting(false);
+        this.corgi.func_233686_v_(false);
     }
 
     @Override
     public void tick() {
         super.tick();
-        this.corgi.getAISit().setSitting(false);
-        if (!this.getIsAboveDestination())
-            this.corgi.setSitting(false);
-        else
-            this.corgi.setSitting(true);
+        this.corgi.func_233686_v_(this.getIsAboveDestination());
     }
 
     @Override

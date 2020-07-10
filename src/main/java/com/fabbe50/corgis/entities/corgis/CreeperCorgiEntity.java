@@ -4,6 +4,8 @@ import com.fabbe50.corgis.entities.ai.CreeperSwellDecoyGoal;
 import com.fabbe50.corgis.entities.interfaces.ICorgi;
 import com.fabbe50.corgis.entities.registry.EntityRegistry;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.monster.CreeperEntity;
@@ -18,10 +20,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
@@ -62,10 +61,8 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
     }
 
-    @Override
-    protected void registerAttributes() {
-        super.registerAttributes();
-        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+    public static AttributeModifierMap.MutableAttribute getAttributes() {
+        return MonsterEntity.func_234295_eP_().func_233815_a_(Attributes.field_233821_d_, 0.25D);
     }
 
     @Override
@@ -168,7 +165,7 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
         return true;
     }
 
-    public boolean func_225509_J__() {
+    public boolean isCharged() {
         return this.dataManager.get(POWERED);
     }
 
@@ -190,7 +187,8 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
         this.dataManager.set(POWERED, true);
     }
 
-    protected boolean processInteract(PlayerEntity player, Hand hand) {
+    @Override
+    protected ActionResultType func_230254_b_(PlayerEntity player, Hand hand) {
         ItemStack itemstack = player.getHeldItem(hand);
         if (itemstack.getItem() == Items.FLINT_AND_STEEL) {
             this.world.playSound(player, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.ITEM_FLINTANDSTEEL_USE, this.getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.4F + 0.8F);
@@ -198,16 +196,16 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
                 this.ignite();
                 itemstack.damageItem(1, player, (p_213625_1_) -> p_213625_1_.sendBreakAnimation(hand));
             }
-            return true;
+            return ActionResultType.func_233537_a_(this.world.isRemote);
         } else {
-            return super.processInteract(player, hand);
+            return super.func_230254_b_(player, hand);
         }
     }
 
     private void explode() {
         if (!this.world.isRemote) {
             Explosion.Mode explosion$mode = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this) ? Explosion.Mode.DESTROY : Explosion.Mode.NONE;
-            float f = this.func_225509_J__() ? 2.0F : 1.0F;
+            float f = this.isCharged() ? 2.0F : 1.0F;
             this.dead = true;
             this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.explosionRadius * f, explosion$mode);
             this.remove();
@@ -242,7 +240,7 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
     }
 
     public boolean ableToCauseSkullDrop() {
-        return this.func_225509_J__() && this.droppedSkulls < 1;
+        return this.isCharged() && this.droppedSkulls < 1;
     }
 
     public void incrementDroppedSkulls() {

@@ -29,6 +29,7 @@ public class Corgis {
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
+        EntityRegistry.registerAttributes();
         EntityRegistry.addSpawningConditions();
         DeferredWorkQueue.runLater(EntityRegistry::addSpawns);
         EntityRegistry.registerBetaMobs();

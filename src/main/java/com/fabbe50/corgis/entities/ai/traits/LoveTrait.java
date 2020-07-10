@@ -26,7 +26,7 @@ public class LoveTrait extends Goal {
     private List<AnimalEntity> animals;
     private boolean isAllowedToSpreadLove() {
         int i = Corgis.config.getLoveCorgi().getEffectRange();
-        AxisAlignedBB bounds = new AxisAlignedBB(this.corgi.getPosition().add(-i, -3, -i), this.corgi.getPosition().add(i, 3, i));
+        AxisAlignedBB bounds = new AxisAlignedBB(this.corgi.func_233580_cy_().add(-i, -3, -i), this.corgi.func_233580_cy_().add(i, 3, i));
         World world = this.corgi.getEntityWorld();
         animals = world.getEntitiesWithinAABB(AnimalEntity.class, bounds);
         return animals.size() < 16;

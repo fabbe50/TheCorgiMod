@@ -26,12 +26,12 @@ public abstract class AbstractCorgiRenderer<T extends MobEntity, M extends Abstr
         if (entity instanceof CorgiEntity) {
             if (entity.isWet()) {
                 float f = entity.getBrightness() * ((CorgiEntity) entity).getShadingWhileWet(partialTicks);
-                this.entityModel.func_228253_a_(f, f, f);
+                this.entityModel.setTint(f, f, f);
             }
         }
         super.render(entity, p_225623_2_, p_225623_3_, matrixStack, renderTypeBuffer, partialTicks);
         if (entity.isWet()) {
-            this.entityModel.func_228253_a_(1.0f, 1.0f, 1.0f);
+            this.entityModel.setTint(1.0f, 1.0f, 1.0f);
         }
     }
 

@@ -15,6 +15,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
@@ -75,6 +76,12 @@ public class EntityRegistry {
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.CORGI, CorgiRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.ZOMBIE_CORGI, ZombieCorgiRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.CREEPER_CORGI, CreeperCorgiRenderer::new);
+    }
+
+    public static void registerAttributes() {
+        GlobalEntityTypeAttributes.put(CORGI, CorgiEntity.getAttributes().func_233813_a_());
+        GlobalEntityTypeAttributes.put(ZOMBIE_CORGI, ZombieCorgiEntity.getAttributes().func_233813_a_());
+        GlobalEntityTypeAttributes.put(CREEPER_CORGI, CreeperCorgiEntity.getAttributes().func_233813_a_());
     }
 
     public static void registerBetaMobs() {

@@ -31,7 +31,7 @@ public class RadioactiveTrait extends Goal {
     public void tick() {
         if (this.corgi.getEntityWorld().getGameTime() % 20 == 0) {
             int i = Corgis.config.getRadioactiveCorgi().getEffectRange();
-            List<LivingEntity> entities = this.corgi.world.getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(this.corgi.getPosition().add(-i, -i, -i), this.corgi.getPosition().add(i, i, i)));
+            List<LivingEntity> entities = this.corgi.world.getEntitiesWithinAABB(LivingEntity.class, new AxisAlignedBB(this.corgi.func_233580_cy_().add(-i, -i, -i), this.corgi.func_233580_cy_().add(i, i, i)));
             for (LivingEntity entity : entities) {
                 if (this.corgi.isTamed() && entity != this.corgi) {
                     if (!(entity instanceof CorgiEntity && ((CorgiEntity) entity).getCorgiType().equals(CorgiType.RADIOACTIVE))) {
