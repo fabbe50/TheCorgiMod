@@ -1,14 +1,13 @@
 package com.fabbe50.corgis.entities.corgis;
 
 import com.fabbe50.corgis.Corgis;
-import com.fabbe50.corgis.entities.ai.CatLieOnBedDecoyGoal;
-import com.fabbe50.corgis.entities.ai.CatSitOnBlockDecoyGoal;
+import com.fabbe50.corgis.entities.ai.*;
 import com.fabbe50.corgis.entities.ai.traits.LoveTrait;
 import com.fabbe50.corgis.entities.ai.traits.RadioactiveTrait;
 import com.fabbe50.corgis.entities.interfaces.ICorgi;
-import com.fabbe50.corgis.entities.ai.BegDecoyGoal;
 import com.fabbe50.corgis.entities.ai.traits.MelonTrait;
 import com.fabbe50.corgis.entities.data.CorgiType;
+import com.fabbe50.corgis.entities.interfaces.ITameableCorgi;
 import com.fabbe50.corgis.entities.registry.EntityRegistry;
 import com.google.common.base.Predicate;
 import net.minecraft.block.BedBlock;
@@ -59,10 +58,11 @@ import java.util.UUID;
 /**
  * Created by fabbe50 on 19/06/2016.
  */
-public class CorgiEntity extends TameableEntity implements ICorgi {
+public class CorgiEntity extends TameableEntity implements ITameableCorgi {
     private static final DataParameter<Boolean> BEGGING = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> COLLARCOLOR = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> CORGITYPE = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.VARINT);
+    private static final DataParameter<Boolean> ASKEDTOSTAY = EntityDataManager.createKey(CorgiEntity.class, DataSerializers.BOOLEAN);
     public static final Predicate<LivingEntity> TARGETS = (p_213440_0_) -> {
         EntityType<?> entitytype = p_213440_0_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == EntityType.FOX;
@@ -102,8 +102,9 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(7, new CatLieOnBedDecoyGoal(this, 1.1D, 8));
-        this.goalSelector.addGoal(8, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
-        this.goalSelector.addGoal(9, new CatSitOnBlockDecoyGoal(this, 0.8D));
+        this.goalSelector.addGoal(8, new FollowOwnerGoalOverride(this, 1.0D, 10.0F, 2.0F, false));
+        this.goalSelector.addGoal(9, new StayInPlaceGoal(this));
+        this.goalSelector.addGoal(10, new CatSitOnBlockDecoyGoal(this, 0.8D));
         this.goalSelector.addGoal(15, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(16, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(17, new BegDecoyGoal(this, 8.0F));
@@ -159,6 +160,7 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         this.dataManager.register(BEGGING, false);
         this.dataManager.register(COLLARCOLOR, DyeColor.RED.getId());
         this.dataManager.register(CORGITYPE, CorgiType.byDamage(rand.nextInt(8)).getID());
+        this.dataManager.register(ASKEDTOSTAY, false);
 
         this.dataManager.register(field_213428_bG, false);
         this.dataManager.register(field_213429_bH, false);
@@ -189,6 +191,7 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         compound.putBoolean("Angry", this.isAngry());
         compound.putByte("CollarColor", (byte)this.getCollarColor().getId());
         compound.putByte("CorgiType", (byte)this.getCorgiType().getID());
+        compound.putBoolean("Stay", this.isAskedToStay());
     }
 
     public void readAdditional(CompoundNBT compound) {
@@ -200,6 +203,9 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         }
         if (compound.contains("CorgiType", 99)) {
             this.setCorgitype(CorgiType.byDamage(compound.getByte("CorgiType")));
+        }
+        if (compound.contains("Stay")) {
+            this.setAskedToStay(compound.getBoolean("Stay"));
         }
     }
 
@@ -292,6 +298,8 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
                 this.addPotionEffect(new EffectInstance(Effects.POISON, 8));
             }
         }
+        if (interactionCooldown != 0 && this.world.getGameTime() % 20 == 0)
+            interactionCooldown--;
 
         if (this.isBegging()) {
             this.headRotation += (1.0F - this.headRotation) * 0.4F;
@@ -426,12 +434,20 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         this.getAttribute(Attributes.field_233823_f_).setBaseValue(8.0D);
     }
 
+    private int interactionCooldown = 0;
     @Override
     public ActionResultType func_230254_b_(PlayerEntity player, Hand hand) {
         ItemStack stack = player.getHeldItem(hand);
         Item item = stack.getItem();
 
         if (this.isTamed()) {
+            if (player.isCrouching() && !this.world.isRemote) {
+                if (interactionCooldown == 0) {
+                    this.setAskedToStay(!this.isAskedToStay());
+                    interactionCooldown = 1;
+                }
+                return ActionResultType.SUCCESS;
+            }
             if (!stack.isEmpty()) {
                 if (stack.isFood()) {
                     if (this.getCorgiType().equals(CorgiType.ANTI) && (item == Items.COD || item == Items.TROPICAL_FISH || item == Items.SALMON) && this.getHealth() < this.getMaxHealth()) {
@@ -507,6 +523,14 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         }
     }
 
+    public boolean isAskedToStay() {
+        return this.dataManager.get(ASKEDTOSTAY);
+    }
+
+    public void setAskedToStay(boolean askedToStay) {
+        this.dataManager.set(ASKEDTOSTAY, askedToStay);
+    }
+
     public CorgiType getCorgiType() {
         return CorgiType.byDamage(this.dataManager.get(CORGITYPE));
     }
@@ -553,6 +577,7 @@ public class CorgiEntity extends TameableEntity implements ICorgi {
         CorgiEntity entitycorgi = EntityRegistry.CORGI.create(this.world);
         UUID uuid = this.getOwnerId();
         if (uuid != null) {
+            entitycorgi.setCustomName(new StringTextComponent(upperCaseFirstLetter(entitycorgi.getCorgiType().getName()) + " Corgi"));
             entitycorgi.setOwnerId(uuid);
             entitycorgi.setTamed(true);
         }
