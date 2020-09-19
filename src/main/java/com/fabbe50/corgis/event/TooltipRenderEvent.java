@@ -1,6 +1,7 @@
 package com.fabbe50.corgis.event;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
@@ -17,15 +18,21 @@ public class TooltipRenderEvent {
 
     @SubscribeEvent
     public void tooltipRender(ItemTooltipEvent event) {
-        if (!event.getItemStack().isEmpty() && event.getItemStack().getItem() instanceof SpawnEggItem) {
-            EntityType<?> type = ((SpawnEggItem)event.getItemStack().getItem()).getType(event.getItemStack().getTag());
-            if (type.getRegistryName() != null) {
-                mobsMarkedForBeta.forEach(loc -> {
-                    boolean flag = loc.toString().equals(type.getRegistryName().toString());
-                    if (flag) {
-                        event.getToolTip().add(new StringTextComponent(TextFormatting.GRAY + "WIP, may not work as intended."));
-                    }
-                });
+        if (!event.getItemStack().isEmpty()) {
+            if (event.getItemStack().getItem() instanceof SpawnEggItem) {
+                EntityType<?> type = ((SpawnEggItem) event.getItemStack().getItem()).getType(event.getItemStack().getTag());
+                if (type.getRegistryName() != null) {
+                    mobsMarkedForBeta.forEach(loc -> {
+                        boolean flag = loc.toString().equals(type.getRegistryName().toString());
+                        if (flag) {
+                            event.getToolTip().add(new StringTextComponent(TextFormatting.GRAY + "WIP, may not work as intended."));
+                        }
+                    });
+                }
+            } else if (event.getItemStack().getItem().equals(Items.DRAGON_EGG)) {
+                event.getToolTip().add(new StringTextComponent(TextFormatting.GRAY + "It's just a normal dragon egg... or is it?"));
+            } else if (event.getItemStack().getItem().equals(Items.NETHER_STAR)) {
+                event.getToolTip().add(new StringTextComponent(TextFormatting.GRAY + "It's just a normal nether star... or is it?"));
             }
         }
     }

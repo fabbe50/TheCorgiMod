@@ -1,10 +1,8 @@
 package com.fabbe50.corgis.entities.ai;
 
 import com.fabbe50.corgis.entities.corgis.CorgiEntity;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Random;
 

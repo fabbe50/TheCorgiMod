@@ -1,0 +1,20 @@
+{
+  "name": "Creeper Corgi",
+  "icon": "corgis:creeper_corgi_spawn_egg",
+  "category": "corgis:corgis",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Stats:$(br)20x $(#f00)♥$()$(br2)Abilities:$(br)Explosive"
+    },
+    {
+      "type": "entity",
+      "name": "Creeper Corgi",
+      "entity": "corgis:creeper_corgi",
+      "rotate": false,
+      "default_rotation": 30,
+      "scale": 0.65,
+      "text": "The creeper corgi has been exposed to the sulfur for so long it inherited it's properties."
+    }
+  ]
+}
