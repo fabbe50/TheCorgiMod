@@ -1,6 +1,14 @@
 package com.fabbe50.corgis;
 
+import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 public class Config {
     private ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -88,9 +96,22 @@ public class Config {
     }
 
     public class Corgis {
-        public Corgis() {
-            builder.push("corgis");
+        public final ForgeConfigSpec.IntValue min;
+        public final ForgeConfigSpec.IntValue max;
+        public final ForgeConfigSpec.IntValue weight;
+        public final ForgeConfigSpec.ConfigValue<List<? extends String>> biomeCategories;
+        public final ForgeConfigSpec.ConfigValue<List<? extends String>> biomes;
 
+        public Corgis() {
+            builder.push("spawn chance");
+            builder.comment("Configure spawn weight and group size.");
+            min = builder.defineInRange("min", 3, 0, 64);
+            max = builder.defineInRange("max", 8, 0, 64);
+            weight = builder.defineInRange("weight", 6, 0, 100);
+            builder.pop();
+            builder.push("spawn biomes");
+            biomeCategories = builder.defineList("biome categories", Collections.singletonList(Biome.Category.PLAINS.getName()), o -> Lists.newArrayList(Biome.Category.values()).contains(Biome.Category.func_235103_a_(String.valueOf(o).toLowerCase(Locale.ROOT))));
+            biomes = builder.defineList("biomes (resourcelocation)", Collections.emptyList(), o -> ForgeRegistries.BIOMES.containsKey(new ResourceLocation(String.valueOf(o))));
             builder.pop();
         }
     }

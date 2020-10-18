@@ -20,16 +20,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -72,6 +68,13 @@ public class EntityRegistry {
         }
     }
 
+    /*@SubscribeEvent
+    public static void registerSpawns(BiomeLoadingEvent event) {
+        if (spawnableBiomes.contains(event.getName())) {
+
+        }
+    }*/
+
     public static void registerRenderers() {
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.CORGI, CorgiRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.ZOMBIE_CORGI, ZombieCorgiRenderer::new);
@@ -91,27 +94,7 @@ public class EntityRegistry {
 
     public static void addSpawningConditions() {
         EntitySpawnPlacementRegistry.register(CORGI, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, CorgiEntity::canSpawnHere);
-//        EntitySpawnPlacementRegistry.register(ZOMBIE_CORGI, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZombieCorgiEntity::func_223325_c);
-    }
-
-    public static void addSpawns() {
-        addSpawn(CORGI, 2, 5, 6, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.FOREST);
-//        addSpawn(ZOMBIE_CORGI, 4, 10, 75, BiomeDictionary.Type.OVERWORLD);
-    }
-
-    public static void addSpawn(EntityType entityType, int min, int max, int weight, BiomeDictionary.Type... types) {
-        addSpawn(entityType, min, max, weight, Arrays.asList(types));
-    }
-
-    public static void addSpawn(EntityType entityType, int min, int max, int weight, Collection<BiomeDictionary.Type> types) {
-        if (weight > 0) {
-            List<Biome> spawnableBiomes = Lists.newArrayList();
-            for (BiomeDictionary.Type type : types) {
-                spawnableBiomes.addAll(BiomeDictionary.getBiomes(type));
-            }
-            for (Biome biome : spawnableBiomes) {
-                biome.getSpawns(entityType.getClassification()).add(new Biome.SpawnListEntry(entityType, weight, min, max));
-            }
-        }
+        EntitySpawnPlacementRegistry.register(ZOMBIE_CORGI, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZombieCorgiEntity::canMonsterSpawn);
+        EntitySpawnPlacementRegistry.register(CREEPER_CORGI, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, CreeperCorgiEntity::canMonsterSpawn);
     }
 }

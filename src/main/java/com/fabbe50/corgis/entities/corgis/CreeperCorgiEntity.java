@@ -24,6 +24,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -186,8 +187,8 @@ public class CreeperCorgiEntity extends MonsterEntity implements ICorgi, ICharge
         this.dataManager.set(STATE, state);
     }
 
-    public void onStruckByLightning(LightningBoltEntity lightningBolt) {
-        super.onStruckByLightning(lightningBolt);
+    public void func_241841_a(ServerWorld world, LightningBoltEntity lightningBolt) {
+        super.func_241841_a(world, lightningBolt);
         this.dataManager.set(POWERED, true);
     }
 

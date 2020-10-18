@@ -44,6 +44,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -554,11 +555,17 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
 
     @Override
     @Nullable
-    public ILivingEntityData onInitialSpawn(IWorld world, DifficultyInstance difficulty, SpawnReason reason, @Nullable ILivingEntityData livingdata, @Nullable CompoundNBT compound) {
+    public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason, @Nullable ILivingEntityData livingdata, @Nullable CompoundNBT compound) {
         livingdata = super.onInitialSpawn(world, difficulty, reason, livingdata, compound);
         this.setCorgitype(getRandomCorgiType(this.world.rand));
         this.setCustomName(new StringTextComponent(upperCaseFirstLetter(this.getCorgiType().getName()) + " Corgi"));
         return livingdata;
+    }
+
+    @Nullable
+    @Override
+    public CorgiEntity func_241840_a(ServerWorld p_241840_1_, AgeableEntity p_241840_2_) {
+        return null;
     }
 
     public static String upperCaseFirstLetter(String str) {
@@ -690,7 +697,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
 
         public void resetTask() {
             this.corgi.func_213419_u(false);
-            float f = this.corgi.world.getCelestialAngle(1.0F);
+            float f = this.corgi.world.getCelestialAngleRadians(1.0F);
             if (this.owner.getSleepTimer() >= 100 && (double)f > 0.77D && (double)f < 0.8D && (double)this.corgi.world.getRandom().nextFloat() < 0.7D) {
                 this.func_220804_h();
             }
@@ -707,7 +714,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
             this.corgi.attemptTeleport((double)(blockpos$mutable.getX() + random.nextInt(11) - 5), (double)(blockpos$mutable.getY() + random.nextInt(5) - 2), (double)(blockpos$mutable.getZ() + random.nextInt(11) - 5), false);
             blockpos$mutable.setPos(this.corgi.func_233580_cy_());
             LootTable loottable = this.corgi.world.getServer().getLootTableManager().getLootTableFromLocation(LootTables.GAMEPLAY_CAT_MORNING_GIFT);
-            LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.corgi.world)).withParameter(LootParameters.POSITION, blockpos$mutable).withParameter(LootParameters.THIS_ENTITY, this.corgi).withRandom(random);
+            LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.corgi.world)).withParameter(LootParameters.field_237457_g_, this.corgi.getPositionVec()).withParameter(LootParameters.THIS_ENTITY, this.corgi).withRandom(random);
 
             for(ItemStack itemstack : loottable.generate(lootcontext$builder.build(LootParameterSets.GIFT))) {
                 this.corgi.world.addEntity(new ItemEntity(this.corgi.world, (double)((float)blockpos$mutable.getX() - MathHelper.sin(this.corgi.renderYawOffset * ((float)Math.PI / 180F))), (double)blockpos$mutable.getY(), (double)((float)blockpos$mutable.getZ() + MathHelper.cos(this.corgi.renderYawOffset * ((float)Math.PI / 180F))), itemstack));

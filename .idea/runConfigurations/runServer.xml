@@ -8,12 +8,12 @@
     <module name="TheCorgiMod.main"/>
     <envs>
       <env name="MOD_CLASSES" value="corgis%%$PROJECT_DIR$\out\production\resources;corgis%%$PROJECT_DIR$\out\production\classes"/>
-      <env name="MCP_MAPPINGS" value="snapshot_20200710-1.15.1"/>
-      <env name="MCP_VERSION" value="20200625.160719"/>
-      <env name="FORGE_VERSION" value="32.0.61"/>
+      <env name="MCP_MAPPINGS" value="snapshot_20200514-1.16"/>
+      <env name="MCP_VERSION" value="20200911.084530"/>
+      <env name="FORGE_VERSION" value="34.0.9"/>
       <env name="FORGE_GROUP" value="net.minecraftforge"/>
       <env name="target" value="fmluserdevserver"/>
-      <env name="MC_VERSION" value="1.16.1"/>
+      <env name="MC_VERSION" value="1.16.3"/>
     </envs>
     <method v="2">
       <option enabled="true" name="Make"/>

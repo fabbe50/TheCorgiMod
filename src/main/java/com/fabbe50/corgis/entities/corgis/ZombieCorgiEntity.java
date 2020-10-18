@@ -30,6 +30,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.*;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.spawner.WorldEntitySpawner;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -203,10 +204,13 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
 
     @Override
     public boolean attackEntityFrom(DamageSource source, float amount) {
-        if (super.attackEntityFrom(source, amount)) {
+        if (!super.attackEntityFrom(source, amount)) {
+            return false;
+        } else if (this.world instanceof ServerWorld) {
+            ServerWorld serverWorld = ((ServerWorld)this.world);
             LivingEntity livingEntity = this.getAttackTarget();
             if (livingEntity == null && source.getTrueSource() instanceof LivingEntity)
-                livingEntity = (LivingEntity)source.getTrueSource();
+                livingEntity = (LivingEntity) source.getTrueSource();
 
             int i = MathHelper.floor(this.getPosX());
             int j = MathHelper.floor(this.getPosY());
@@ -214,7 +218,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
 
             ZombieCorgiEvent.SummonAidEvent event = ModEventFactory.fireZombieSummonAid(this, world, i, j, k, livingEntity, this.getAttribute(Attributes.field_233829_l_).getValue());
             if (event.getResult() == Event.Result.DENY) return true;
-            if (event.getResult() == Event.Result.ALLOW || livingEntity != null && this.world.getDifficulty() == Difficulty.HARD && (double)this.rand.nextFloat() < this.getAttribute(Attributes.field_233829_l_).getValue() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
+            if (event.getResult() == Event.Result.ALLOW || livingEntity != null && this.world.getDifficulty() == Difficulty.HARD && (double) this.rand.nextFloat() < this.getAttribute(Attributes.field_233829_l_).getValue() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
                 ZombieCorgiEntity entity = event.getCustomSummonedAid() != null && event.getResult() == Event.Result.ALLOW ? event.getCustomSummonedAid() : EntityRegistry.ZOMBIE_CORGI.create(this.world);
 
                 for (int l = 0; l < 50; l++) {
@@ -224,15 +228,15 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
                     BlockPos pos = new BlockPos(i1, j1 - 1, k1);
                     EntityType<?> entitytype = entity.getType();
                     EntitySpawnPlacementRegistry.PlacementType entityspawnplacementregistry$placementtype = EntitySpawnPlacementRegistry.getPlacementType(entitytype);
-                    if (WorldEntitySpawner.canCreatureTypeSpawnAtLocation(entityspawnplacementregistry$placementtype, this.world, pos, entitytype) && EntitySpawnPlacementRegistry.func_223515_a(entitytype, this.world, SpawnReason.REINFORCEMENT, pos, this.world.rand)) {
-                        entity.setPosition((double)i1, (double)j1, (double)k1);
-                        if (!this.world.isPlayerWithin((double)i1, (double)j1, (double)k1, 7.0D) && this.world.checkNoEntityCollision(entity) && this.world.hasNoCollisions(entity) && !this.world.containsAnyLiquid(entity.getBoundingBox())) {
+                    if (WorldEntitySpawner.canCreatureTypeSpawnAtLocation(entityspawnplacementregistry$placementtype, this.world, pos, entitytype) && EntitySpawnPlacementRegistry.func_223515_a(entitytype, serverWorld, SpawnReason.REINFORCEMENT, pos, serverWorld.rand)) {
+                        entity.setPosition((double) i1, (double) j1, (double) k1);
+                        if (!this.world.isPlayerWithin((double) i1, (double) j1, (double) k1, 7.0D) && this.world.checkNoEntityCollision(entity) && this.world.hasNoCollisions(entity) && !this.world.containsAnyLiquid(entity.getBoundingBox())) {
                             this.world.addEntity(entity);
                             if (livingEntity != null)
                                 entity.setAttackTarget(livingEntity);
-                            entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(entity.func_233580_cy_()), SpawnReason.REINFORCEMENT, null, null);
-                            this.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement caller charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
-                            entity.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement callee charge", (double)-0.05f, AttributeModifier.Operation.ADDITION));
+                            entity.onInitialSpawn(serverWorld, this.world.getDifficultyForLocation(entity.func_233580_cy_()), SpawnReason.REINFORCEMENT, null, null);
+                            this.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement caller charge", (double) -0.05f, AttributeModifier.Operation.ADDITION));
+                            entity.getAttribute(Attributes.field_233829_l_).func_233769_c_(new AttributeModifier("Reinforcement callee charge", (double) -0.05f, AttributeModifier.Operation.ADDITION));
                             break;
                         }
                     }
@@ -311,8 +315,8 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
     }
 
     @Override
-    public void onKillEntity(LivingEntity entityLivingIn) {
-        super.onKillEntity(entityLivingIn);
+    public void func_241847_a(ServerWorld world, LivingEntity entityLivingIn) {
+        super.func_241847_a(world, entityLivingIn);
         if ((this.world.getDifficulty() == Difficulty.NORMAL || this.world.getDifficulty() == Difficulty.HARD) && entityLivingIn instanceof VillagerEntity) {
             if (this.world.getDifficulty() != Difficulty.HARD && this.rand.nextBoolean())
                 return;
@@ -321,7 +325,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
             ZombieVillagerEntity zombieVillager = EntityType.ZOMBIE_VILLAGER.create(this.world);
             zombieVillager.copyLocationAndAnglesFrom(villager);
             villager.remove();
-            zombieVillager.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(zombieVillager.func_233580_cy_())), SpawnReason.CONVERSION, new ZombieCorgiEntity.GroupData(false), null);
+            zombieVillager.onInitialSpawn(world, world.getDifficultyForLocation(new BlockPos(zombieVillager.func_233580_cy_())), SpawnReason.CONVERSION, new ZombieCorgiEntity.GroupData(false), null);
             zombieVillager.setVillagerData(villager.getVillagerData());
             zombieVillager.setGossips(villager.getGossip().func_234058_a_(NBTDynamicOps.INSTANCE).getValue());
             zombieVillager.setOffers(villager.getOffers().write());
@@ -350,7 +354,7 @@ public class ZombieCorgiEntity extends MonsterEntity implements ICorgi {
 
     @Nullable
     @Override
-    public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason, @Nullable ILivingEntityData spawnDataIn, @Nullable CompoundNBT dataTag) {
+    public ILivingEntityData onInitialSpawn(IServerWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason, @Nullable ILivingEntityData spawnDataIn, @Nullable CompoundNBT dataTag) {
         spawnDataIn = super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
         float f = difficultyIn.getClampedAdditionalDifficulty();
         this.setCanPickUpLoot(this.rand.nextFloat() < 0.55F * f);
