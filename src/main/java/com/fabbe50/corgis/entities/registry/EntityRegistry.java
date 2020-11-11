@@ -82,9 +82,9 @@ public class EntityRegistry {
     }
 
     public static void registerAttributes() {
-        GlobalEntityTypeAttributes.put(CORGI, CorgiEntity.getAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(ZOMBIE_CORGI, ZombieCorgiEntity.getAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(CREEPER_CORGI, CreeperCorgiEntity.getAttributes().func_233813_a_());
+        GlobalEntityTypeAttributes.put(CORGI, CorgiEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(ZOMBIE_CORGI, ZombieCorgiEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(CREEPER_CORGI, CreeperCorgiEntity.getAttributes().create());
     }
 
     public static void registerBetaMobs() {

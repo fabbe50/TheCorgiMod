@@ -142,7 +142,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
     }
 
     public static AttributeModifierMap.MutableAttribute getAttributes() {
-        return MobEntity.func_233666_p_().func_233815_a_(Attributes.field_233821_d_, (double)0.3F).func_233815_a_(Attributes.field_233818_a_, 30.0D).func_233815_a_(Attributes.field_233823_f_, 4.0D);
+        return MobEntity.func_233666_p_().createMutableAttribute(Attributes.MOVEMENT_SPEED, (double)0.3F).createMutableAttribute(Attributes.MAX_HEALTH, 30.0D).createMutableAttribute(Attributes.ATTACK_DAMAGE, 4.0D);
     }
 
     public void setAttackTarget(@Nullable LivingEntity entitylivingbaseIn) {
@@ -392,7 +392,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
     }
 
     public int getVerticalFaceSpeed() {
-        return this.func_233684_eK_() ? 20 : super.getVerticalFaceSpeed();
+        return this.isEntitySleeping() ? 20 : super.getVerticalFaceSpeed();
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount) {
@@ -413,7 +413,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
     }
 
     public boolean attackEntityAsMob(Entity entityIn) {
-        boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), (float)((int)this.getAttribute(Attributes.field_233823_f_).getValue()));
+        boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), (float)((int)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue()));
 
         if (flag) {
             this.applyEnchantments(this, entityIn);
@@ -425,14 +425,14 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
     public void setTamed(boolean tamed) {
         super.setTamed(tamed);
         if (tamed) {
-            this.getAttribute(Attributes.field_233818_a_).setBaseValue(60.0D);
+            this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(60.0D);
             this.setHealth(60.0F);
         }
         else {
-            this.getAttribute(Attributes.field_233818_a_).setBaseValue(30.0D);
+            this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(30.0D);
         }
 
-        this.getAttribute(Attributes.field_233823_f_).setBaseValue(8.0D);
+        this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8.0D);
     }
 
     private int interactionCooldown = 0;
@@ -479,7 +479,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
                 }
             }
             if (this.isOwner(player) && !this.world.isRemote && !this.isBreedingItem(stack)) {
-                this.func_233687_w_(!this.func_233684_eK_());
+                this.func_233687_w_(!this.isSitting());
                 this.isJumping = false;
                 this.navigator.clearPath();
                 this.setAttackTarget((LivingEntity) null);
@@ -609,7 +609,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
             return false;
         } else {
             CorgiEntity corgiEntity = (CorgiEntity)otherAnimal;
-            return corgiEntity.isTamed() && (!corgiEntity.func_233684_eK_() && (this.isInLove() && corgiEntity.isInLove()));
+            return corgiEntity.isTamed() && (!corgiEntity.isBegging() && (this.isInLove() && corgiEntity.isInLove()));
         }
     }
 
@@ -643,7 +643,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
         public boolean shouldExecute() {
             if (!this.corgi.isTamed()) {
                 return false;
-            } else if (this.corgi.func_233684_eK_()) {
+            } else if (this.corgi.isBegging()) {
                 return false;
             } else if (!this.corgi.getCorgiType().equals(CorgiType.ANTI)) {
                 return false;
@@ -684,7 +684,7 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
 
 
         public boolean shouldContinueExecuting() {
-            return this.corgi.isTamed() && !this.corgi.func_233684_eK_() && this.owner != null && this.owner.isSleeping() && this.bedPos != null && !this.func_220805_g();
+            return this.corgi.isTamed() && !this.corgi.isBegging() && this.owner != null && this.owner.isSleeping() && this.bedPos != null && !this.func_220805_g();
         }
 
         public void startExecuting() {
@@ -710,9 +710,9 @@ public class CorgiEntity extends TameableEntity implements ITameableCorgi {
         private void func_220804_h() {
             Random random = this.corgi.getRNG();
             BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
-            blockpos$mutable.setPos(this.corgi.func_233580_cy_());
+            blockpos$mutable.setPos(this.corgi.getPosition());
             this.corgi.attemptTeleport((double)(blockpos$mutable.getX() + random.nextInt(11) - 5), (double)(blockpos$mutable.getY() + random.nextInt(5) - 2), (double)(blockpos$mutable.getZ() + random.nextInt(11) - 5), false);
-            blockpos$mutable.setPos(this.corgi.func_233580_cy_());
+            blockpos$mutable.setPos(this.corgi.getPosition());
             LootTable loottable = this.corgi.world.getServer().getLootTableManager().getLootTableFromLocation(LootTables.GAMEPLAY_CAT_MORNING_GIFT);
             LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.corgi.world)).withParameter(LootParameters.field_237457_g_, this.corgi.getPositionVec()).withParameter(LootParameters.THIS_ENTITY, this.corgi).withRandom(random);
 

@@ -25,19 +25,19 @@ public class MelonTrait extends MoveToBlockGoal {
 
     @Override
     public boolean shouldExecute() {
-        return this.corgi.isTamed() && !this.corgi.func_233684_eK_() && this.corgi.getCorgiType().equals(CorgiType.MELON) && super.shouldExecute();
+        return this.corgi.isTamed() && !this.corgi.isSleeping() && this.corgi.getCorgiType().equals(CorgiType.MELON) && super.shouldExecute();
     }
 
     @Override
     public void startExecuting() {
         super.startExecuting();
-        this.corgi.func_233686_v_(false);
+        this.corgi.setSleeping(false);
     }
 
     @Override
     public void resetTask() {
         super.resetTask();
-        this.corgi.func_233686_v_(false);
+        this.corgi.setSleeping(false);
     }
 
     private int timeSitting = 20;
@@ -45,16 +45,16 @@ public class MelonTrait extends MoveToBlockGoal {
     @Override
     public void tick() {
         super.tick();
-        this.corgi.func_233686_v_(this.getIsAboveDestination());
+        this.corgi.setSleeping(this.getIsAboveDestination());
         if (timeSitting == 0)
             timeSitting = this.random.nextInt(10) + 10;
-        if (this.getIsAboveDestination() && this.corgi.func_233684_eK_() && this.corgi.world.getBlockState(this.corgi.func_233580_cy_().down()).getBlock() == Blocks.MELON &&
+        if (this.getIsAboveDestination() && this.corgi.isSleeping() && this.corgi.world.getBlockState(this.corgi.getPosition().down()).getBlock() == Blocks.MELON &&
                 this.corgi.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && Corgis.config.getMelonCorgi().getShouldBreakMelons()) {
             if (ticks % 20 == 0) {
                 timeSitting--;
                 if (timeSitting == 0) {
-                    this.corgi.func_233686_v_(false);
-                    Utilities.destroyBlock(this.corgi.world, this.corgi.func_233580_cy_().down(), true, false, true);
+                    this.corgi.setSleeping(false);
+                    Utilities.destroyBlock(this.corgi.world, this.corgi.getPosition().down(), true, false, true);
                     timeSitting = 20;
                     ticks = 0;
                 }

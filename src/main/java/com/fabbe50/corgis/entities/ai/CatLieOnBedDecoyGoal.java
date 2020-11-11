@@ -22,13 +22,13 @@ public class CatLieOnBedDecoyGoal extends MoveToBlockGoal {
 
     @Override
     public boolean shouldExecute() {
-        return this.corgi.isTamed() && !this.corgi.func_233684_eK_() && !this.corgi.func_213416_eg() && this.corgi.getCorgiType().equals(CorgiType.ANTI) && super.shouldExecute();
+        return this.corgi.isTamed() && !this.corgi.isSitting() && !this.corgi.func_213416_eg() && this.corgi.getCorgiType().equals(CorgiType.ANTI) && super.shouldExecute();
     }
 
     @Override
     public void startExecuting() {
         super.startExecuting();
-        this.corgi.func_233686_v_(false);
+        this.corgi.setSleeping(false);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class CatLieOnBedDecoyGoal extends MoveToBlockGoal {
     @Override
     public void tick() {
         super.tick();
-        this.corgi.func_233686_v_(false);
+        this.corgi.setSleeping(false);
         if (!this.getIsAboveDestination())
             this.corgi.func_213419_u(false);
         else if (!this.corgi.func_213416_eg()) {

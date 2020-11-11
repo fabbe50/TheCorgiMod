@@ -27,7 +27,7 @@ public class StayInPlaceGoal extends Goal {
 
     @Override
     public void startExecuting() {
-        this.pos = entity.func_233580_cy_();
+        this.pos = entity.getPosition();
     }
 
     @Override

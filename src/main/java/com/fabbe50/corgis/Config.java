@@ -110,7 +110,7 @@ public class Config {
             weight = builder.defineInRange("weight", 6, 0, 100);
             builder.pop();
             builder.push("spawn biomes");
-            biomeCategories = builder.defineList("biome categories", Collections.singletonList(Biome.Category.PLAINS.getName()), o -> Lists.newArrayList(Biome.Category.values()).contains(Biome.Category.func_235103_a_(String.valueOf(o).toLowerCase(Locale.ROOT))));
+            biomeCategories = builder.defineList("biome categories", Collections.singletonList(Biome.Category.PLAINS.getName()), o -> Lists.newArrayList(Biome.Category.values()).contains(Biome.Category.byName(String.valueOf(o).toLowerCase(Locale.ROOT))));
             biomes = builder.defineList("biomes (resourcelocation)", Collections.emptyList(), o -> ForgeRegistries.BIOMES.containsKey(new ResourceLocation(String.valueOf(o))));
             builder.pop();
         }
