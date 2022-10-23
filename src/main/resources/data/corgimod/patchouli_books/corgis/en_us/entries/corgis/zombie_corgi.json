@@ -1,0 +1,20 @@
+{
+  "name": "Zombie Corgi",
+  "icon": "corgis:zombie_corgi_spawn_egg",
+  "category": "corgis:corgis",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Stats:$(br)20x $(#f00)♥$()$(br)Base Attack Damage: 3$(br)Base Armor: 2$(br2)Abilities:$(br)Spawn Reinforcements"
+    },
+    {
+      "type": "entity",
+      "name": "Zombie Corgi",
+      "entity": "corgis:zombie_corgi",
+      "rotate": false,
+      "default_rotation": 30,
+      "scale": 0.65,
+      "text": "The remains of the corgis that we've lost throughout the years, coming back with vengeful intentions."
+    }
+  ]
+}

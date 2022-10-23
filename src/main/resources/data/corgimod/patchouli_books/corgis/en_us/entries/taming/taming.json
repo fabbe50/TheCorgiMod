@@ -1,0 +1,11 @@
+{
+  "name": "Taming",
+  "icon": "minecraft:baked_potato",
+  "category": "corgis:taming",
+  "pages": [
+    {
+      "type": "text",
+      "text": "You can tame all corgis with baked potatoes except the hostile corgis and the Anti Corgi. The Anti Corgi is tamed with raw fish."
+    }
+  ]
+}
