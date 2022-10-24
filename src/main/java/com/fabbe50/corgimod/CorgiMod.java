@@ -1,10 +1,12 @@
 package com.fabbe50.corgimod;
 
 import com.fabbe50.corgimod.client.model.geom.ModelLayers;
-import com.fabbe50.corgimod.client.renderer.RendererRegistry;
+import com.fabbe50.corgimod.client.renderer.registry.RendererRegistry;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import com.mojang.logging.LogUtils;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,9 +25,12 @@ public class CorgiMod {
     public static final String MODID = "corgimod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+    private static ModConfig config;
 
     public CorgiMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setupEntityModelLayers);
@@ -38,10 +43,15 @@ public class CorgiMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
     }
 
     private void setupEntityModelLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
         ModelLayers.register(event);
+    }
+
+    public static ModConfig getConfig() {
+        return config;
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

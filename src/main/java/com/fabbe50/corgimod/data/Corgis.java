@@ -2,6 +2,10 @@ package com.fabbe50.corgimod.data;
 
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public enum Corgis {
     NORMAL(0, "normal", "Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_normal.png"), false),
     ANTI(1, "anti", "Anti Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_anti.png"), false),
@@ -38,5 +42,18 @@ public enum Corgis {
 
     public ResourceLocation getTextureLocation() {
         return textureLocation;
+    }
+
+    public static List<Corgis> getCorgis() {
+        return Arrays.stream(Corgis.values()).toList();
+    }
+
+    public static List<Corgis> getNonHostileCorgis() {
+        List<Corgis> tmp = new ArrayList<>();
+        for (Corgis corgi : Corgis.values()) {
+            if (!corgi.hostile)
+                tmp.add(corgi);
+        }
+        return tmp;
     }
 }

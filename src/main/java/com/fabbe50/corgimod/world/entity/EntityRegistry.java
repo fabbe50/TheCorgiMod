@@ -23,8 +23,8 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<AntiCorgi>> CORGI_ANTI = DEFERRED_REGISTER.register("corgi_anti", () -> registerEntity(EntityType.Builder.of(AntiCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_anti"));
     public static final RegistryObject<EntityType<BodyguardCorgi>> CORGI_BODYGUARD = DEFERRED_REGISTER.register("corgi_bodyguard", () -> registerEntity(EntityType.Builder.of(BodyguardCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_bodyguard"));
 
-    private static final EntityType registerEntity(EntityType.Builder builder, String entityName) {
-        return (EntityType) builder.build(entityName);
+    private static EntityType registerEntity(EntityType.Builder builder, String entityName) {
+        return builder.build(entityName);
     }
 
     @SubscribeEvent
