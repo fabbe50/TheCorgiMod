@@ -31,4 +31,9 @@ public class BodyguardCorgi extends Corgi {
 
         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12.0D);
     }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return Component.literal(Corgis.BODYGUARD.getFormattedName());
+    }
 }

@@ -31,4 +31,9 @@ public class Corgi extends Wolf {
 
         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8.0D);
     }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return Component.literal(Corgis.NORMAL.getFormattedName());
+    }
 }

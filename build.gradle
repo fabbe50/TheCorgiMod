@@ -123,6 +123,7 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -131,6 +132,7 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19.2-43.1.47'
 
+    implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:8.2.88")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
