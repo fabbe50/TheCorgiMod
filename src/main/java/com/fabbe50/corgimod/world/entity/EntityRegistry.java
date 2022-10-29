@@ -25,6 +25,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<BusinessCorgi>> CORGI_BUSINESS = DEFERRED_REGISTER.register("corgi_business", () -> registerEntity(EntityType.Builder.of(BusinessCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_business"));
     public static final RegistryObject<EntityType<CreeperCorgi>> CORGI_CREEPER = DEFERRED_REGISTER.register("corgi_creeper", () -> registerEntity(EntityType.Builder.of(CreeperCorgi::new, MobCategory.MONSTER).sized(1f, 0.5f), "corgi_creeper"));
     public static final RegistryObject<EntityType<LoveCorgi>> CORGI_LOVE = DEFERRED_REGISTER.register("corgi_love", () -> registerEntity(EntityType.Builder.of(LoveCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_love"));
+    public static final RegistryObject<EntityType<ZombieCorgi>> CORGI_ZOMBIE = DEFERRED_REGISTER.register("corgi_zombie", () -> registerEntity(EntityType.Builder.of(ZombieCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_zombie"));
 
     private static EntityType registerEntity(EntityType.Builder<?> builder, String entityName) {
         return builder.build(entityName);
@@ -38,6 +39,7 @@ public class EntityRegistry {
         event.register(CORGI_BUSINESS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BusinessCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_CREEPER.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, CreeperCorgi::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_LOVE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LoveCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
+        event.register(CORGI_ZOMBIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZombieCorgi::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
     }
 
     @SubscribeEvent
@@ -48,5 +50,6 @@ public class EntityRegistry {
         event.put(CORGI_BUSINESS.get(), BusinessCorgi.createAttributes().build());
         event.put(CORGI_CREEPER.get(), CreeperCorgi.createAttributes().build());
         event.put(CORGI_LOVE.get(), LoveCorgi.createAttributes().build());
+        event.put(CORGI_ZOMBIE.get(), ZombieCorgi.createAttributes().build());
     }
 }

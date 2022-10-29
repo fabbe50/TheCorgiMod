@@ -21,4 +21,13 @@ public class EventHandler {
             event.getToolTip().add(Component.literal("This feature may be broken cause of early stages in development. Please do not use or report issues about this."));
         }
     }
+
+    public static void addWip(Item item) {
+        wip.add(item);
+    }
+
+    public static void addBroken(Item item) {
+        wip.add(item);
+        broken.add(item);
+    }
 }

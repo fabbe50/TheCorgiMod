@@ -21,5 +21,6 @@ public class RendererRegistry {
         EntityRenderers.register(EntityRegistry.CORGI_BUSINESS.get(), BusinessCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_CREEPER.get(), CreeperCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_LOVE.get(), LoveCorgiRenderer::new);
+        EntityRenderers.register(EntityRegistry.CORGI_ZOMBIE.get(), ZombieCorgiRenderer::new);
     }
 }
