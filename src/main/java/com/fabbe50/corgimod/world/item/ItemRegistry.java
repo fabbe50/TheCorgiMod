@@ -19,5 +19,6 @@ public class ItemRegistry {
         DEFERRED_REGISTER.register("spawn_egg_corgi_normal", () -> new ForgeSpawnEggItem(EntityRegistry.CORGI_NORMAL, 0xE0BC8D, 0x89644E, new Item.Properties().tab(CorgiSpawnEggGroup.INSTANCE)));
         DEFERRED_REGISTER.register("spawn_egg_corgi_anti", () -> new ForgeSpawnEggItem(EntityRegistry.CORGI_ANTI, 0x1F4372, 0x769BB1, new Item.Properties().tab(CorgiSpawnEggGroup.INSTANCE)));
         DEFERRED_REGISTER.register("spawn_egg_corgi_bodyguard", () -> new ForgeSpawnEggItem(EntityRegistry.CORGI_BODYGUARD, 0xE0BC8D, 0x000000, new Item.Properties().tab(CorgiSpawnEggGroup.INSTANCE)));
+            DEFERRED_REGISTER.register("spawn_egg_corgi_business", () -> new ForgeSpawnEggItem(EntityRegistry.CORGI_BUSINESS, 0xE0BC8D, 0x000000, new Item.Properties().tab(CorgiSpawnEggGroup.INSTANCE)));
     }
 }

@@ -1,5 +1,9 @@
 {
   "itemGroup.corgimod_spawneggs": "Corgi Spawn Eggs",
   "item.corgimod.spawn_egg_corgi_anti": "Anti Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_bodyguard": "Bodyguard Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_business": "Business Corgi Spawn Egg",
   "entity.corgimod.corgi_anti": "Anti Corgi",
+  "entity.corgimod.corgi_bodyguard": "Bodyguard Corgi",
+  "entity.corgimod.corgi_business": "Business Corgi",
 }

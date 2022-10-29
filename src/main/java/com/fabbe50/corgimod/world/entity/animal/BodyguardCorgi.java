@@ -1,5 +1,6 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.data.Corgis;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
@@ -34,6 +35,8 @@ public class BodyguardCorgi extends Corgi {
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.literal(Corgis.BODYGUARD.getFormattedName());
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.BODYGUARD.getFormattedName());
+        return super.getDisplayName();
     }
 }
