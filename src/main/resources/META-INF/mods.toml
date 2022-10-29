@@ -25,11 +25,11 @@ displayName="The Corgi Mod" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+displayURL="https://fabbe50.com/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="corgis.png" #optional
 # A text field displayed in the mod UI
-credits="" #optional
+credits="Every Corgi out there" #optional
 # A text field displayed in the mod UI
 authors="fabbe50" #optional
 # Display Test controls the display for your mod in the server connection screen
@@ -42,7 +42,7 @@ authors="fabbe50" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-
+It adds corgis with varying abilities.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.corgimod]] #optional
@@ -62,5 +62,11 @@ description='''
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.corgimod]]
+    modId="cloth_config"
+    mandatory=true
+    versionRange="[8.2.88,)"
     ordering="NONE"
     side="BOTH"

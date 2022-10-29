@@ -22,6 +22,7 @@ public class ModelLayers {
     public static final ModelLayerLocation CORGI_BODYGUARD = register("corgi_bodyguard");
     public static final ModelLayerLocation CORGI_BUSINESS = register("corgi_business");
     public static final ModelLayerLocation CORGI_CREEPER = register("corgi_creeper");
+    public static final ModelLayerLocation CORGI_CREEPER_ARMOR = register("corgi_creeper", "armor");
 
     private static ModelLayerLocation register(String name) {
         return register(name, DEFAULT_LAYER);

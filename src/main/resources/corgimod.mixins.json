@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.fabbe50.corgimod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "corgimod.refmap.json",
+  "mixins": [
+    "VillagerMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
