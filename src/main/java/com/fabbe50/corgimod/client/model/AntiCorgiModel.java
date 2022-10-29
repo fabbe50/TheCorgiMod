@@ -16,6 +16,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
 
 public class AntiCorgiModel<T extends AntiCorgi> extends ColorableAgeableListModel<T> {
 	private float lieDownAmount;
@@ -68,64 +69,96 @@ public class AntiCorgiModel<T extends AntiCorgi> extends ColorableAgeableListMod
 
 	@Override
 	public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float z) {
-	}
-
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.lieDownAmount = entity.getLieDownAmount(z);
+		this.lieDownAmountTail = entity.getLieDownAmountTail(z);
+		this.relaxStateOneAmount = entity.getRelaxStateOneAmount(z);
+		if (this.lieDownAmount <= 0F) {
+			this.head.xRot = 0F;
+			this.head.zRot = 0F;
+			this.lf_leg.xRot = 0F;
+			this.lf_leg.yRot = 0F;
+			this.lf_leg.zRot = 0F;
+			this.rf_leg.xRot = 0F;
+			this.rf_leg.yRot = 0F;
+			this.rf_leg.zRot = 0F;
+			this.rf_leg.x = -1.2F;
+			this.lb_leg.xRot = 0F;
+			this.lb_leg.yRot = 0F;
+			this.rb_leg.yRot = 0F;
+			this.rb_leg.zRot = 0F;
+			this.rb_leg.x = -1.1F;
+			this.rb_leg.y = 18F;
+		}
+		this.body.y = 24F;
+		this.tail.y = 17F;
+		this.tail.z = 7F;
+		this.tail.xRot = 0;
+		this.rf_leg.setPos(-2F, 20F, -7F);
+		this.lf_leg.setPos(2F, 20F, -7F);
+		this.rb_leg.setPos(-2F, 20F, 7F);
+		this.lb_leg.setPos(2F, 20F, 7F);
+		this.head.setPos(0F, 18F, -6.75F);
 		if (entity.isInSittingPose()) {
-			this.body.setPos(0F, 25F, 0F);
-			this.body.xRot = (0);
-			this.tail.setPos(0F, 18F, 7F);
+			this.body.y = 26F;
+			this.tail.y = 19F;
 			this.tail.xRot = -0.5f;
-			this.rf_leg.setPos(-2F, 22F, -7F);
+			this.rf_leg.y = 23F;
 			this.rf_leg.xRot = ((float) Math.PI * 3F / 2F);
 			this.rf_leg.yRot = 0.5f;
-			this.lf_leg.setPos(2F, 22F, -7F);
+			this.lf_leg.y = 23F;
 			this.lf_leg.xRot = ((float) Math.PI * 3F / 2F);
 			this.lf_leg.yRot = -0.5f;
 			this.rb_leg.yRot = -2.5f;
 			this.rb_leg.xRot = ((float) Math.PI * -3F / 2F);
-			this.rb_leg.setPos(-2F, 22F, 7F);
+			this.rb_leg.y = 23F;
 			this.lb_leg.yRot = 2.5f;
 			this.lb_leg.xRot = ((float) Math.PI * -3F / 2F);
-			this.lb_leg.setPos(2F, 22F, 7F);
-			this.head.setPos(0F, 20F, -6.75F);
-//			this.head..setRotation(0F, 18F, -7.5F);
+			this.lb_leg.y = 23F;
+			this.head.y = 21F;
+//			this.EarLeft.setRotation(0F, 18F, -7.5F);
 //			this.EarRight.setRotation(0F, 18F, -7.5F);
 //			this.MouthUpper.setRotation(0F, 18F, -7.5F);
 //			this.MouthLower.setRotation(0F, 18F, -7.5F);
-		} else {
-			this.body.setPos(0F, 24F, 0F);
-			this.body.xRot = (0);//(float)Math.PI / 22F);
-			this.tail.setPos(0F, 17F, 7F);
-			this.tail.xRot = 0;
-			this.rf_leg.setPos(-2F, 20F, -7F);
-			this.lf_leg.setPos(2F, 20F, -7F);
-			this.rb_leg.setPos(-2F, 20F, 7F);
-			this.lb_leg.setPos(2F, 20F, 7F);
-			this.rf_leg.xRot = (float)Math.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
-			this.rf_leg.yRot = 0;
-			this.lf_leg.xRot = (float)Math.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount;
-			this.lf_leg.yRot = 0;
-			this.rb_leg.xRot = (float)Math.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount;
-			this.rb_leg.yRot = 0;
-			this.lb_leg.xRot = (float)Math.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
-			this.lb_leg.yRot = 0;
-			this.head.setPos(0F, 18F, -6.75F);
-//			this.EarLeft.setRotation(0F, 15F, -9.5F);
-//			this.EarRight.setRotation(0F, 15F, -9.5F);
-//			this.MouthUpper.setRotation(0F, 15F, -9.5F);
-//			this.MouthLower.setRotation(0F, 15F, -9.5F);
 		}
 	}
 
 	@Override
-	protected Iterable<ModelPart> headParts() {
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.head.xRot = headPitch * ((float)Math.PI / 180F);
+		this.head.yRot = netHeadYaw * ((float)Math.PI / 180F);
+		if (!entity.isInSittingPose()) {
+			this.lb_leg.xRot = Mth.cos(limbSwing * 0.6662F) * limbSwingAmount;
+			this.rb_leg.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
+			this.lf_leg.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
+			this.rf_leg.xRot = Mth.cos(limbSwing * 0.6662F) * limbSwingAmount;
+		}
+		if (this.lieDownAmount > 0.0F) {
+			this.head.zRot = ModelUtils.rotlerpRad(this.head.zRot, -1.2707963F, this.lieDownAmount);
+			this.head.yRot = ModelUtils.rotlerpRad(this.head.yRot, 1.2707963F, this.lieDownAmount);
+			this.lf_leg.xRot = -1.2707963F;
+			this.rf_leg.xRot = -0.47079635F;
+			this.rf_leg.zRot = -0.2F;
+			this.rf_leg.x = -0.2F;
+			this.lb_leg.xRot = -0.4F;
+			this.rb_leg.xRot = 0.5F;
+			this.rb_leg.zRot = -0.5F;
+			this.rb_leg.x = -0.3F;
+			this.rb_leg.y = 20.0F;
+			this.tail.xRot = ModelUtils.rotlerpRad(this.tail.xRot, 0.8F, this.lieDownAmountTail);
+		}
+
+		if (this.relaxStateOneAmount > 0.0F) {
+			this.head.xRot = ModelUtils.rotlerpRad(this.head.xRot, -0.58177644F, this.relaxStateOneAmount);
+		}
+	}
+
+	@Override
+	protected @NotNull Iterable<ModelPart> headParts() {
 		return ImmutableList.of(this.head);
 	}
 
 	@Override
-	protected Iterable<ModelPart> bodyParts() {
+	protected @NotNull Iterable<ModelPart> bodyParts() {
 		return ImmutableList.of(this.body, this.rf_leg, this.lf_leg, this.rb_leg, this.lb_leg, this.tail);
 	}
 }
