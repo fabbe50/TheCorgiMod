@@ -1,10 +1,13 @@
 package com.fabbe50.corgimod.client.renderer.registry;
 
-import com.fabbe50.corgimod.client.renderer.AntiCorgiRenderer;
-import com.fabbe50.corgimod.client.renderer.BodyguardCorgiRenderer;
-import com.fabbe50.corgimod.client.renderer.CorgiRenderer;
+import com.fabbe50.corgimod.client.renderer.*;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class RendererRegistry {
     public RendererRegistry() {
@@ -16,5 +19,6 @@ public class RendererRegistry {
         EntityRenderers.register(EntityRegistry.CORGI_ANTI.get(), AntiCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_BODYGUARD.get(), BodyguardCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_BUSINESS.get(), BusinessCorgiRenderer::new);
+        EntityRenderers.register(EntityRegistry.CORGI_CREEPER.get(), CreeperCorgiRenderer::new);
     }
 }

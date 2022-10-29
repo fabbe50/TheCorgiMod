@@ -25,12 +25,13 @@ public class CorgiMod {
     public static final String MODID = "corgimod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    private static ModConfig config;
+    public static ModConfig config;
 
     public CorgiMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+        config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setupEntityModelLayers);
@@ -43,15 +44,11 @@ public class CorgiMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
     }
 
     private void setupEntityModelLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
-        ModelLayers.register(event);
-    }
-
-    public static ModConfig getConfig() {
-        return config;
+        ModelLayers.registerDefinitions(event);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

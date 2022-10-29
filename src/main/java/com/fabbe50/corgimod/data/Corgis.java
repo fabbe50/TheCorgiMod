@@ -1,28 +1,33 @@
 package com.fabbe50.corgimod.data;
 
+import com.fabbe50.corgimod.world.entity.EntityRegistry;
+import com.fabbe50.corgimod.world.entity.animal.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.animal.Wolf;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public enum Corgis {
-    CREEPER(4, "creeper", "Creeper Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_creeper.png"), true),
-    FABBE50(5, "fabbe50", "fabbe50 Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_fabbe50.png"), false),
-    HERO(6, "hero", "Hero Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_hero.png"), false),
-    LOVE(7, "love", "Love Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_love.png"), false),
-    MELON(8, "melon", "Melon Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_melon.png"), false),
-    NERD(9, "nerd", "Nerd Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_nerd.png"), false),
-    PIRATE(10, "pirate", "Pirate Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_pirate.png"), false),
-    RADIOACTIVE(11, "radioactive", "Radioactive Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_radioactive.png"), false),
-    SPY(12, "spy", "Spy Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_spy.png"), false),
-    SUNGLASSES(13, "sunglasses", "Sunglasses Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_sunglasses.png"), false),
-    ZOMBIE(14, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), true);
-
     NORMAL(0, "normal", "Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_normal.png"), EntityRegistry.CORGI_NORMAL.get(), Corgi.class, false),
     ANTI(1, "anti", "Anti Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_anti.png"), EntityRegistry.CORGI_ANTI.get(), AntiCorgi.class,  false),
     BODYGUARD(2, "bodyguard", "Bodyguard Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_bodyguard.png"), EntityRegistry.CORGI_BODYGUARD.get(), BodyguardCorgi.class, false),
     BUSINESS(3, "business", "Business Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_business.png"), EntityRegistry.CORGI_BUSINESS.get(), BusinessCorgi.class, false),
+    CREEPER(4, "creeper", "Creeper Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_creeper.png"), EntityRegistry.CORGI_CREEPER.get(), CreeperCorgi.class, true),
+//    FABBE50(5, "fabbe50", "fabbe50 Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_fabbe50.png"), false),
+//    HERO(6, "hero", "Hero Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_hero.png"), false),
+//    MELON(8, "melon", "Melon Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_melon.png"), false),
+//    NERD(9, "nerd", "Nerd Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_nerd.png"), false),
+//    PIRATE(10, "pirate", "Pirate Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_pirate.png"), false),
+//    RADIOACTIVE(11, "radioactive", "Radioactive Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_radioactive.png"), false),
+//    SPY(12, "spy", "Spy Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_spy.png"), false),
+//    SUNGLASSES(13, "sunglasses", "Sunglasses Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_sunglasses.png"), false),
+//    ZOMBIE(14, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), true);
+
     private final int id;
     private final String name;
     private final String formattedName;

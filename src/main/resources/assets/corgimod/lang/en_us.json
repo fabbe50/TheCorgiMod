@@ -3,7 +3,11 @@
   "item.corgimod.spawn_egg_corgi_anti": "Anti Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_bodyguard": "Bodyguard Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_business": "Business Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_creeper": "Creeper Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_normal": "Corgi Spawn Egg",
   "entity.corgimod.corgi_anti": "Anti Corgi",
   "entity.corgimod.corgi_bodyguard": "Bodyguard Corgi",
   "entity.corgimod.corgi_business": "Business Corgi",
+  "entity.corgimod.corgi_creeper": "Creeper Corgi",
+  "entity.corgimod.corgi_normal": "Corgi"
 }
