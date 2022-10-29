@@ -23,6 +23,7 @@ public class ModelLayers {
     public static final ModelLayerLocation CORGI_BUSINESS = register("corgi_business");
     public static final ModelLayerLocation CORGI_CREEPER = register("corgi_creeper");
     public static final ModelLayerLocation CORGI_CREEPER_ARMOR = register("corgi_creeper", "armor");
+    public static final ModelLayerLocation CORGI_LOVE = register("corgi_love");
 
     private static ModelLayerLocation register(String name) {
         return register(name, DEFAULT_LAYER);
@@ -48,5 +49,6 @@ public class ModelLayers {
         event.registerLayerDefinition(CORGI_BUSINESS, BusinessCorgiModel::createBodyLayer);
         event.registerLayerDefinition(CORGI_CREEPER, CreeperCorgiModel::createBodyLayer);
         event.registerLayerDefinition(CORGI_CREEPER_ARMOR, CreeperCorgiPowerLayer::createBodyLayer);
+        event.registerLayerDefinition(CORGI_LOVE, LoveCorgiModel::createBodyLayer);
     }
 }
