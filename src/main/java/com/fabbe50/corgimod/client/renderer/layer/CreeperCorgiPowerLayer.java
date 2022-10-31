@@ -1,4 +1,4 @@
-package com.fabbe50.corgimod.client.renderer;
+package com.fabbe50.corgimod.client.renderer.layer;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.client.model.CreeperCorgiModel;
