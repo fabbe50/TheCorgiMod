@@ -13,6 +13,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeableListModel<T> {
 	private final ModelPart body;
@@ -61,16 +62,16 @@ public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeab
 	}
 
 	@Override
-	public void prepareMobModel(T entity, float x, float y, float z) {
+	public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float ageInTicks) {
 		if (entity.isAngry()) {
 			this.tail.yRot = 0.0F;
 		} else {
-			this.tail.yRot = Mth.cos(x * 0.6662F) * 1.4F * y;
+			this.tail.yRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		}
 
-		this.head.zRot = entity.getHeadRollAngle(z) + entity.getBodyRollAngle(z, 0.0F);
-		this.body.zRot = entity.getBodyRollAngle(z, -0.16F);
-		this.tail.zRot = entity.getBodyRollAngle(z, -0.2F);
+		this.head.zRot = entity.getHeadRollAngle(ageInTicks) + entity.getBodyRollAngle(ageInTicks, 0.0F);
+		this.body.zRot = entity.getBodyRollAngle(ageInTicks, -0.16F);
+		this.tail.zRot = entity.getBodyRollAngle(ageInTicks, -0.2F);
 	}
 
 	@Override
@@ -125,12 +126,12 @@ public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeab
 	}
 
 	@Override
-	protected Iterable<ModelPart> headParts() {
+	protected @NotNull Iterable<ModelPart> headParts() {
 		return ImmutableList.of(this.head);
 	}
 
 	@Override
-	protected Iterable<ModelPart> bodyParts() {
+	protected @NotNull Iterable<ModelPart> bodyParts() {
 		return ImmutableList.of(this.body, this.rf_leg, this.lf_leg, this.rb_leg, this.lb_leg, this.tail);
 	}
 }

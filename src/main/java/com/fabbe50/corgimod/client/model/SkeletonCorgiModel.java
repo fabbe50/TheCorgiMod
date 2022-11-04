@@ -8,6 +8,7 @@ import net.minecraft.client.model.ColorableAgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 
 public class SkeletonCorgiModel <T extends SkeletonCorgi> extends ColorableAgeableListModel<T> {
@@ -95,6 +96,11 @@ public class SkeletonCorgiModel <T extends SkeletonCorgi> extends ColorableAgeab
         PartDefinition lf_leg = partdefinition.addOrReplaceChild("lf_leg", CubeListBuilder.create().texOffs(47, 33).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 20.0F, -7.0F));
 
         return LayerDefinition.create(meshdefinition, 128, 64);
+    }
+
+    @Override
+    public void prepareMobModel(@NotNull T entity, float limbSwing, float limbSwingAmount, float ageInTicks) {
+        this.tail.yRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
     }
 
     @Override

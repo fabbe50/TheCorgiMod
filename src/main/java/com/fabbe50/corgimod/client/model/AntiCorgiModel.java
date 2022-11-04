@@ -69,6 +69,7 @@ public class AntiCorgiModel<T extends AntiCorgi> extends ColorableAgeableListMod
 
 	@Override
 	public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float z) {
+		this.tail.yRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		this.lieDownAmount = entity.getLieDownAmount(z);
 		this.lieDownAmountTail = entity.getLieDownAmountTail(z);
 		this.relaxStateOneAmount = entity.getRelaxStateOneAmount(z);
