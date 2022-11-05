@@ -46,7 +46,7 @@ public class RadioactiveCorgi extends Corgi {
     }
 
     @Override
-    public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
+    public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (!this.level.isClientSide) {
             if (this.isTame() && this.isFood(itemStack) && !this.hasBeenFed()) {
