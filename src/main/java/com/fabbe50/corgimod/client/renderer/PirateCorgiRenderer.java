@@ -8,6 +8,7 @@ import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class PirateCorgiRenderer extends AbstractCorgiRenderer<PirateCorgi, PirateCorgiModel<PirateCorgi>> {
     public PirateCorgiRenderer(EntityRendererProvider.Context context) {
@@ -19,7 +20,7 @@ public class PirateCorgiRenderer extends AbstractCorgiRenderer<PirateCorgi, Pira
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Corgi corgi) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull Corgi corgi) {
         return Corgis.PIRATE.getTextureLocation();
     }
 }

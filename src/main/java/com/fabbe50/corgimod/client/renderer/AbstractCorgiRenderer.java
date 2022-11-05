@@ -5,10 +5,19 @@ import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.animal.BodyguardCorgi;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexBuffer;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mojang.math.Matrix4f;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+
+import java.awt.*;
 
 public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractCorgiModel<T>> extends MobRenderer<T, M> {
     public AbstractCorgiRenderer(EntityRendererProvider.Context context, M model) {
@@ -21,7 +30,7 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
     }
 
     @Override
-    public void render(T corgi, float p_115456_, float p_115457_, PoseStack poseStack, MultiBufferSource multiBufferSource, int p_115460_) {
+    public void render(T corgi, float p_115456_, float p_115457_, @NotNull PoseStack poseStack, @NotNull MultiBufferSource multiBufferSource, int p_115460_) {
         if (corgi.isWet()) {
             float f = corgi.getWetShade(p_115457_);
             this.model.setColor(f, f, f);
@@ -34,7 +43,7 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Corgi corgi) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull Corgi corgi) {
         return Corgis.NORMAL.getTextureLocation();
     }
 }
