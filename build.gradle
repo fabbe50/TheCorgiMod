@@ -62,8 +62,11 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'corgimod'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
-                examplemod {
+                corgimod {
                     source sourceSets.main
                 }
             }
@@ -79,7 +82,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'corgimod'
 
             mods {
-                examplemod {
+                corgimod {
                     source sourceSets.main
                 }
             }
@@ -98,7 +101,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'corgimod'
 
             mods {
-                examplemod {
+                corgimod {
                     source sourceSets.main
                 }
             }
@@ -115,7 +118,7 @@ minecraft {
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                corgimod {
                     source sourceSets.main
                 }
             }
@@ -135,6 +138,7 @@ repositories {
     //     dir 'libs'
     // }
     maven { url "https://maven.shedaniel.me/" }
+    maven { url 'https://maven.blamejared.com' }
 }
 
 dependencies {
@@ -144,6 +148,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.1.47'
 
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:8.2.88")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
