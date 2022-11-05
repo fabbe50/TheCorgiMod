@@ -1,7 +1,7 @@
 {
   "name": "Melon Corgi",
-  "icon": "corgis:corgi_spawn_egg",
-  "category": "corgis:corgis",
+  "icon": "corgimod:spawn_egg_corgi_melon",
+  "category": "corgimod:corgis",
   "pages": [
     {
       "type": "text",
@@ -10,7 +10,7 @@
     {
       "type": "entity",
       "name": "Melon Corgi",
-      "entity": "corgis:corgi{CorgiType:4}",
+      "entity": "corgimod:corgi_melon",
       "rotate": false,
       "default_rotation": 30,
       "scale": 0.65,

@@ -1,7 +1,7 @@
 {
   "name": "Creeper Corgi",
-  "icon": "corgis:creeper_corgi_spawn_egg",
-  "category": "corgis:corgis",
+  "icon": "corgimod:spawn_egg_corgi_creeper",
+  "category": "corgimod:corgis",
   "pages": [
     {
       "type": "text",
@@ -10,7 +10,7 @@
     {
       "type": "entity",
       "name": "Creeper Corgi",
-      "entity": "corgis:creeper_corgi",
+      "entity": "corgimod:corgi_creeper",
       "rotate": false,
       "default_rotation": 30,
       "scale": 0.65,

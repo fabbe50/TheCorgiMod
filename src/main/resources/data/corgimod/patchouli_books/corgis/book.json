@@ -1,6 +1,8 @@
 {
   "name": "Corgis",
   "landing_text": "Corgis for dummies",
+  "book_texture": "patchouli:textures/gui/book_purple.png",
+  "model": "corgimod:book",
   "version": 1,
   "show_progress": false
 }

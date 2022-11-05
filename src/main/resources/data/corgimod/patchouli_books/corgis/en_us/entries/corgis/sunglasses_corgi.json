@@ -1,16 +1,16 @@
 {
   "name": "Sunglasses Corgi",
-  "icon": "corgis:corgi_spawn_egg",
-  "category": "corgis:corgis",
+  "icon": "corgimod:spawn_egg_corgi_sunglasses",
+  "category": "corgimod:corgis",
   "pages": [
     {
       "type": "text",
-      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Not Implemented"
+      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Climate Control"
     },
     {
       "type": "entity",
       "name": "Sunglasses Corgi",
-      "entity": "corgis:corgi{CorgiType:7}",
+      "entity": "corgimod:corgi_sunglasses",
       "rotate": false,
       "default_rotation": 30,
       "scale": 0.65,

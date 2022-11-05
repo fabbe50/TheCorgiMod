@@ -1,7 +1,7 @@
 {
   "name": "Sit and Stay",
   "icon": "minecraft:lead",
-  "category": "corgis:taming",
+  "category": "corgimod:taming",
   "pages": [
     {
       "type": "text",

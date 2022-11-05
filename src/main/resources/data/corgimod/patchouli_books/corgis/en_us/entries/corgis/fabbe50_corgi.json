@@ -1,7 +1,7 @@
 {
   "name": "fabbe50 Corgi",
-  "icon": "corgis:corgi_spawn_egg",
-  "category": "corgis:corgis",
+  "icon": "corgimod:spawn_egg_corgi_fabbe50",
+  "category": "corgimod:corgis",
   "pages": [
     {
       "type": "text",
@@ -10,7 +10,7 @@
     {
       "type": "entity",
       "name": "fabbe50 Corgi",
-      "entity": "corgis:corgi{CorgiType:1}",
+      "entity": "corgimod:corgi_fabbe50",
       "rotate": false,
       "default_rotation": 30,
       "scale": 0.65,
