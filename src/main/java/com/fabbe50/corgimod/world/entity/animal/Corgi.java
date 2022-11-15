@@ -13,6 +13,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -107,6 +108,34 @@ public class Corgi extends Wolf {
             return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
+    }
+
+    @Override
+    public boolean hurt(DamageSource damageSource, float v) {
+        if (damageSource.getEntity() instanceof Player player) {
+            if (this.getOwner() != null) {
+                if (this.getOwner().is(player)) {
+                    for (int i = 0; i < 4; i++) {
+                        this.level.addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
+                    }
+                    return false;
+                }
+            }
+        }
+        return super.hurt(damageSource, v);
+    }
+
+    public static class CorgiEvents {
+        @SubscribeEvent
+        public static void disableCorgiDamage(AttackEntityEvent event) {
+            if (event.getTarget() instanceof Corgi corgi) {
+                if (corgi.getOwner() instanceof Player player) {
+                    if (player.equals(event.getEntity())) {
+                        event.setCanceled(true);
+                    }
+                }
+            }
+        }
     }
 
     @Override
