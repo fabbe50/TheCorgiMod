@@ -1,6 +1,7 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.world.item.ItemRegistry;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -31,6 +32,18 @@ public class RadioactiveCorgi extends Corgi {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_HAS_BEEN_FED, false);
+    }
+
+    @Override
+    public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
+        super.addAdditionalSaveData(compoundTag);
+        compoundTag.putBoolean("HasBeenFed", this.hasBeenFed());
+    }
+
+    @Override
+    public void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
+        super.readAdditionalSaveData(compoundTag);
+        this.setHasBeenFed(compoundTag.getBoolean("HasBeenFed"));
     }
 
     @Override

@@ -1,11 +1,19 @@
 {
-  "name": "Sit and Stay",
+  "name": "Sit and Patrol",
   "icon": "minecraft:lead",
   "category": "corgimod:taming",
   "pages": [
     {
       "type": "text",
-      "text": "Once you've tamed your corgi you can make them lay down by simply right clicking them. But you can also make them run around the area they're in by shift + right clicking them, you know it's working when the little diamond hovers the corgi when you're looking at it. When this is active they won't follow you around."
+      "text": "Once you've tamed your corgi you can make them lay down by simply right clicking them. But you can also make them run around the area they're in by shift + right clicking them, you know it's working when the little pyramid hovers the corgi when you're looking at it. When this is active they won't follow you around."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "corgimod:textures/icons/patrol.png"
+      ],
+      "title": "Patrol",
+      "text": "When the little pyramid is hovering the corgi when you're looking at it, it's in patrol mode."
     }
   ]
 }

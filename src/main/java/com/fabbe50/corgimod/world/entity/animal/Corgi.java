@@ -4,6 +4,8 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -11,10 +13,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -26,6 +25,8 @@ import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -43,17 +44,17 @@ public class Corgi extends Wolf {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(1, new Corgi.CorgiPanicGoal(1.5D));
-        this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(2, new StayInPlaceGoal(this));
-        this.goalSelector.addGoal(3, new Corgi.CorgiAvoidEntityGoal<>(this, Llama.class, 24.0F, 1.5D, 1.5D));
-        this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
-        this.goalSelector.addGoal(6, new FollowOwnerGoalFix(this, 1.0d, 10.0f, 2.0f, false));
-        this.goalSelector.addGoal(7, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(9, new BegGoal(this, 8.0F));
-        this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(3, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(3, new StayInPlaceGoal(this));
+        this.goalSelector.addGoal(4, new Corgi.CorgiAvoidEntityGoal<>(this, Llama.class, 24.0F, 1.5D, 1.5D));
+        this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, 0.4F));
+        this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(7, new FollowOwnerGoalFix(this, 1.0d, 10.0f, 2.0f, false));
+        this.goalSelector.addGoal(9, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(10, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(11, new BegGoal(this, 8.0F));
+        this.goalSelector.addGoal(12, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(12, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
@@ -70,8 +71,20 @@ public class Corgi extends Wolf {
         this.entityData.define(ASKED_TO_STAY, false);
     }
 
+    @Override
+    public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
+        super.addAdditionalSaveData(compoundTag);
+        compoundTag.putBoolean("AskedToStay", isAskedToStay());
+    }
+
+    @Override
+    public void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
+        super.readAdditionalSaveData(compoundTag);
+        this.setAskedToStay(compoundTag.getBoolean("AskedToStay"));
+    }
+
     public static AttributeSupplier.@NotNull Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, (double)0.3F).add(Attributes.MAX_HEALTH, 12.0D).add(Attributes.ATTACK_DAMAGE, 8.0D);
+        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 12.0D).add(Attributes.ATTACK_DAMAGE, 8.0D);
     }
 
     @Override
@@ -163,12 +176,12 @@ public class Corgi extends Wolf {
         }
 
         public void start() {
-            Corgi.this.setTarget((LivingEntity)null);
+            Corgi.this.setTarget(null);
             super.start();
         }
 
         public void tick() {
-            Corgi.this.setTarget((LivingEntity)null);
+            Corgi.this.setTarget(null);
             super.tick();
         }
     }
