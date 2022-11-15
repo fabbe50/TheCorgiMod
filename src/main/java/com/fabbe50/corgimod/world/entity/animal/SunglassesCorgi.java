@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -27,29 +28,37 @@ public class SunglassesCorgi extends Corgi {
             if (this.isTame()) {
                 if (item.equals(Items.FLINT_AND_STEEL)){
                     if (!player.getAbilities().instabuild) {
-                        itemStack.shrink(1);
+                        itemStack.hurtAndBreak(1, player, (player1) -> {
+                            player1.broadcastBreakEvent(hand);
+                        });
                     }
                     level.setWeatherParameters(24000, 0, false, false);
+                    return InteractionResult.SUCCESS;
                 } else if (item.equals(Items.WATER_BUCKET)) {
                     if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
+                        player.addItem(new ItemStack(Items.BUCKET));
                     }
                     level.setWeatherParameters(0, 6000, true, false);
+                    return InteractionResult.SUCCESS;
                 } else if (item.equals(ItemRegistry.URANIUM.get())) {
                     if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
                     }
                     level.setWeatherParameters(0, 6000, true, true);
+                    return InteractionResult.SUCCESS;
                 } else if (item.equals(Items.LAPIS_LAZULI)) {
                     if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
                     }
                     level.setDayTime(13000);
+                    return InteractionResult.SUCCESS;
                 } else if (item.equals(Items.GLOWSTONE_DUST)) {
                     if (!player.getAbilities().instabuild) {
                         itemStack.shrink(1);
                     }
                     level.setDayTime(1000);
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
