@@ -13,7 +13,7 @@
       "entity": "corgimod:corgi_zombie",
       "rotate": false,
       "default_rotation": 30,
-      "scale": 0.65,
+      "scale": 0.85,
       "text": "The remains of the corgis that we've lost throughout the years, coming back with vengeful intentions."
     }
   ]

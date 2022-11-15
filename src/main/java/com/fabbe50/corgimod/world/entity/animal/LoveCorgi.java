@@ -34,8 +34,8 @@ public class LoveCorgi extends Corgi {
     @Override
     public void tick() {
         super.tick();
-        if (random.nextInt(8) == 0) {
-            if (CorgiMod.config.general.corgiParticleEffects) {
+        if (CorgiMod.config.general.corgiParticleEffects) {
+            if (random.nextInt(8) == 0) {
                 this.level.addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
             }
         }

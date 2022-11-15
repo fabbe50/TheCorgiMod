@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "text",
-      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Climate Control"
+      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Climate Control$(br2)$(br)Climate Control:$(br)Adds the ability to affect time and weather."
     },
     {
       "type": "entity",
@@ -13,7 +13,7 @@
       "entity": "corgimod:corgi_sunglasses",
       "rotate": false,
       "default_rotation": 30,
-      "scale": 0.65,
+      "scale": 0.85,
       "text": "The sunglasses corgi has such good vision it extends to the player."
     }
   ]

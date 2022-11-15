@@ -68,7 +68,6 @@ public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeab
 		} else {
 			this.tail.yRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		}
-
 		this.head.zRot = entity.getHeadRollAngle(ageInTicks) + entity.getBodyRollAngle(ageInTicks, 0.0F);
 		this.body.zRot = entity.getBodyRollAngle(ageInTicks, -0.16F);
 		this.tail.zRot = entity.getBodyRollAngle(ageInTicks, -0.2F);

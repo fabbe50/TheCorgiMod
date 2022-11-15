@@ -1,5 +1,6 @@
 {
   "itemGroup.corgimod_spawneggs": "Corgi Spawn Eggs",
+
   "item.corgimod.spawn_egg_corgi_normal": "Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_anti": "Anti Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_bodyguard": "Bodyguard Corgi Spawn Egg",
@@ -16,7 +17,10 @@
   "item.corgimod.spawn_egg_corgi_spy": "Spy Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_sunglasses": "Sunglasses Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_zombie": "Zombie Corgi Spawn Egg",
+
   "item.corgimod.uranium": "Uranium",
+  "item.corgimod.sunglasses": "Sunglasses",
+
   "entity.corgimod.corgi_normal": "Corgi",
   "entity.corgimod.corgi_anti": "Anti Corgi",
   "entity.corgimod.corgi_bodyguard": "Bodyguard Corgi",

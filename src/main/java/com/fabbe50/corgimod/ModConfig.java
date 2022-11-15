@@ -6,9 +6,9 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Config(name = CorgiMod.MODID)
 public class ModConfig implements ConfigData {
-    @ConfigEntry.Category("General")
+    @ConfigEntry.Gui.CollapsibleObject
     public General general = new General();
-    @ConfigEntry.Category("Corgi Abilities")
+    @ConfigEntry.Gui.CollapsibleObject
     public CorgiAbilities corgiAbilities = new CorgiAbilities();
 
     public static class General {
@@ -20,5 +20,6 @@ public class ModConfig implements ConfigData {
     public static class CorgiAbilities {
         public int loveCorgiEffectRange = 5;
         public int loveCorgiMaxEntityCount = 16;
+        public float pirateCorgiBoatSpeed = 1.5f;
     }
 }

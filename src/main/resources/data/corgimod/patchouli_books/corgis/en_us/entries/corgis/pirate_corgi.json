@@ -13,7 +13,7 @@
       "entity": "corgimod:corgi_pirate",
       "rotate": false,
       "default_rotation": 30,
-      "scale": 0.65,
+      "scale": 0.85,
       "text": "The pirate corgi makes you zoom across the seas in search for treasure."
     }
   ]
