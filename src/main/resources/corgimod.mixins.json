@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "corgimod.refmap.json",
   "mixins": [
+    "BoatMixin",
     "VillagerMixin"
   ],
   "client": [
