@@ -97,7 +97,7 @@ public enum Corgis {
         List<Corgis> tmp = new ArrayList<>();
         for (Corgis corgi : getNonHostileCorgis()) {
             try {
-                if (Class.forName(corgi.getCorgiClass().getName()).isAssignableFrom(Wolf.class)) {
+                if (Class.forName(corgi.getCorgiClass().getSuperclass().getName()).isAssignableFrom(Wolf.class) || Class.forName(corgi.getCorgiClass().getSuperclass().getName()).isAssignableFrom(Corgi.class)) {
                     tmp.add(corgi);
                 }
             } catch (ClassNotFoundException ignored) {}

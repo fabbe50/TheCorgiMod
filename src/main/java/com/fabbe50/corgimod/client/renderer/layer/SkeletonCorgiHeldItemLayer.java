@@ -36,7 +36,8 @@ public class SkeletonCorgiHeldItemLayer extends RenderLayer<SkeletonCorgi, Skele
         poseStack.translate((double)((this.getParentModel()).head.x / 16.0F), (double)((this.getParentModel()).head.y / 16.0F), (double)((this.getParentModel()).head.z / 16.0F));
         poseStack.mulPose(Vector3f.YP.rotationDegrees(p_117015_));
         poseStack.mulPose(Vector3f.XP.rotationDegrees(p_117016_));
-        poseStack.translate((double)0.06F, (double)0.27F, -0.5D);
+        poseStack.translate((double)0.09F, (double)-0.07F, -0.2D);
+        poseStack.mulPose(Vector3f.YP.rotationDegrees(225F));
         poseStack.mulPose(Vector3f.XP.rotationDegrees(90.0F));
 
         ItemStack itemstack = corgi.getItemBySlot(EquipmentSlot.MAINHAND);

@@ -2,6 +2,7 @@ package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.data.Corgis;
+import com.fabbe50.corgimod.world.entity.ai.BreedGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
 import net.minecraft.core.particles.ParticleTypes;
@@ -51,7 +52,7 @@ public class Corgi extends Wolf {
         this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(7, new FollowOwnerGoalFix(this, 1.0d, 10.0f, 2.0f, false));
-        this.goalSelector.addGoal(9, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(9, new BreedGoalFix(this, 1.0D));
         this.goalSelector.addGoal(10, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(11, new BegGoal(this, 8.0F));
         this.goalSelector.addGoal(12, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -147,7 +148,7 @@ public class Corgi extends Wolf {
 
     @Override
     public Wolf getBreedOffspring(@NotNull ServerLevel level, @NotNull AgeableMob ageableMob) {
-        EntityType<Corgi> corgi = (EntityType<Corgi>) Corgis.getTameWolfBasedCorgis().get(new Random().nextInt(Corgis.getNonHostileCorgis().size())).getCorgiType();
+        EntityType<Corgi> corgi = (EntityType<Corgi>) Corgis.getTameWolfBasedCorgis().get(this.random.nextInt(Corgis.getTameWolfBasedCorgis().size())).getCorgiType();
         Corgi corgi1 = corgi.create(level);
         UUID uuid1 = this.getOwnerUUID();
         if (corgi1 != null && uuid1 != null) {
