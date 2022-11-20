@@ -5,6 +5,7 @@ import com.fabbe50.corgimod.client.renderer.registry.RendererRegistry;
 import com.fabbe50.corgimod.handlers.EventHandler;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
+import com.fabbe50.corgimod.world.entity.animal.HeroCorgi;
 import com.fabbe50.corgimod.world.entity.animal.ZombieCorgi;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import com.mojang.logging.LogUtils;
@@ -48,6 +49,7 @@ public class CorgiMod {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new ZombieCorgi.ZombieEvents());
         MinecraftForge.EVENT_BUS.register(new Corgi.CorgiEvents());
+        MinecraftForge.EVENT_BUS.register(new HeroCorgi.HeroCorgiEvents());
         MinecraftForge.EVENT_BUS.register(new EventHandler());
     }
 
