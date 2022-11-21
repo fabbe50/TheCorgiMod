@@ -1,8 +1,10 @@
 package com.fabbe50.corgimod.world.item;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Armors;
 import com.fabbe50.corgimod.misc.CorgiSpawnEggGroup;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -14,6 +16,7 @@ public class ItemRegistry {
     public static final DeferredRegister<Item> DEFERRED_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, CorgiMod.MODID);
 
     public static final RegistryObject<Item> URANIUM = DEFERRED_REGISTER.register("uranium", () -> new ItemUranium(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final RegistryObject<Item> SUNGLASSES = DEFERRED_REGISTER.register("sunglasses", () -> new ItemSunglasses(Armors.SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
 
 
     static {
