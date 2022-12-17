@@ -21,5 +21,7 @@ public class ModConfig implements ConfigData {
         public int loveCorgiEffectRange = 5;
         public int loveCorgiMaxEntityCount = 16;
         public float pirateCorgiBoatSpeed = 1.5f;
+        public double spyCorgiRange = 16.0d;
+        public int spyCorgiExposeTime = 1;
     }
 }

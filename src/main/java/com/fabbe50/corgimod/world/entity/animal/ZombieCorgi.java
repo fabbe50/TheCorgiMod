@@ -1,7 +1,10 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
@@ -22,8 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class ZombieCorgi extends Zombie {
-    public ZombieCorgi(EntityType<? extends Zombie> p_34271_, Level p_34272_) {
-        super(p_34271_, p_34272_);
+    public ZombieCorgi(EntityType<? extends Zombie> entityType, Level level) {
+        super(entityType, level);
     }
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
@@ -32,6 +35,13 @@ public class ZombieCorgi extends Zombie {
 
     public float getTailAngle() {
         return ((float)Math.PI / 5F);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.ZOMBIE.getFormattedName());
+        return super.getDisplayName();
     }
 
     public static class ZombieEvents {

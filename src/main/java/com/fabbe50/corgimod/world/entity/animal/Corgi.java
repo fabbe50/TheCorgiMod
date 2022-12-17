@@ -32,14 +32,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.Random;
 import java.util.UUID;
 
 public class Corgi extends Wolf {
     private static final EntityDataAccessor<Boolean> ASKED_TO_STAY = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
 
-    public Corgi(EntityType<? extends Wolf> p_30369_, Level p_30370_) {
-        super(p_30369_, p_30370_);
+    public Corgi(EntityType<? extends Wolf> entityType, Level level) {
+        super(entityType, level);
     }
 
     @Override

@@ -2,23 +2,16 @@ package com.fabbe50.corgimod.client.renderer;
 
 import com.fabbe50.corgimod.client.model.AbstractCorgiModel;
 import com.fabbe50.corgimod.data.Corgis;
-import com.fabbe50.corgimod.world.entity.animal.BodyguardCorgi;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexBuffer;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.VertexFormat;
-import com.mojang.math.Matrix3f;
-import com.mojang.math.Matrix4f;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3d;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.joml.*;
 
 import java.awt.*;
 
@@ -48,12 +41,13 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
             this.model.setColor(1.0f, 1.0f, 1.0f);
         }
         if (corgi.isAskedToStay() && corgi == this.context.getEntityRenderDispatcher().crosshairPickEntity) {
-            if (rotationAngle == 360) {
+            if (rotationAngle == 36000) {
                 rotationAngle = 0;
             }
             poseStack.pushPose();
             poseStack.scale(0.3f, 0.3f, 0.3f);
-            poseStack.mulPose(new Quaternion(0, rotationAngle++, 0, true));
+            poseStack.mulPose(new Quaternionf(new AxisAngle4f(rotationAngle / 100F, 0, 1, 0)));
+            rotationAngle++;
             poseStack.translate(-0.5, 2, -0.5);
             drawWireFrame(poseStack, multiBufferSource, Color.WHITE);
             poseStack.popPose();
@@ -61,7 +55,7 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
     }
 
     private void drawWireFrame(PoseStack poseStack, MultiBufferSource multiBufferSource, Color color) {
-        final Vector3d [] BASE_VERTICES = {
+        final Vector3d[] BASE_VERTICES = {
                 new Vector3d(0, 1, 0),
                 new Vector3d(1, 1, 0),
                 new Vector3d(1, 1, 1),

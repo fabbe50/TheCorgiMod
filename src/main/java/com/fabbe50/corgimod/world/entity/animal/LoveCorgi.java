@@ -14,8 +14,8 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class LoveCorgi extends Corgi {
-    public LoveCorgi(EntityType<? extends Wolf> p_30369_, Level p_30370_) {
-        super(p_30369_, p_30370_);
+    public LoveCorgi(EntityType<? extends Wolf> entityType, Level level) {
+        super(entityType, level);
     }
 
     @Override

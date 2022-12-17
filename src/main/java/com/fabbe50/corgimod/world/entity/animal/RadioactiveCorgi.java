@@ -1,7 +1,10 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -70,6 +73,13 @@ public class RadioactiveCorgi extends Corgi {
             }
         }
         return super.mobInteract(player, hand);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.RADIOACTIVE.getFormattedName());
+        return super.getDisplayName();
     }
 
     @Override

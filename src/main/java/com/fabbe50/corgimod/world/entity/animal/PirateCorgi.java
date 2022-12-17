@@ -1,10 +1,12 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.utils.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -27,8 +29,8 @@ public class PirateCorgi extends Corgi {
     private static final EntityDataAccessor<BlockPos> TREASURE_POS = SynchedEntityData.defineId(PirateCorgi.class, EntityDataSerializers.BLOCK_POS);
     private int treasureCooldown;
 
-    public PirateCorgi(EntityType<? extends Wolf> p_30369_, Level p_30370_) {
-        super(p_30369_, p_30370_);
+    public PirateCorgi(EntityType<? extends Wolf> entityType, Level level) {
+        super(entityType, level);
     }
 
     @Override
@@ -93,6 +95,13 @@ public class PirateCorgi extends Corgi {
             }
             this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, temp.getX() + random.nextDouble() - 0.5D, temp.getY() + random.nextDouble(), temp.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
         }
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.PIRATE.getFormattedName());
+        return super.getDisplayName();
     }
 
     public boolean isOwnerCloseToTreasure() {

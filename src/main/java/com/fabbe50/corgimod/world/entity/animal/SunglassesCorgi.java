@@ -1,6 +1,9 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -63,5 +66,12 @@ public class SunglassesCorgi extends Corgi {
             }
         }
         return super.mobInteract(player, hand);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.SUNGLASSES.getFormattedName());
+        return super.getDisplayName();
     }
 }

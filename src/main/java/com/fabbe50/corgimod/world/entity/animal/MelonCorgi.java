@@ -1,10 +1,13 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.data.LootTables;
 import com.fabbe50.corgimod.world.entity.ai.StealMelonGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -32,8 +35,8 @@ public class MelonCorgi extends Corgi {
     private static final EntityDataAccessor<Boolean> HAS_SEED = SynchedEntityData.defineId(MelonCorgi.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> SEED_TIME = SynchedEntityData.defineId(MelonCorgi.class, EntityDataSerializers.INT);
 
-    public MelonCorgi(EntityType<? extends Wolf> p_30369_, Level p_30370_) {
-        super(p_30369_, p_30370_);
+    public MelonCorgi(EntityType<? extends Wolf> entityType, Level level) {
+        super(entityType, level);
     }
 
     @Override
@@ -141,6 +144,13 @@ public class MelonCorgi extends Corgi {
             return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.MELON.getFormattedName());
+        return super.getDisplayName();
     }
 
     public void setBarterTime(int barterTime) {

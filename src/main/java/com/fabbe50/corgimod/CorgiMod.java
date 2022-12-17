@@ -3,6 +3,7 @@ package com.fabbe50.corgimod;
 import com.fabbe50.corgimod.client.model.geom.ModelLayers;
 import com.fabbe50.corgimod.client.renderer.registry.RendererRegistry;
 import com.fabbe50.corgimod.handlers.EventHandler;
+import com.fabbe50.corgimod.misc.CorgiModTabs;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.fabbe50.corgimod.world.entity.animal.HeroCorgi;
@@ -44,6 +45,7 @@ public class CorgiMod {
 
         EntityRegistry.DEFERRED_REGISTER.register(modEventBus);
         ItemRegistry.DEFERRED_REGISTER.register(modEventBus);
+        modEventBus.register(new CorgiModTabs());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

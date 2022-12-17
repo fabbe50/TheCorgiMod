@@ -1,9 +1,12 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.utils.Utils;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -76,6 +79,13 @@ public class HeroCorgi extends Corgi {
         } else if (this.getLevel().getGameTime() % 20 == 0) {
             this.setPlayerSavingCooldown(getPlayerSavingCooldown() - 20);
         }
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.HERO.getFormattedName());
+        return super.getDisplayName();
     }
 
     @Override

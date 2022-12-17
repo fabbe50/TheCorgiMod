@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "text",
-      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Not Implemented"
+      "text": "Stats:$(br)15x $(#f00)♥$()$(br)Base Attack Damage: 4$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Abilities:$(br)Pirate's Gift"
     },
     {
       "type": "entity",

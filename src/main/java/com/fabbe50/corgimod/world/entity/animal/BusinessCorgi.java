@@ -18,8 +18,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class BusinessCorgi extends Corgi {
 
-    public BusinessCorgi(EntityType<? extends Wolf> p_30369_, Level p_30370_) {
-        super(p_30369_, p_30370_);
+    public BusinessCorgi(EntityType<? extends Wolf> entityType, Level level) {
+        super(entityType, level);
     }
 
     @Override

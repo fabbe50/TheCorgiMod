@@ -1,5 +1,8 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.data.Corgis;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -9,8 +12,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class SkeletonCorgi extends AbstractSkeleton {
 
-    public SkeletonCorgi(EntityType<? extends AbstractSkeleton> p_33570_, Level p_33571_) {
-        super(p_33570_, p_33571_);
+    public SkeletonCorgi(EntityType<? extends AbstractSkeleton> entityType, Level level) {
+        super(entityType, level);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.showCorgiDefaultNames)
+            return Component.literal(Corgis.SKELETON.getFormattedName());
+        return super.getDisplayName();
     }
 
     public float getTailAngle() {

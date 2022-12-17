@@ -14,11 +14,11 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class CreeperCorgi extends Creeper {
-    public CreeperCorgi(EntityType<? extends Creeper> p_32278_, Level p_32279_) {
-        super(p_32278_, p_32279_);
+    public CreeperCorgi(EntityType<? extends Creeper> entityType, Level level) {
+        super(entityType, level);
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
+    public static AttributeSupplier.@NotNull Builder createAttributes() {
         return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.33D);
     }
 

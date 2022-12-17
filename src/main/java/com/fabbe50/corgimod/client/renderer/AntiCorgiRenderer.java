@@ -5,7 +5,7 @@ import com.fabbe50.corgimod.client.model.geom.ModelLayers;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.animal.AntiCorgi;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.BlockPos;
@@ -31,7 +31,7 @@ public class AntiCorgiRenderer extends MobRenderer<AntiCorgi, AntiCorgiModel<Ant
         float f = corgi.getLieDownAmount(p_115321_);
         if (f > 0.0F) {
             poseStack.translate((double)(0.4F * f), (double)(0.15F * f), (double)(0.1F * f));
-            poseStack.mulPose(Vector3f.ZP.rotationDegrees(Mth.rotLerp(f, 0.0F, 90.0F)));
+            poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.rotLerp(f, 0.0F, 90.0F)));
             BlockPos blockpos = corgi.blockPosition();
 
             for(Player player : corgi.level.getEntitiesOfClass(Player.class, (new AABB(blockpos)).inflate(2.0D, 2.0D, 2.0D))) {
