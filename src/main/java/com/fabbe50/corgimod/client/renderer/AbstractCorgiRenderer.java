@@ -10,10 +10,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 import org.joml.*;
 
 import java.awt.*;
+import java.lang.Math;
 
 public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractCorgiModel<T>> extends MobRenderer<T, M> {
     private int rotationAngle;
@@ -44,11 +46,12 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
             if (rotationAngle == 36000) {
                 rotationAngle = 0;
             }
+            float y = 2;
             poseStack.pushPose();
             poseStack.scale(0.3f, 0.3f, 0.3f);
             poseStack.mulPose(new Quaternionf(new AxisAngle4f(rotationAngle / 100F, 0, 1, 0)));
             rotationAngle++;
-            poseStack.translate(-0.5, 2, -0.5);
+            poseStack.translate(-0.5, Mth.sin((rotationAngle + ageInTicks / 20F + corgi.bobs) * 0.01F + 0.1F) / 3 + (corgi.getEyeHeight() + 1.5F), -0.5);
             drawWireFrame(poseStack, multiBufferSource, Color.WHITE);
             poseStack.popPose();
         }

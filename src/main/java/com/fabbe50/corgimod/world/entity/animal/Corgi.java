@@ -36,9 +36,11 @@ import java.util.UUID;
 
 public class Corgi extends Wolf {
     private static final EntityDataAccessor<Boolean> ASKED_TO_STAY = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
+    public final float bobs;
 
     public Corgi(EntityType<? extends Wolf> entityType, Level level) {
         super(entityType, level);
+        bobs = this.getRandom().nextFloat() * (float) Math.PI * 2.0F;
     }
 
     @Override
