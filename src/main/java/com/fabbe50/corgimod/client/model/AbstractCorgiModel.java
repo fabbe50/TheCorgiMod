@@ -14,6 +14,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeableListModel<T> {
 	private final ModelPart body;
@@ -91,7 +92,18 @@ public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeab
 			this.lb_leg.yRot = 2.5f;
 			this.lb_leg.xRot = ((float) Math.PI * -3F / 2F);
 			this.lb_leg.setPos(2F, 23F, 7F);
-			this.head.setPos(0F, 21F, -6.75F);
+			if (entity.isBaby()) {
+				this.head.xScale = 0.75F;
+				this.head.yScale = 0.75F;
+				this.head.zScale = 0.75F;
+				this.head.setPos(0F, 18F, -5.75F);
+			} else {
+				this.head.xScale = 1F;
+				this.head.yScale = 1F;
+				this.head.zScale = 1F;
+				this.head.setPos(0F, 21F, -6.75F);
+			}
+
 //			this.head..setRotation(0F, 18F, -7.5F);
 //			this.EarRight.setRotation(0F, 18F, -7.5F);
 //			this.MouthUpper.setRotation(0F, 18F, -7.5F);
@@ -112,7 +124,18 @@ public abstract class AbstractCorgiModel<T extends Corgi> extends ColorableAgeab
 			this.rb_leg.yRot = 0;
 			this.lb_leg.xRot = (float)Math.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 			this.lb_leg.yRot = 0;
-			this.head.setPos(0F, 18F, -6.75F);
+			if (entity.isBaby()) {
+				this.head.xScale = 0.75F;
+				this.head.yScale = 0.75F;
+				this.head.zScale = 0.75F;
+				this.head.setPos(0F, 16.5F, -5.75F);
+			} else {
+				this.head.xScale = 1F;
+				this.head.yScale = 1F;
+				this.head.zScale = 1F;
+				this.head.setPos(0F, 18F, -6.75F);
+			}
+
 //			this.EarLeft.setRotation(0F, 15F, -9.5F);
 //			this.EarRight.setRotation(0F, 15F, -9.5F);
 //			this.MouthUpper.setRotation(0F, 15F, -9.5F);
