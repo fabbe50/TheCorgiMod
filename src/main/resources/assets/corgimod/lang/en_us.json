@@ -7,6 +7,7 @@
   "item.corgimod.spawn_egg_corgi_business": "Business Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_creeper": "Creeper Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_fabbe50": "fabbe50 Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_farmer": "Farmer Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_hero": "Hero Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_love": "Love Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_melon": "Melon Corgi Spawn Egg",
@@ -27,6 +28,7 @@
   "entity.corgimod.corgi_business": "Business Corgi",
   "entity.corgimod.corgi_creeper": "Creeper Corgi",
   "entity.corgimod.corgi_fabbe50": "fabbe50 Corgi",
+  "entity.corgimod.corgi_farmer": "Farmer Corgi",
   "entity.corgimod.corgi_hero": "Hero Corgi",
   "entity.corgimod.corgi_love": "Love Corgi",
   "entity.corgimod.corgi_melon": "Melon Corgi",
@@ -46,7 +48,6 @@
   "text.autoconfig.corgimod.option.corgiAbilities": "Corgi Abilities",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange": "Love Corgi Effect Range",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiMaxEntityCount": "Love Corgi Max Entity Count",
-  "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed"
   "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed",
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange": "Spy Corgi Reveal Range",
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime": "Spy Corgi Reveal Time"

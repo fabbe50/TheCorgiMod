@@ -25,6 +25,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<BusinessCorgi>> CORGI_BUSINESS = DEFERRED_REGISTER.register("corgi_business", () -> registerEntity(EntityType.Builder.of(BusinessCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_business"));
     public static final RegistryObject<EntityType<CreeperCorgi>> CORGI_CREEPER = DEFERRED_REGISTER.register("corgi_creeper", () -> registerEntity(EntityType.Builder.of(CreeperCorgi::new, MobCategory.MONSTER).sized(1f, 0.5f), "corgi_creeper"));
     public static final RegistryObject<EntityType<Fabbe50Corgi>> CORGI_FABBE50 = DEFERRED_REGISTER.register("corgi_fabbe50", () -> registerEntity(EntityType.Builder.of(Fabbe50Corgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_fabbe50"));
+    public static final RegistryObject<EntityType<FarmerCorgi>> CORGI_FARMER = DEFERRED_REGISTER.register("corgi_farmer", () -> registerEntity(EntityType.Builder.of(FarmerCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_farmer"));
     public static final RegistryObject<EntityType<HeroCorgi>> CORGI_HERO = DEFERRED_REGISTER.register("corgi_hero", () -> registerEntity(EntityType.Builder.of(HeroCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_hero"));
     public static final RegistryObject<EntityType<LoveCorgi>> CORGI_LOVE = DEFERRED_REGISTER.register("corgi_love", () -> registerEntity(EntityType.Builder.of(LoveCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_love"));
     public static final RegistryObject<EntityType<MelonCorgi>> CORGI_MELON = DEFERRED_REGISTER.register("corgi_melon", () -> registerEntity(EntityType.Builder.of(MelonCorgi::new, MobCategory.CREATURE).sized(1f, 0.5f), "corgi_melon"));
@@ -48,6 +49,7 @@ public class EntityRegistry {
         event.register(CORGI_BUSINESS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BusinessCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_CREEPER.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, CreeperCorgi::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_FABBE50.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Fabbe50Corgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
+        event.register(CORGI_FARMER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FarmerCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_HERO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, HeroCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_LOVE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LoveCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
         event.register(CORGI_MELON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, MelonCorgi::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.AND);
@@ -68,6 +70,7 @@ public class EntityRegistry {
         event.put(CORGI_BUSINESS.get(), BusinessCorgi.createAttributes().build());
         event.put(CORGI_CREEPER.get(), CreeperCorgi.createAttributes().build());
         event.put(CORGI_FABBE50.get(), Fabbe50Corgi.createAttributes().build());
+        event.put(CORGI_FARMER.get(), FarmerCorgi.createAttributes().build());
         event.put(CORGI_HERO.get(), HeroCorgi.createAttributes().build());
         event.put(CORGI_LOVE.get(), LoveCorgi.createAttributes().build());
         event.put(CORGI_MELON.get(), MelonCorgi.createAttributes().build());

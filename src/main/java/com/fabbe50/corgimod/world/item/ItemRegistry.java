@@ -35,6 +35,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SPAWN_EGG_SUNGLASSES_CORGI = registerSpawnEgg("spawn_egg_corgi_sunglasses", EntityRegistry.CORGI_SUNGLASSES, 0xddb471, 0x000000, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_ZOMBIE_CORGI = registerSpawnEgg("spawn_egg_corgi_zombie", EntityRegistry.CORGI_ZOMBIE, 0x45673e, 0x224119, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_FABBE50_CORGI = registerSpawnEgg("spawn_egg_corgi_fabbe50", EntityRegistry.CORGI_FABBE50, 0xd4d6e8, 0xffffcc, new Item.Properties());
+    public static final RegistryObject<Item> SPAWN_EGG_FARMER_CORGI = registerSpawnEgg("spawn_egg_corgi_farmer", EntityRegistry.CORGI_FARMER, 0xE0BC8D, 0x89644E, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_NERD_CORGI = registerSpawnEgg("spawn_egg_corgi_nerd", EntityRegistry.CORGI_NERD, 0xffffff, 0x000000, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_SPY_CORGI = registerSpawnEgg("spawn_egg_corgi_spy", EntityRegistry.CORGI_SPY, 0x000000, 0x000000, new Item.Properties());
 

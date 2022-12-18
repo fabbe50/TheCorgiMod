@@ -21,6 +21,7 @@ public class RendererRegistry {
         EntityRenderers.register(EntityRegistry.CORGI_BUSINESS.get(), BusinessCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_CREEPER.get(), CreeperCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_FABBE50.get(), Fabbe50CorgiRenderer::new);
+        EntityRenderers.register(EntityRegistry.CORGI_FARMER.get(), FarmerCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_HERO.get(), HeroCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_LOVE.get(), LoveCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_MELON.get(), MelonCorgiRenderer::new);

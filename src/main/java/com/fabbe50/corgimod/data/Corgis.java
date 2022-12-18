@@ -19,16 +19,17 @@ public enum Corgis {
     BUSINESS(3, "business", "Business Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_business.png"), EntityRegistry.CORGI_BUSINESS.get(), BusinessCorgi.class, false),
     CREEPER(4, "creeper", "Creeper Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_creeper.png"), EntityRegistry.CORGI_CREEPER.get(), CreeperCorgi.class, true),
     FABBE50(5, "fabbe50", "fabbe50 Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_fabbe50.png"), EntityRegistry.CORGI_FABBE50.get(), Fabbe50Corgi.class, false),
-    HERO(6, "hero", "Hero Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_hero.png"), EntityRegistry.CORGI_HERO.get(), HeroCorgi.class, false),
-    LOVE(7, "love", "Love Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_love.png"), EntityRegistry.CORGI_LOVE.get(), LoveCorgi.class, false),
-    MELON(8, "melon", "Melon Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_melon.png"), EntityRegistry.CORGI_MELON.get(), MelonCorgi.class, false),
-    NERD(9, "nerd", "Nerd Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_nerd.png"), EntityRegistry.CORGI_NERD.get(), NerdCorgi.class, false),
-    PIRATE(10, "pirate", "Pirate Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_pirate.png"), EntityRegistry.CORGI_PIRATE.get(), PirateCorgi.class, false),
-    RADIOACTIVE(11, "radioactive", "Radioactive Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_radioactive.png"), EntityRegistry.CORGI_RADIOACTIVE.get(), RadioactiveCorgi.class, false),
-    SKELETON(12, "skeleton", "Skeleton Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_skeleton.png"), EntityRegistry.CORGI_SKELETON.get(), SkeletonCorgi.class, true),
-    SPY(13, "spy", "Spy Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_spy.png"), EntityRegistry.CORGI_SPY.get(), SpyCorgi.class, false),
-    SUNGLASSES(14, "sunglasses", "Sunglasses Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_sunglasses.png"), EntityRegistry.CORGI_SUNGLASSES.get(), SunglassesCorgi.class, false),
-    ZOMBIE(15, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), EntityRegistry.CORGI_ZOMBIE.get(), ZombieCorgi.class, true);
+    FARMER(6, "farmer", "Farmer Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_farmer.png"), EntityRegistry.CORGI_FARMER.get(), FarmerCorgi.class, false),
+    HERO(7, "hero", "Hero Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_hero.png"), EntityRegistry.CORGI_HERO.get(), HeroCorgi.class, false),
+    LOVE(8, "love", "Love Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_love.png"), EntityRegistry.CORGI_LOVE.get(), LoveCorgi.class, false),
+    MELON(9, "melon", "Melon Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_melon.png"), EntityRegistry.CORGI_MELON.get(), MelonCorgi.class, false),
+    NERD(10, "nerd", "Nerd Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_nerd.png"), EntityRegistry.CORGI_NERD.get(), NerdCorgi.class, false),
+    PIRATE(11, "pirate", "Pirate Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_pirate.png"), EntityRegistry.CORGI_PIRATE.get(), PirateCorgi.class, false),
+    RADIOACTIVE(12, "radioactive", "Radioactive Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_radioactive.png"), EntityRegistry.CORGI_RADIOACTIVE.get(), RadioactiveCorgi.class, false),
+    SKELETON(13, "skeleton", "Skeleton Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_skeleton.png"), EntityRegistry.CORGI_SKELETON.get(), SkeletonCorgi.class, true),
+    SPY(14, "spy", "Spy Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_spy.png"), EntityRegistry.CORGI_SPY.get(), SpyCorgi.class, false),
+    SUNGLASSES(15, "sunglasses", "Sunglasses Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_sunglasses.png"), EntityRegistry.CORGI_SUNGLASSES.get(), SunglassesCorgi.class, false),
+    ZOMBIE(16, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), EntityRegistry.CORGI_ZOMBIE.get(), ZombieCorgi.class, true);
 
     private final int id;
     private final String name;

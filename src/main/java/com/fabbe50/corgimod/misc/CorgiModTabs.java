@@ -38,6 +38,7 @@ public class CorgiModTabs {
 
                         if (CorgiMod.config.general.enableWorkInProgressFeatures) {
                             populator.accept(ItemRegistry.SPAWN_EGG_FABBE50_CORGI.get());
+                            populator.accept(ItemRegistry.SPAWN_EGG_FARMER_CORGI.get());
                             populator.accept(ItemRegistry.SPAWN_EGG_NERD_CORGI.get());
                             populator.accept(ItemRegistry.SPAWN_EGG_SPY_CORGI.get());
                         }
