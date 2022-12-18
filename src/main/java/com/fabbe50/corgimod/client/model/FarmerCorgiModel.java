@@ -1,11 +1,14 @@
 package com.fabbe50.corgimod.client.model;
 
 import com.fabbe50.corgimod.world.entity.animal.FarmerCorgi;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import org.jetbrains.annotations.NotNull;
 
 public class FarmerCorgiModel<T extends FarmerCorgi> extends AbstractCorgiModel<T> {
+
     public FarmerCorgiModel(ModelPart root) {
         super(root);
     }
@@ -36,8 +39,8 @@ public class FarmerCorgiModel<T extends FarmerCorgi> extends AbstractCorgiModel<
 
         PartDefinition lf_leg = partdefinition.addOrReplaceChild("lf_leg", CubeListBuilder.create().texOffs(47, 33).addBox(-1.1F, 0.0F, -0.9F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 20.0F, -7.0F));
 
-        PartDefinition hat = partdefinition.addOrReplaceChild("hat", CubeListBuilder.create().texOffs(79, 48).addBox(-8.0F, -2.4F, -8.0F, 16.0F, 6.0F, 16.0F, new CubeDeformation(-3.0F))
-                .texOffs(96, 0).addBox(-4.0F, -2.5F, -4.0F, 8.0F, 4.0F, 8.0F, new CubeDeformation(-0.9F)), PartPose.offset(0.0F, 12.1F, -8.5F));
+        PartDefinition hat = head.addOrReplaceChild("hat", CubeListBuilder.create().texOffs(79, 48).addBox(-8.0F, -2.4F, -8.0F, 16.0F, 6.0F, 16.0F, new CubeDeformation(-3.0F))
+                .texOffs(96, 0).addBox(-4.0F, -2.5F, -4.0F, 8.0F, 4.0F, 8.0F, new CubeDeformation(-0.9F)), PartPose.offset(0.0F, -5.9F, -1.6667F));
 
         return LayerDefinition.create(meshdefinition, 128, 64);
     }
