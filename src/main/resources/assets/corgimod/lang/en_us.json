@@ -47,4 +47,7 @@
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange": "Love Corgi Effect Range",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiMaxEntityCount": "Love Corgi Max Entity Count",
   "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed"
+  "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed",
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange": "Spy Corgi Reveal Range",
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime": "Spy Corgi Reveal Time"
 }

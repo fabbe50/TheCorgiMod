@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'maven-publish'
 
-version = '1.19.3-2.0'
+version = '1.19.3-2.0.1'
 group = 'com.fabbe50.corgimod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'corgimod'
 
