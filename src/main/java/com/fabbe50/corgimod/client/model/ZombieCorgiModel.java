@@ -82,7 +82,17 @@ public class ZombieCorgiModel<T extends ZombieCorgi> extends ColorableAgeableLis
 		this.rb_leg.yRot = 0;
 		this.lb_leg.xRot = (float) Math.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
 		this.lb_leg.yRot = 0;
-		this.head.setPos(0F, 18F, -6.75F);
+		if (entity.isBaby()) {
+			this.head.xScale = 0.75F;
+			this.head.yScale = 0.75F;
+			this.head.zScale = 0.75F;
+			this.head.setPos(0F, 16.5F, -5.75F);
+		} else {
+			this.head.xScale = 1F;
+			this.head.yScale = 1F;
+			this.head.zScale = 1F;
+			this.head.setPos(0F, 18F, -6.75F);
+		}
 //			this.EarLeft.setRotation(0F, 15F, -9.5F);
 //			this.EarRight.setRotation(0F, 15F, -9.5F);
 //			this.MouthUpper.setRotation(0F, 15F, -9.5F);
