@@ -17,6 +17,15 @@ public class ModConfig implements ConfigData {
         public NamingMode namingMode;
         public boolean enableWorkInProgressFeatures = false;
         public boolean corgiParticleEffects = true;
+
+        @ConfigEntry.Gui.Tooltip(count = 2)
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public BreedingMode breedingMode;
+
+        public General() {
+            this.namingMode = NamingMode.RANDOM_NAMES;
+            this.breedingMode = BreedingMode.PARENTS;
+        }
     }
 
     public static class CorgiAbilities {

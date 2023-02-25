@@ -1,7 +1,9 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
+import com.fabbe50.corgimod.handlers.NameHandler;
 import com.fabbe50.corgimod.world.entity.ai.BreedGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
@@ -154,7 +156,7 @@ public class Corgi extends Wolf {
 
     @Override
     public Wolf getBreedOffspring(@NotNull ServerLevel level, @NotNull AgeableMob ageableMob) {
-        EntityType<Corgi> corgi = (EntityType<Corgi>) Corgis.getTameWolfBasedCorgis().get(this.random.nextInt(Corgis.getTameWolfBasedCorgis().size())).getCorgiType();
+        EntityType<Corgi> corgi = getCorgiFromBreeding(this, (Corgi) ageableMob);
         Corgi corgi1 = corgi.create(level);
         UUID uuid1 = this.getOwnerUUID();
         if (corgi1 != null && uuid1 != null) {
@@ -162,6 +164,19 @@ public class Corgi extends Wolf {
             corgi1.setTame(true);
         }
         return corgi1;
+    }
+
+    public EntityType<Corgi> getCorgiFromBreeding(Corgi parent1, Corgi parent2) {
+        if (CorgiMod.config.general.breedingMode.equals(ModConfig.BreedingMode.PARENTS)) {
+            if (random.nextBoolean()) {
+                return (EntityType<Corgi>) Corgis.getCorgiTypeFromParent(parent1);
+            } else {
+                return (EntityType<Corgi>) Corgis.getCorgiTypeFromParent(parent2);
+            }
+        } else if (CorgiMod.config.general.breedingMode.equals(ModConfig.BreedingMode.RANDOM)) {
+            return (EntityType<Corgi>) Corgis.getTameWolfBasedCorgis().get(this.random.nextInt(Corgis.getTameWolfBasedCorgis().size())).getCorgiType();
+        }
+        return (EntityType<Corgi>) Corgis.NORMAL.getCorgiType();
     }
 
     @Override

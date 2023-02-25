@@ -76,6 +76,15 @@ public enum Corgis {
         return Arrays.stream(Corgis.values()).toList();
     }
 
+    public static EntityType<?> getCorgiTypeFromParent(Corgi parent) {
+        for (Corgis corgis : getCorgis()) {
+            if (corgis.getCorgiClass().equals(parent.getClass())) {
+                return corgis.getCorgiType();
+            }
+        }
+        return NORMAL.getCorgiType();
+    }
+
     public static Corgis getCorgiFromID(int id) {
         for (Corgis corgis : getCorgis()) {
             if (corgis.getId() == id) {
