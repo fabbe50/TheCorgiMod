@@ -4,6 +4,7 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
+import com.fabbe50.corgimod.world.entity.ai.BegGoalCustom;
 import com.fabbe50.corgimod.world.entity.ai.BreedGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
@@ -28,6 +29,8 @@ import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -57,7 +60,7 @@ public class Corgi extends Wolf {
         this.goalSelector.addGoal(7, new FollowOwnerGoalFix(this, 1.0d, 10.0f, 2.0f, false));
         this.goalSelector.addGoal(9, new BreedGoalFix(this, 1.0D));
         this.goalSelector.addGoal(10, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(11, new BegGoal(this, 8.0F));
+        this.goalSelector.addGoal(11, new BegGoalCustom(this, 8.0F));
         this.goalSelector.addGoal(12, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(12, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
@@ -204,6 +207,13 @@ public class Corgi extends Wolf {
 
     public boolean isAskedToStay() {
         return this.entityData.get(ASKED_TO_STAY);
+    }
+
+    public boolean isItemOfInterest(ItemStack stack) {
+        if (this.isTame() && stack.is(Items.BONE)) {
+            return true;
+        }
+        return this.isFood(stack);
     }
 
     class CorgiAvoidEntityGoal<T extends LivingEntity> extends AvoidEntityGoal<T> {

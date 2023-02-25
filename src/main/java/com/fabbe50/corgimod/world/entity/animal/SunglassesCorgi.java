@@ -70,6 +70,15 @@ public class SunglassesCorgi extends Corgi {
     }
 
     @Override
+    public boolean isItemOfInterest(ItemStack stack) {
+        if (this.isTame() && (stack.is(Items.WATER_BUCKET) || stack.is(Items.FLINT_AND_STEEL) || stack.is(ItemRegistry.URANIUM.get()) || stack.is(Items.LAPIS_LAZULI) || stack.is(Items.GLOWSTONE_DUST))) {
+            return true;
+        }
+
+        return super.isItemOfInterest(stack);
+    }
+
+    @Override
     public @NotNull Component getDisplayName() {
         if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
             return Component.literal(Corgis.SUNGLASSES.getFormattedName());
