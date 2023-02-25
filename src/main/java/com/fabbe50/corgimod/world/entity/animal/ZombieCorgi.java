@@ -34,6 +34,11 @@ public class ZombieCorgi extends Zombie {
         return Monster.createMonsterAttributes().add(Attributes.FOLLOW_RANGE, 45.0D).add(Attributes.MOVEMENT_SPEED, (double)0.33F).add(Attributes.ATTACK_DAMAGE, 5.0D).add(Attributes.ARMOR, 1.0D).add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
+    @Override
+    protected float getStandingEyeHeight(@NotNull Pose pose, @NotNull EntityDimensions entityDimensions) {
+        return entityDimensions.height * 0.85F;
+    }
+
     public float getTailAngle() {
         return ((float)Math.PI / 5F);
     }
