@@ -47,14 +47,21 @@
   "text.autoconfig.corgimod.option.general.namingMode.@Tooltip[1]": "Default Names: Displays \"Corgi\" prefixed by type. (Example: \"Pirate Corgi\"). NOTE: This disables naming of the corgis.",
   "text.autoconfig.corgimod.option.general.namingMode.@Tooltip[2]": "Off: Disables the auto-naming completely. Corgis can still be named. Vanilla behavior.",
   "text.autoconfig.corgimod.option.general.enableWorkInProgressFeatures": "Enable WIP Features",
+  "text.autoconfig.corgimod.option.general.enableWorkInProgressFeatures.@Tooltip": "Enables features that may not be finished yet. Can cause weird behavior and even crashes. Backups are recommended.",
   "text.autoconfig.corgimod.option.general.corgiParticleEffects": "Corgi Particle Effects",
+  "text.autoconfig.corgimod.option.general.corgiParticleEffects.@Tooltip": "Enables the particle effects around the corgis. Turn this off if you're suffering from frame rate issues.",
   "text.autoconfig.corgimod.option.general.breedingMode": "Breeding Mode",
   "text.autoconfig.corgimod.option.general.breedingMode.@Tooltip[0]": "Parents: Breeding two corgis together spawns a child based on one of the parents.",
   "text.autoconfig.corgimod.option.general.breedingMode.@Tooltip[1]": "Random: Breeding two corgis together spawns a completely random child corgi.",
   "text.autoconfig.corgimod.option.corgiAbilities": "Corgi Abilities",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange": "Love Corgi Effect Range",
+  "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange.@Tooltip": "Set the maximum radius the love corgi checks for when activating breeding for them",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiMaxEntityCount": "Love Corgi Max Entity Count",
-  "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed",
+  "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiMaxEntityCount.@Tooltip": "Set the maximum amount of entities that are allowed around the love corgi for the ability to deactivate.",
+  "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed": "Pirate Corgi Boat Speed Multiplier",
+  "text.autoconfig.corgimod.option.corgiAbilities.pirateCorgiBoatSpeed.@Tooltip": "Set the multiplier for how many times faster the boat will go when the pirate corgi is riding with you in the boat.",
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange": "Spy Corgi Reveal Range",
-  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime": "Spy Corgi Reveal Time"
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange.@Tooltip": "Set the maximum radius the spy corgi will apply the glow effect to mobs around it.",
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime": "Spy Corgi Reveal Time",
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime.@Tooltip": "Set the amount of time in seconds that the glow effect will apply on the mobs."
 }

@@ -15,7 +15,10 @@ public class ModConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip(count = 3)
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public NamingMode namingMode;
+
+        @ConfigEntry.Gui.Tooltip
         public boolean enableWorkInProgressFeatures = false;
+        @ConfigEntry.Gui.Tooltip
         public boolean corgiParticleEffects = true;
 
         @ConfigEntry.Gui.Tooltip(count = 2)
@@ -29,10 +32,15 @@ public class ModConfig implements ConfigData {
     }
 
     public static class CorgiAbilities {
+        @ConfigEntry.Gui.Tooltip
         public int loveCorgiEffectRange = 5;
+        @ConfigEntry.Gui.Tooltip
         public int loveCorgiMaxEntityCount = 16;
+        @ConfigEntry.Gui.Tooltip
         public float pirateCorgiBoatSpeed = 1.5f;
+        @ConfigEntry.Gui.Tooltip
         public double spyCorgiRange = 16.0d;
+        @ConfigEntry.Gui.Tooltip
         public int spyCorgiExposeTime = 1;
     }
 
@@ -42,5 +50,12 @@ public class ModConfig implements ConfigData {
         RANDOM_NAMES;
 
         NamingMode() {}
+    }
+
+    public enum BreedingMode {
+        RANDOM,
+        PARENTS;
+
+        BreedingMode() {}
     }
 }
