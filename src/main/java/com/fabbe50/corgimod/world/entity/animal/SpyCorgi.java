@@ -38,7 +38,7 @@ public class SpyCorgi extends Corgi {
     @Override
     public void tick() {
         super.tick();
-        if (this.getLevel().getGameTime() % Utils.ticksFromSecond(30) == 0 && this.isTame()) {
+        if (this.getLevel().getGameTime() % Utils.ticksFromSecond(30) == 0 && this.isTame() && !this.isInSittingPose()) {
             List<LivingEntity> entities = this.getLevel().getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, this, this.getBoundingBox().inflate(CorgiMod.config.corgiAbilities.spyCorgiRange));
             for (LivingEntity entity : entities) {
                 if (entity != null && entity.isAlive() && entity instanceof Enemy) {
