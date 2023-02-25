@@ -1,6 +1,7 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,7 @@ public class AntiCorgi extends Cat {
 
     @Override
     public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.showCorgiDefaultNames)
+        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
             return Component.literal(Corgis.ANTI.getFormattedName());
         return super.getDisplayName();
     }

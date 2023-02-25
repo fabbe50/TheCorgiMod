@@ -1,6 +1,7 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -18,7 +19,7 @@ public class SkeletonCorgi extends AbstractSkeleton {
 
     @Override
     public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.showCorgiDefaultNames)
+        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
             return Component.literal(Corgis.SKELETON.getFormattedName());
         return super.getDisplayName();
     }

@@ -99,7 +99,7 @@ public class PirateCorgi extends Corgi {
 
     @Override
     public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.showCorgiDefaultNames)
+        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
             return Component.literal(Corgis.PIRATE.getFormattedName());
         return super.getDisplayName();
     }

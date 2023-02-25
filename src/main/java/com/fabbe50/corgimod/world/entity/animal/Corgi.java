@@ -142,8 +142,13 @@ public class Corgi extends Wolf {
 
     @Override
     public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.showCorgiDefaultNames)
+        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
             return Component.literal(Corgis.NORMAL.getFormattedName());
+        } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
+            if (!this.hasCustomName()) {
+                this.setCustomName(Component.literal(NameHandler.getRandomName(random.nextBoolean())));
+            }
+        }
         return super.getDisplayName();
     }
 

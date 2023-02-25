@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'maven-publish'
 
-version = '1.19.3-2.0.1'
+version = '1.19.3-2.0.2'
 group = 'com.fabbe50.corgimod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'corgimod'
 
@@ -81,6 +81,9 @@ minecraft {
 
             property 'forge.enabledGameTestNamespaces', 'corgimod'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 corgimod {
                     source sourceSets.main
@@ -138,7 +141,8 @@ repositories {
     //     dir 'libs'
     // }
     maven { url "https://maven.shedaniel.me/" }
-    maven { url 'https://maven.blamejared.com' }
+    maven { url "https://maven.blamejared.com" }
+    maven { url "https://maven.theillusivec4.top/" }
 }
 
 dependencies {
@@ -148,8 +152,11 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.3-44.0.30'
 
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:9.0.94")
-//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
-//    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
+
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.3-5.1.3.1")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.3-5.1.3.1:api")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.3-78:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.3-78")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency

@@ -3,6 +3,7 @@ package com.fabbe50.corgimod;
 import com.fabbe50.corgimod.client.model.geom.ModelLayers;
 import com.fabbe50.corgimod.client.renderer.registry.RendererRegistry;
 import com.fabbe50.corgimod.handlers.EventHandler;
+import com.fabbe50.corgimod.handlers.NameHandler;
 import com.fabbe50.corgimod.misc.CorgiModTabs;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
@@ -34,11 +35,15 @@ public class CorgiMod {
     private static final Logger LOGGER = LogUtils.getLogger();
     public static ModConfig config;
 
+    private static NameHandler nameHandler = new NameHandler();
+
     public CorgiMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        nameHandler.init();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setupEntityModelLayers);
@@ -61,6 +66,10 @@ public class CorgiMod {
 
     private void setupEntityModelLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
         ModelLayers.registerDefinitions(event);
+    }
+
+    public static NameHandler getNameHandler() {
+        return nameHandler;
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

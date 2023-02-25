@@ -42,7 +42,10 @@
 
   "text.autoconfig.corgimod.title": "The Corgi Mod",
   "text.autoconfig.corgimod.option.general": "General",
-  "text.autoconfig.corgimod.option.general.showCorgiDefaultNames": "Default Names",
+  "text.autoconfig.corgimod.option.general.namingMode": "Naming Mode",
+  "text.autoconfig.corgimod.option.general.namingMode.@Tooltip[0]": "Random Names: Applies a random name to the corgi unless the corgi already has a name. Corgis can be renamed.",
+  "text.autoconfig.corgimod.option.general.namingMode.@Tooltip[1]": "Default Names: Displays \"Corgi\" prefixed by type. (Example: \"Pirate Corgi\"). NOTE: This disables naming of the corgis.",
+  "text.autoconfig.corgimod.option.general.namingMode.@Tooltip[2]": "Off: Disables the auto-naming completely. Corgis can still be named. Vanilla behavior.",
   "text.autoconfig.corgimod.option.general.enableWorkInProgressFeatures": "Enable WIP Features",
   "text.autoconfig.corgimod.option.general.corgiParticleEffects": "Corgi Particle Effects",
   "text.autoconfig.corgimod.option.corgiAbilities": "Corgi Abilities",

@@ -12,7 +12,9 @@ public class ModConfig implements ConfigData {
     public CorgiAbilities corgiAbilities = new CorgiAbilities();
 
     public static class General {
-        public boolean showCorgiDefaultNames = false;
+        @ConfigEntry.Gui.Tooltip(count = 3)
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public NamingMode namingMode;
         public boolean enableWorkInProgressFeatures = false;
         public boolean corgiParticleEffects = true;
     }
@@ -23,5 +25,13 @@ public class ModConfig implements ConfigData {
         public float pirateCorgiBoatSpeed = 1.5f;
         public double spyCorgiRange = 16.0d;
         public int spyCorgiExposeTime = 1;
+    }
+
+    public enum NamingMode {
+        OFF,
+        DEFAULT_NAMES,
+        RANDOM_NAMES;
+
+        NamingMode() {}
     }
 }
