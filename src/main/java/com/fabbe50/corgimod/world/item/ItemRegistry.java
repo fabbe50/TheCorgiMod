@@ -4,9 +4,11 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.data.Armors;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
+import com.fabbe50.corgimod.world.level.block.BlockRegistry;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,6 +22,16 @@ public class ItemRegistry {
     public static final RegistryObject<Item> URANIUM = DEFERRED_REGISTER.register("uranium", () -> new ItemUranium(new Item.Properties()));
     public static final RegistryObject<Item> SUNGLASSES = DEFERRED_REGISTER.register("sunglasses", () -> new ItemSunglasses(Armors.SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties()));
 
+    //Blocks
+    public static final RegistryObject<Item> ACACIA_DOG_DOOR = DEFERRED_REGISTER.register("acacia_dog_door", () -> new BlockItem(BlockRegistry.ACACIA_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BIRCH_DOG_DOOR = DEFERRED_REGISTER.register("birch_dog_door", () -> new BlockItem(BlockRegistry.BIRCH_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRIMSON_DOG_DOOR = DEFERRED_REGISTER.register("crimson_dog_door", () -> new BlockItem(BlockRegistry.CRIMSON_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DARK_OAK_DOG_DOOR = DEFERRED_REGISTER.register("dark_oak_dog_door", () -> new BlockItem(BlockRegistry.DARK_OAK_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_DOG_DOOR = DEFERRED_REGISTER.register("jungle_dog_door", () -> new BlockItem(BlockRegistry.JUNGLE_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_DOG_DOOR = DEFERRED_REGISTER.register("mangrove_dog_door", () -> new BlockItem(BlockRegistry.MANGROVE_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OAK_DOG_DOOR = DEFERRED_REGISTER.register("oak_dog_door", () -> new BlockItem(BlockRegistry.OAK_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_DOG_DOOR = DEFERRED_REGISTER.register("spruce_dog_door", () -> new BlockItem(BlockRegistry.SPRUCE_DOG_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WARPED_DOG_DOOR = DEFERRED_REGISTER.register("warped_dog_door", () -> new BlockItem(BlockRegistry.WARPED_DOG_DOOR.get(), new Item.Properties()));
 
     //Spawn Eggs
     public static final RegistryObject<Item> SPAWN_EGG_NORMAL_CORGI = registerSpawnEgg("spawn_egg_corgi_normal", EntityRegistry.CORGI_NORMAL, 0xE0BC8D, 0x89644E, new Item.Properties());

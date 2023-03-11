@@ -10,6 +10,7 @@ import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.fabbe50.corgimod.world.entity.animal.HeroCorgi;
 import com.fabbe50.corgimod.world.entity.animal.ZombieCorgi;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
+import com.fabbe50.corgimod.world.level.block.BlockRegistry;
 import com.mojang.logging.LogUtils;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -49,6 +50,7 @@ public class CorgiMod {
         modEventBus.addListener(this::setupEntityModelLayers);
 
         EntityRegistry.DEFERRED_REGISTER.register(modEventBus);
+        BlockRegistry.DEFERRED_REGISTER.register(modEventBus);
         ItemRegistry.DEFERRED_REGISTER.register(modEventBus);
         modEventBus.register(new CorgiModTabs());
 

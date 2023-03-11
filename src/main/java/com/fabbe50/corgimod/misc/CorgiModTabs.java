@@ -47,6 +47,17 @@ public class CorgiModTabs {
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ItemRegistry.URANIUM.get());
         }
+        if (event.getTab() == CreativeModeTabs.REDSTONE_BLOCKS) {
+            event.accept(ItemRegistry.OAK_DOG_DOOR);
+            event.accept(ItemRegistry.SPRUCE_DOG_DOOR);
+            event.accept(ItemRegistry.BIRCH_DOG_DOOR);
+            event.accept(ItemRegistry.JUNGLE_DOG_DOOR);
+            event.accept(ItemRegistry.ACACIA_DOG_DOOR);
+            event.accept(ItemRegistry.DARK_OAK_DOG_DOOR);
+            event.accept(ItemRegistry.MANGROVE_DOG_DOOR);
+            event.accept(ItemRegistry.CRIMSON_DOG_DOOR);
+            event.accept(ItemRegistry.WARPED_DOG_DOOR);
+        }
         if (event.getTab() == CreativeModeTabs.COMBAT) {
             event.accept(ItemRegistry.SUNGLASSES.get());
         }

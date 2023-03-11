@@ -8,6 +8,8 @@ import com.fabbe50.corgimod.world.entity.ai.BegGoalCustom;
 import com.fabbe50.corgimod.world.entity.ai.BreedGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
 import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
+import com.fabbe50.corgimod.world.level.block.DogDoorBlock;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -95,6 +97,9 @@ public class Corgi extends Wolf {
         return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 12.0D).add(Attributes.ATTACK_DAMAGE, 8.0D);
     }
 
+    //Dog Door shitty hack.. will be replaced by proper AI Goal.
+    private DogDoorBlock dogDoorBlock;
+    private BlockPos dogDoorBlockPos;
     @Override
     public void setTame(boolean p_30443_) {
         super.setTame(p_30443_);
@@ -106,6 +111,21 @@ public class Corgi extends Wolf {
         }
 
         Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_DAMAGE)).setBaseValue(8.0D);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.level.getBlockState(this.blockPosition()).getBlock() instanceof DogDoorBlock dogDoorBlockTemp) {
+            this.dogDoorBlock = dogDoorBlockTemp;
+            this.dogDoorBlockPos = this.blockPosition();
+            this.dogDoorBlock.setOpen(this, this.level, this.level.getBlockState(this.dogDoorBlockPos), this.dogDoorBlockPos, true);
+        }
+        if (dogDoorBlock != null && dogDoorBlockPos != null && !(this.level.getBlockState(this.blockPosition()).getBlock() instanceof DogDoorBlock)) {
+            this.dogDoorBlock.setOpen(this, this.level, this.level.getBlockState(this.dogDoorBlockPos), this.dogDoorBlockPos, false);
+            this.dogDoorBlock = null;
+            this.dogDoorBlockPos = null;
+        }
     }
 
     @Override

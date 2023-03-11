@@ -23,6 +23,16 @@
   "item.corgimod.uranium": "Uranium",
   "item.corgimod.sunglasses": "Sunglasses",
 
+  "block.corgimod.acacia_dog_door": "Acacia Dog Door",
+  "block.corgimod.birch_dog_door": "Birch Dog Door",
+  "block.corgimod.crimson_dog_door": "Crimson Dog Door",
+  "block.corgimod.dark_oak_dog_door": "Dark Oak Dog Door",
+  "block.corgimod.jungle_dog_door": "Jungle Dog Door",
+  "block.corgimod.mangrove_dog_door": "Mangrove Dog Door",
+  "block.corgimod.oak_dog_door": "Oak Dog Door",
+  "block.corgimod.spruce_dog_door": "Spruce Dog Door",
+  "block.corgimod.warped_dog_door": "Warped Dog Door",
+
   "entity.corgimod.corgi_normal": "Corgi",
   "entity.corgimod.corgi_anti": "Anti Corgi",
   "entity.corgimod.corgi_bodyguard": "Bodyguard Corgi",

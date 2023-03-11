@@ -3,11 +3,6 @@ package com.fabbe50.corgimod.client.renderer.registry;
 import com.fabbe50.corgimod.client.renderer.*;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class RendererRegistry {
     public RendererRegistry() {

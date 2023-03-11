@@ -1,0 +1,118 @@
+{
+  "variants": {
+    "facing=east,align_pos=center,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_center",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,align_pos=center,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_center_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,align_pos=front,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_front",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,align_pos=front,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_front_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,align_pos=back,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_back",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,align_pos=back,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_back_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,align_pos=center,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_center",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,align_pos=center,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_center_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,align_pos=front,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_front",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,align_pos=front,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_front_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,align_pos=back,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_back",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,align_pos=back,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_back_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,align_pos=center,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_center",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,align_pos=center,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_center_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,align_pos=front,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_front",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,align_pos=front,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_front_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,align_pos=back,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_back",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,align_pos=back,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_back_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,align_pos=center,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_center",
+      "uvlock": true
+    },
+    "facing=south,align_pos=center,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_center_open",
+      "uvlock": true
+    },
+    "facing=south,align_pos=front,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_front",
+      "uvlock": true
+    },
+    "facing=south,align_pos=front,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_front_open",
+      "uvlock": true
+    },
+    "facing=south,align_pos=back,open=false": {
+      "model": "corgimod:block/mangrove_dog_door_back",
+      "uvlock": true
+    },
+    "facing=south,align_pos=back,open=true": {
+      "model": "corgimod:block/mangrove_dog_door_back_open",
+      "uvlock": true
+    }
+  }
+}
