@@ -3,6 +3,7 @@ package com.fabbe50.corgimod.world.entity.animal;
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
+import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -24,8 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 
-public class RadioactiveCorgi extends Corgi {
-    private static final EntityDataAccessor<Boolean> DATA_HAS_BEEN_FED = SynchedEntityData.defineId(RadioactiveCorgi.class, EntityDataSerializers.BOOLEAN);
+public class RadioactiveCorgi extends Corgi implements IAbility {
     public int uraniumDropTime = this.random.nextInt(6000) + 6000;
 
     public RadioactiveCorgi(EntityType<? extends Wolf> entityType, Level level) {
@@ -33,47 +33,14 @@ public class RadioactiveCorgi extends Corgi {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_HAS_BEEN_FED, false);
-    }
-
-    @Override
-    public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
-        super.addAdditionalSaveData(compoundTag);
-        compoundTag.putBoolean("HasBeenFed", this.hasBeenFed());
-    }
-
-    @Override
-    public void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
-        super.readAdditionalSaveData(compoundTag);
-        this.setHasBeenFed(compoundTag.getBoolean("HasBeenFed"));
-    }
-
-    @Override
-    public void aiStep() {
-        super.aiStep();
-        if (!this.level.isClientSide && this.isAlive() && !this.isBaby() && --this.uraniumDropTime <= 0 && this.hasBeenFed()) {
+    public void runAbilityWhileFed() {
+        if (!this.level.isClientSide && this.isAlive() && !this.isBaby() && --this.uraniumDropTime <= 0) {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             this.spawnAtLocation(ItemRegistry.URANIUM.get());
             this.gameEvent(GameEvent.ENTITY_PLACE);
             this.uraniumDropTime = this.random.nextInt(6000) + 6000;
             this.setHasBeenFed(false);
         }
-    }
-
-    @Override
-    public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
-        if (!this.level.isClientSide) {
-            if (this.isTame() && this.isFood(itemStack) && !this.hasBeenFed()) {
-                if (!player.getAbilities().instabuild && !(this.getHealth() < this.getMaxHealth())) {
-                    itemStack.shrink(1);
-                }
-                this.setHasBeenFed(true);
-            }
-        }
-        return super.mobInteract(player, hand);
     }
 
     @Override
@@ -91,13 +58,5 @@ public class RadioactiveCorgi extends Corgi {
             ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 10, 3));
         }
         return super.doHurtTarget(entity);
-    }
-
-    public void setHasBeenFed(boolean hasBeenFed) {
-        this.entityData.set(DATA_HAS_BEEN_FED, hasBeenFed);
-    }
-
-    public boolean hasBeenFed() {
-        return this.entityData.get(DATA_HAS_BEEN_FED);
     }
 }

@@ -4,10 +4,8 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
-import com.fabbe50.corgimod.world.entity.ai.BegGoalCustom;
-import com.fabbe50.corgimod.world.entity.ai.BreedGoalFix;
-import com.fabbe50.corgimod.world.entity.ai.FollowOwnerGoalFix;
-import com.fabbe50.corgimod.world.entity.ai.StayInPlaceGoal;
+import com.fabbe50.corgimod.world.entity.ability.IAbility;
+import com.fabbe50.corgimod.world.entity.ai.*;
 import com.fabbe50.corgimod.world.level.block.DogDoorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -43,6 +41,8 @@ import java.util.UUID;
 
 public class Corgi extends Wolf {
     private static final EntityDataAccessor<Boolean> ASKED_TO_STAY = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_HAS_BEEN_FED = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Long> DATA_TIME_WHEN_FED = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.LONG);
     public final float bobs;
 
     public Corgi(EntityType<? extends Wolf> entityType, Level level) {
@@ -79,18 +79,24 @@ public class Corgi extends Wolf {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(ASKED_TO_STAY, false);
+        this.entityData.define(DATA_HAS_BEEN_FED, false);
+        this.entityData.define(DATA_TIME_WHEN_FED, 0L);
     }
 
     @Override
     public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
         compoundTag.putBoolean("AskedToStay", isAskedToStay());
+        compoundTag.putBoolean("HasBeenFed", this.hasBeenFed());
+        compoundTag.putLong("TimeWhenFed", this.getTimeWhenFed());
     }
 
     @Override
     public void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
         super.readAdditionalSaveData(compoundTag);
         this.setAskedToStay(compoundTag.getBoolean("AskedToStay"));
+        this.setHasBeenFed(compoundTag.getBoolean("HasBeenFed"));
+        this.setTimeWhenFed(compoundTag.getLong("TimeWhenFed"));
     }
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
@@ -129,10 +135,41 @@ public class Corgi extends Wolf {
     }
 
     @Override
+    public void aiStep() {
+        if (!this.level.isClientSide && this.isAlive() && isTame()) {
+            if (this instanceof IAbility) {
+                if (this.hasBeenFed()) {
+                    if (this.getTimeWhenFed() + (1000 * 60 * 6) < System.currentTimeMillis()) {
+                        ((IAbility) this).runAbilityAtEndOfFed();
+                        this.setHasBeenFed(false);
+                    } else {
+                        ((IAbility) this).runAbilityWhileFed();
+                    }
+                } else {
+                    ((IAbility) this).runAbilityWhileHungry();
+                }
+            }
+        }
+        super.aiStep();
+    }
+
+    @Override
     public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
-        if (this.isTame() && player.isCrouching() && !this.level.isClientSide) {
-            this.setAskedToStay(!this.isAskedToStay());
-            return InteractionResult.SUCCESS;
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (!this.level.isClientSide) {
+            if (this.isTame()) {
+                if (this.isFood(itemStack) && !this.hasBeenFed()) {
+                    if (!player.getAbilities().instabuild && !(this.getHealth() < this.getMaxHealth())) {
+                        itemStack.shrink(1);
+                    }
+                    this.setTimeWhenFed(System.currentTimeMillis());
+                    this.setHasBeenFed(true);
+                }
+                if (player.isCrouching()) {
+                    this.setAskedToStay(!this.isAskedToStay());
+                    return InteractionResult.SUCCESS;
+                }
+            }
         }
         return super.mobInteract(player, hand);
     }
@@ -227,6 +264,22 @@ public class Corgi extends Wolf {
 
     public boolean isAskedToStay() {
         return this.entityData.get(ASKED_TO_STAY);
+    }
+
+    public void setHasBeenFed(boolean hasBeenFed) {
+        this.entityData.set(DATA_HAS_BEEN_FED, hasBeenFed);
+    }
+
+    public boolean hasBeenFed() {
+        return this.entityData.get(DATA_HAS_BEEN_FED);
+    }
+
+    public void setTimeWhenFed(long timeWhenFed) {
+        this.entityData.set(DATA_TIME_WHEN_FED, timeWhenFed);
+    }
+
+    public long getTimeWhenFed() {
+        return this.entityData.get(DATA_TIME_WHEN_FED);
     }
 
     public boolean isItemOfInterest(ItemStack stack) {
