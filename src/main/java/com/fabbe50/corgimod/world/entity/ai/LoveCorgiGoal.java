@@ -12,11 +12,12 @@ import java.util.List;
 
 public class LoveCorgiGoal extends Goal {
     private final LoveCorgi corgi;
-    private int cooldown = 10;
+    private int cooldown;
     private List<Animal> animals;
 
     public LoveCorgiGoal(LoveCorgi corgi) {
         this.corgi = corgi;
+        this.cooldown = corgi.getRandom().nextInt(10) + 10;
     }
 
     @Override
@@ -25,7 +26,7 @@ public class LoveCorgiGoal extends Goal {
             if ((this.corgi.getLevel().getGameTime() % 20) - 1 == 0) {
                 cooldown--;
             }
-            if (cooldown <= 0) {
+            if (cooldown <= 0 && this.corgi.hasBeenFed()) {
                 int i = CorgiMod.config.corgiAbilities.loveCorgiEffectRange;
                 AABB bounds = new AABB(this.corgi.getOnPos().offset(-i, -2, -i), this.corgi.getOnPos().offset(i, 2, i));
                 Level level = this.corgi.getLevel();
@@ -49,7 +50,7 @@ public class LoveCorgiGoal extends Goal {
                     animal.setInLove((Player) this.corgi.getOwner());
                 }
             }
-            cooldown = 30;
+            cooldown = this.corgi.getRandom().nextInt(10) + 10;
         }
     }
 }
