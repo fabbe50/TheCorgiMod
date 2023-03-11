@@ -29,6 +29,7 @@ public class CorgiModTabs {
                         populator.accept(ItemRegistry.SPAWN_EGG_PIRATE_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_RADIOACTIVE_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_SKELETON_CORGI.get());
+                        populator.accept(ItemRegistry.SPAWN_EGG_SPY_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_SUNGLASSES_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_ZOMBIE_CORGI.get());
 
@@ -36,7 +37,6 @@ public class CorgiModTabs {
                             populator.accept(ItemRegistry.SPAWN_EGG_FABBE50_CORGI.get());
                             populator.accept(ItemRegistry.SPAWN_EGG_FARMER_CORGI.get());
                             populator.accept(ItemRegistry.SPAWN_EGG_NERD_CORGI.get());
-                            populator.accept(ItemRegistry.SPAWN_EGG_SPY_CORGI.get());
                         }
                     })
         );

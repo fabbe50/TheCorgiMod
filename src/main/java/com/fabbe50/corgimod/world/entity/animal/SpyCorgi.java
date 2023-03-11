@@ -4,6 +4,7 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.utils.Utils;
+import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -22,23 +23,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class SpyCorgi extends Corgi {
+public class SpyCorgi extends Corgi implements IAbility {
     private static final TargetingConditions TARGETING_CONDITIONS = TargetingConditions.forNonCombat().range(CorgiMod.config.corgiAbilities.spyCorgiRange).ignoreLineOfSight();
     public SpyCorgi(EntityType<? extends Wolf> entityType, Level level) {
         super(entityType, level);
     }
 
     @Override
-    public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
-            return Component.literal(Corgis.SPY.getFormattedName());
-        return super.getDisplayName();
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (this.getLevel().getGameTime() % Utils.ticksFromSecond(30) == 0 && this.isTame() && !this.isInSittingPose()) {
+    public void runAbilityWhileFed() {
+        if (this.getLevel().getGameTime() % Utils.ticksFromSecond(30) == 0 && !this.isInSittingPose()) {
             List<LivingEntity> entities = this.getLevel().getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, this, this.getBoundingBox().inflate(CorgiMod.config.corgiAbilities.spyCorgiRange));
             for (LivingEntity entity : entities) {
                 if (entity != null && entity.isAlive() && entity instanceof Enemy) {
@@ -46,5 +39,12 @@ public class SpyCorgi extends Corgi {
                 }
             }
         }
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
+            return Component.literal(Corgis.SPY.getFormattedName());
+        return super.getDisplayName();
     }
 }

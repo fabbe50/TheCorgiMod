@@ -41,7 +41,7 @@ public class ModConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip
         public double spyCorgiRange = 16.0d;
         @ConfigEntry.Gui.Tooltip
-        public int spyCorgiExposeTime = 1;
+        public int spyCorgiExposeTime = 5;
     }
 
     public enum NamingMode {
