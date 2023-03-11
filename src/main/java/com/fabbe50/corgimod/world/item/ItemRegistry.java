@@ -2,7 +2,7 @@ package com.fabbe50.corgimod.world.item;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.data.Armors;
-import com.fabbe50.corgimod.misc.CorgiModTabs;
+import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,11 +16,12 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
     public static final DeferredRegister<Item> DEFERRED_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, CorgiMod.MODID);
 
+    //Items
     public static final RegistryObject<Item> URANIUM = DEFERRED_REGISTER.register("uranium", () -> new ItemUranium(new Item.Properties()));
     public static final RegistryObject<Item> SUNGLASSES = DEFERRED_REGISTER.register("sunglasses", () -> new ItemSunglasses(Armors.SUNGLASSES, EquipmentSlot.HEAD, new Item.Properties()));
 
 
-
+    //Spawn Eggs
     public static final RegistryObject<Item> SPAWN_EGG_NORMAL_CORGI = registerSpawnEgg("spawn_egg_corgi_normal", EntityRegistry.CORGI_NORMAL, 0xE0BC8D, 0x89644E, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_ANTI_CORGI = registerSpawnEgg("spawn_egg_corgi_anti", EntityRegistry.CORGI_ANTI, 0x1F4372, 0x769BB1, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_BODYGUARD_CORGI = registerSpawnEgg("spawn_egg_corgi_bodyguard", EntityRegistry.CORGI_BODYGUARD, 0x171717, 0xd4d4d4, new Item.Properties());
@@ -38,6 +39,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SPAWN_EGG_FARMER_CORGI = registerSpawnEgg("spawn_egg_corgi_farmer", EntityRegistry.CORGI_FARMER, 0xE0BC8D, 0x89644E, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_NERD_CORGI = registerSpawnEgg("spawn_egg_corgi_nerd", EntityRegistry.CORGI_NERD, 0xffffff, 0x000000, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_SPY_CORGI = registerSpawnEgg("spawn_egg_corgi_spy", EntityRegistry.CORGI_SPY, 0x000000, 0x000000, new Item.Properties());
+    public static final RegistryObject<Item> SPAWN_EGG_RANDOM_CORGI = DEFERRED_REGISTER.register("spawn_egg_corgi_random", () -> new ItemRandomSpawnEgg(EntityRegistry.CORGI_NORMAL, Corgis.getNonHostileCorgiTypeRegistryObjects(), new Item.Properties()));
 
     private static RegistryObject<Item> registerSpawnEgg(String registryName, RegistryObject<? extends EntityType<? extends Mob>> entityObject, int backgroundColor, int highlightColor, Item.Properties properties) {
         return DEFERRED_REGISTER.register(registryName, () -> new ForgeSpawnEggItem(entityObject, backgroundColor, highlightColor, properties));
