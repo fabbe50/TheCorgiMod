@@ -1,6 +1,7 @@
 package com.fabbe50.corgimod.world.entity.ai;
 
 import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.fabbe50.corgimod.world.entity.animal.LoveCorgi;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.animal.Animal;
@@ -23,13 +24,13 @@ public class LoveCorgiGoal extends Goal {
     @Override
     public boolean canUse() {
         if (this.corgi.isTame()) {
-            if ((this.corgi.getLevel().getGameTime() % 20) - 1 == 0) {
+            if ((this.corgi.level().getGameTime() % 20) - 1 == 0) {
                 cooldown--;
             }
             if (cooldown <= 0 && this.corgi.hasBeenFed()) {
                 int i = CorgiMod.config.corgiAbilities.loveCorgiEffectRange;
                 AABB bounds = new AABB(this.corgi.getOnPos().offset(-i, -2, -i), this.corgi.getOnPos().offset(i, 2, i));
-                Level level = this.corgi.getLevel();
+                Level level = this.corgi.level();
                 animals = level.getEntitiesOfClass(Animal.class, bounds);
                 return animals.size() < CorgiMod.config.corgiAbilities.loveCorgiMaxEntityCount;
             }
@@ -46,8 +47,10 @@ public class LoveCorgiGoal extends Goal {
     public void tick() {
         if (cooldown <= 0) {
             for (Animal animal : animals) {
-                if (animal.getAge() == 0 && animal.canFallInLove() && animal != this.corgi) {
-                    animal.setInLove((Player) this.corgi.getOwner());
+                if (!(animal instanceof Corgi)) {
+                    if (animal.getAge() == 0 && animal.canFallInLove()) {
+                        animal.setInLove((Player) this.corgi.getOwner());
+                    }
                 }
             }
             cooldown = this.corgi.getRandom().nextInt(10) + 10;

@@ -31,8 +31,8 @@ public class SpyCorgi extends Corgi implements IAbility {
 
     @Override
     public void runAbilityWhileFed() {
-        if (this.getLevel().getGameTime() % Utils.ticksFromSecond(30) == 0 && !this.isInSittingPose()) {
-            List<LivingEntity> entities = this.getLevel().getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, this, this.getBoundingBox().inflate(CorgiMod.config.corgiAbilities.spyCorgiRange));
+        if (this.level().getGameTime() % Utils.ticksFromSecond(30) == 0 && !this.isInSittingPose()) {
+            List<LivingEntity> entities = this.level().getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, this, this.getBoundingBox().inflate(CorgiMod.config.corgiAbilities.spyCorgiRange));
             for (LivingEntity entity : entities) {
                 if (entity != null && entity.isAlive() && entity instanceof Enemy) {
                     entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, Utils.ticksFromSecond(CorgiMod.config.corgiAbilities.spyCorgiExposeTime)));

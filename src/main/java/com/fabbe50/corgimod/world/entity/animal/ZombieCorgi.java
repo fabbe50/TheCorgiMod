@@ -57,10 +57,10 @@ public class ZombieCorgi extends Zombie {
                 int x = Mth.floor(corgi.getX());
                 int y = Mth.floor(corgi.getY());
                 int z = Mth.floor(corgi.getZ());
-                ServerLevel serverLevel = (ServerLevel) corgi.getLevel();
+                ServerLevel serverLevel = (ServerLevel) corgi.level();
                 LivingEntity attacker = event.getAttacker();
-                if (attacker != null && corgi.level.getDifficulty() == Difficulty.HARD && (double)corgi.random.nextFloat() < Objects.requireNonNull(corgi.getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)).getValue() && corgi.level.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
-                    ZombieCorgi zombieCorgi = EntityRegistry.CORGI_ZOMBIE.get().create(corgi.level);
+                if (attacker != null && corgi.level().getDifficulty() == Difficulty.HARD && (double)corgi.random.nextFloat() < Objects.requireNonNull(corgi.getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)).getValue() && corgi.level().getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+                    ZombieCorgi zombieCorgi = EntityRegistry.CORGI_ZOMBIE.get().create(corgi.level());
                     if (zombieCorgi != null) {
                         for (int l = 0; l < 50; l++) {
                             int x1 = x + Mth.nextInt(corgi.random, 7, 40) + Mth.nextInt(corgi.random, -1, 1);
@@ -69,11 +69,11 @@ public class ZombieCorgi extends Zombie {
                             BlockPos pos = new BlockPos(x1, y1, z1);
                             EntityType<?> entityType = zombieCorgi.getType();
                             SpawnPlacements.Type spawnplacements$type = SpawnPlacements.getPlacementType(entityType);
-                            if (NaturalSpawner.isSpawnPositionOk(spawnplacements$type, corgi.level, pos, entityType) && SpawnPlacements.checkSpawnRules(entityType, serverLevel, MobSpawnType.REINFORCEMENT, pos, corgi.level.random)) {
+                            if (NaturalSpawner.isSpawnPositionOk(spawnplacements$type, corgi.level(), pos, entityType) && SpawnPlacements.checkSpawnRules(entityType, serverLevel, MobSpawnType.REINFORCEMENT, pos, corgi.level().random)) {
                                 zombieCorgi.setPos(x1, y1, z1);
-                                if (!corgi.level.hasNearbyAlivePlayer(x1, y1, z1, 7) && corgi.level.isUnobstructed(zombieCorgi) && corgi.level.noCollision(zombieCorgi) && !corgi.level.containsAnyLiquid(zombieCorgi.getBoundingBox())) {
+                                if (!corgi.level().hasNearbyAlivePlayer(x1, y1, z1, 7) && corgi.level().isUnobstructed(zombieCorgi) && corgi.level().noCollision(zombieCorgi) && !corgi.level().containsAnyLiquid(zombieCorgi.getBoundingBox())) {
                                     zombieCorgi.setTarget(attacker);
-                                    zombieCorgi.finalizeSpawn(serverLevel, corgi.level.getCurrentDifficultyAt(zombieCorgi.blockPosition()), MobSpawnType.REINFORCEMENT, null, null);
+                                    zombieCorgi.finalizeSpawn(serverLevel, corgi.level().getCurrentDifficultyAt(zombieCorgi.blockPosition()), MobSpawnType.REINFORCEMENT, null, null);
                                     serverLevel.addFreshEntityWithPassengers(zombieCorgi);
                                     Objects.requireNonNull(corgi.getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)).addPermanentModifier(new AttributeModifier("Zombie reinforcement caller charge", -0.05f, AttributeModifier.Operation.ADDITION));
                                     Objects.requireNonNull(zombieCorgi.getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)).addPermanentModifier(new AttributeModifier("Zombie reinforcement callee charge", -0.05f, AttributeModifier.Operation.ADDITION));

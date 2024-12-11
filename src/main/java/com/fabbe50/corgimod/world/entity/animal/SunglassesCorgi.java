@@ -27,8 +27,8 @@ public class SunglassesCorgi extends Corgi {
     public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
-        if (!this.level.isClientSide) {
-            ServerLevel level = (ServerLevel) this.level;
+        if (!this.level().isClientSide) {
+            ServerLevel level = (ServerLevel) this.level();
             if (this.isTame()) {
                 if (item.equals(Items.FLINT_AND_STEEL)){
                     if (!player.getAbilities().instabuild) {

@@ -107,8 +107,6 @@ public class Corgi extends Wolf {
     }
 
     //Dog Door shitty hack.. will be replaced by proper AI Goal.
-    private DogDoorBlock dogDoorBlock;
-    private BlockPos dogDoorBlockPos;
     @Override
     public void setTame(boolean p_30443_) {
         super.setTame(p_30443_);
@@ -124,7 +122,7 @@ public class Corgi extends Wolf {
 
     @Override
     public void aiStep() {
-        if (!this.level.isClientSide && this.isAlive() && isTame()) {
+        if (!this.level().isClientSide && this.isAlive() && isTame()) {
             if (this instanceof IAbility) {
                 if (this.hasBeenFed()) {
                     if (this.getTimeWhenFed() + (1000 * 60 * 6) < System.currentTimeMillis()) {
@@ -144,7 +142,7 @@ public class Corgi extends Wolf {
     @Override
     public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             if (this.isTame()) {
                 if (this.isFood(itemStack) && !this.hasBeenFed()) {
                     if (!player.getAbilities().instabuild && !(this.getHealth() < this.getMaxHealth())) {
@@ -168,7 +166,7 @@ public class Corgi extends Wolf {
             if (this.getOwner() != null) {
                 if (this.getOwner().is(player)) {
                     for (int i = 0; i < 4; i++) {
-                        this.level.addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
+                        this.level().addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
                     }
                     return false;
                 }

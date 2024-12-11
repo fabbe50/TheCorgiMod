@@ -26,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -73,7 +74,7 @@ public class MelonCorgi extends Corgi {
     @Override
     public void tick() {
         super.tick();
-        if (this.getLevel().getGameTime() % 20 == 0) {
+        if (this.level().getGameTime() % 20 == 0) {
             int barterTime = this.getBarterTime();
             if (barterTime > 0) {
                 this.setBarterTime(barterTime - 20);
@@ -84,7 +85,7 @@ public class MelonCorgi extends Corgi {
             } else if (this.getHasSeed()) {
                 int amount = this.random.nextInt(5);
                 for (int i = 0; i < amount; i++) {
-                    this.getLevel().addFreshEntity(new ItemEntity(this.getLevel(), this.position().x, this.position().y, this.position().z, new ItemStack(Items.MELON), (this.random.nextDouble() / 2) - 0.25, 0.1, (this.random.nextDouble() / 2) - 0.25));
+                    this.level().addFreshEntity(new ItemEntity(this.level(), this.position().x, this.position().y, this.position().z, new ItemStack(Items.MELON), (this.random.nextDouble() / 2) - 0.25, 0.1, (this.random.nextDouble() / 2) - 0.25));
                 }
                 this.setHasSeed(false);
             }
@@ -104,9 +105,9 @@ public class MelonCorgi extends Corgi {
                     this.navigation.stop();
                     this.setTarget((LivingEntity) null);
                     this.setOrderedToSit(true);
-                    this.level.broadcastEntityEvent(this, (byte) 7);
+                    this.level().broadcastEntityEvent(this, (byte) 7);
                 } else {
-                    this.level.broadcastEntityEvent(this, (byte) 6);
+                    this.level().broadcastEntityEvent(this, (byte) 6);
                 }
                 return InteractionResult.SUCCESS;
             } else {
@@ -116,16 +117,16 @@ public class MelonCorgi extends Corgi {
                     }
                     int amount = this.random.nextInt(5);
                     for (int i = 0; i < amount; i++) {
-                        this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0.1D, 0);
+                        this.level().addParticle(ParticleTypes.HAPPY_VILLAGER, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0.1D, 0);
                     }
-                    MinecraftServer server = this.getLevel().getServer();
+                    MinecraftServer server = this.level().getServer();
                     if (server != null) {
                         BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
                         mutableBlockPos.set(this.blockPosition());
-                        LootTable lootTable = server.getLootTables().get(LootTables.MELON_CORGI_GIFT);
-                        LootContext.Builder builder = (new LootContext.Builder((ServerLevel) this.getLevel())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.THIS_ENTITY, this).withRandom(this.getRandom());
-                        for (ItemStack itemStack : lootTable.getRandomItems(builder.create(LootContextParamSets.GIFT))) {
-                            this.getLevel().addFreshEntity(new ItemEntity(this.getLevel(), mutableBlockPos.getX() - Mth.sin(this.yBodyRot * ((float) Math.PI / 180F)), mutableBlockPos.getY(), mutableBlockPos.getZ() + Mth.cos(this.yBodyRot * ((float) Math.PI / 180F)), itemStack));
+                        LootTable lootTable = server.getLootData().getLootTable(LootTables.MELON_CORGI_GIFT);
+                        LootParams.Builder lootParamsBuilder = new LootParams.Builder((ServerLevel) this.level());
+                        for (ItemStack itemStack : lootTable.getRandomItems(lootParamsBuilder.create(LootContextParamSets.GIFT))) {
+                            this.level().addFreshEntity(new ItemEntity(this.level(), mutableBlockPos.getX() - Mth.sin(this.yBodyRot * ((float) Math.PI / 180F)), mutableBlockPos.getY(), mutableBlockPos.getZ() + Mth.cos(this.yBodyRot * ((float) Math.PI / 180F)), itemStack));
                         }
                         this.resetBarterTime();
                     }
@@ -138,7 +139,7 @@ public class MelonCorgi extends Corgi {
             }
             int amount = this.random.nextInt(5);
             for (int i = 0; i < amount; i++) {
-                this.level.addParticle(ParticleTypes.HEART, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0.1D, 0);
+                this.level().addParticle(ParticleTypes.HEART, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0.1D, 0);
             }
             this.setHasSeed(true);
             this.setSeedTime(60);

@@ -26,7 +26,7 @@ public abstract class VillagerMixin extends AbstractVillager {
 
     @Inject(method = "updateSpecialPrices", at = @At("HEAD"), cancellable = true)
     public void injectUpdateSpecialPrices(Player player, CallbackInfo ci) {
-        List<BusinessCorgi> corgis = player.getLevel().getEntitiesOfClass(BusinessCorgi.class, new AABB(player.getOnPos().offset(-5, -5, -5), player.getOnPos().offset(5, 5, 5)));
+        List<BusinessCorgi> corgis = player.level().getEntitiesOfClass(BusinessCorgi.class, new AABB(player.getOnPos().offset(-5, -5, -5), player.getOnPos().offset(5, 5, 5)));
         for (BusinessCorgi corgi : corgis) {
             if (corgi.isOwnedBy(player)) {
                 for (MerchantOffer merchantOffer : this.getOffers()) {

@@ -37,10 +37,10 @@ public class CorgiMod {
     private static final Logger LOGGER = LogUtils.getLogger();
     public static ModConfig config;
 
-    private static NameHandler nameHandler = new NameHandler();
+    private static final NameHandler nameHandler = new NameHandler();
 
-    public CorgiMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public CorgiMod(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
@@ -53,7 +53,7 @@ public class CorgiMod {
         EntityRegistry.DEFERRED_REGISTER.register(modEventBus);
         BlockRegistry.DEFERRED_REGISTER.register(modEventBus);
         ItemRegistry.DEFERRED_REGISTER.register(modEventBus);
-        modEventBus.register(new CorgiModTabs());
+        CorgiModTabs.DEFERRED_REGISTER.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

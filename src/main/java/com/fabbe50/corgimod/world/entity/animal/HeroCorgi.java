@@ -14,6 +14,8 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -75,9 +77,9 @@ public class HeroCorgi extends Corgi {
         super.tick();
         if (this.getPlayerSavingCooldown() <= 0 && this.hasBeenFed()) {
             if (this.random.nextInt(8) == 0) {
-                this.getLevel().addParticle(ParticleTypes.GLOW, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0, 0);
+                this.level().addParticle(ParticleTypes.GLOW, this.getX() + this.random.nextDouble() - 0.5D, this.getY() + this.random.nextDouble(), this.getZ() + this.random.nextDouble() - 0.5D, 0, 0, 0);
             }
-        } else if (this.getLevel().getGameTime() % 20 == 0) {
+        } else if (this.level().getGameTime() % 20 == 0) {
             this.setPlayerSavingCooldown(getPlayerSavingCooldown() - 20);
         }
     }
@@ -114,21 +116,21 @@ public class HeroCorgi extends Corgi {
         @SubscribeEvent
         public void onPlayerDeath(LivingDeathEvent event) {
             if (event.getEntity() instanceof Player player) {
-                List<HeroCorgi> list = player.getLevel().getNearbyEntities(HeroCorgi.class, TARGETING_CONDITIONS, player, player.getBoundingBox().inflate(16.0D));
+                List<HeroCorgi> list = player.level().getNearbyEntities(HeroCorgi.class, TARGETING_CONDITIONS, player, player.getBoundingBox().inflate(16.0D));
                 for (HeroCorgi corgi : list) {
                     if (corgi.getOwner() != null && corgi.getOwner().is(player) && corgi.hasBeenFed() && corgi.getPlayerSavingCooldown() <= 0) {
                         player.setHealth(1);
                         event.setCanceled(true);
                         for (int i = 0; i < 8; i++) {
-                            player.getLevel().addParticle(ParticleTypes.HEART, player.position().x + player.getRandom().nextDouble() - 0.5D, player.position().y + player.getRandom().nextInt(2) + player.getRandom().nextDouble() - 0.5D, player.position().z + player.getRandom().nextDouble() - 0.5D, 0, 0.1f, 0);
+                            player.level().addParticle(ParticleTypes.HEART, player.position().x + player.getRandom().nextDouble() - 0.5D, player.position().y + player.getRandom().nextInt(2) + player.getRandom().nextDouble() - 0.5D, player.position().z + player.getRandom().nextDouble() - 0.5D, 0, 0.1f, 0);
                         }
                         player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, Utils.ticksFromSecond(20), 2, false, true));
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, Utils.ticksFromSecond(5), 3, false, true));
                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, Utils.ticksFromSecond(20), 2, false, true));
-                        if (event.getSource().isFire()) {
+                        if (event.getSource().is(DamageTypes.ON_FIRE)) {
                             player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Utils.ticksFromSecond(20), 0, false, true));
                         }
-                        if (event.getSource().equals(DamageSource.DROWN)) {
+                        if (event.getSource().is(DamageTypes.DROWN)) {
                             player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, Utils.ticksFromSecond(20), 0, false, true));
                         }
                         corgi.setHasBeenFed(false);

@@ -18,6 +18,6 @@ public class Utils {
     }
 
     public static Vec3i vec3iFromVec3(Vec3 vec3) {
-        return new Vec3i(vec3.x, vec3.y, vec3.z);
+        return new Vec3i((int)vec3.x, (int)vec3.y, (int)vec3.z);
     }
 }

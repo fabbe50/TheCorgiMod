@@ -34,7 +34,7 @@ public class RadioactiveCorgi extends Corgi implements IAbility {
 
     @Override
     public void runAbilityWhileFed() {
-        if (!this.level.isClientSide && this.isAlive() && !this.isBaby() && --this.uraniumDropTime <= 0) {
+        if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.uraniumDropTime <= 0) {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             this.spawnAtLocation(ItemRegistry.URANIUM.get());
             this.gameEvent(GameEvent.ENTITY_PLACE);

@@ -34,7 +34,7 @@ public class AntiCorgiRenderer extends MobRenderer<AntiCorgi, AntiCorgiModel<Ant
             poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.rotLerp(f, 0.0F, 90.0F)));
             BlockPos blockpos = corgi.blockPosition();
 
-            for(Player player : corgi.level.getEntitiesOfClass(Player.class, (new AABB(blockpos)).inflate(2.0D, 2.0D, 2.0D))) {
+            for(Player player : corgi.level().getEntitiesOfClass(Player.class, (new AABB(blockpos)).inflate(2.0D, 2.0D, 2.0D))) {
                 if (player.isSleeping()) {
                     poseStack.translate((double)(0.15F * f), 0.0D, 0.0D);
                     break;

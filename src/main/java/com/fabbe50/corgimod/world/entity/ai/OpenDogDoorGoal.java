@@ -22,7 +22,7 @@ public class OpenDogDoorGoal extends Goal {
     @Override
     public boolean canUse() {
         if (entity != null) {
-            Level level = entity.getLevel();
+            Level level = entity.level();
             if (isCloseToDoor(level, entity.getOnPos())) {
                 blockState = level.getBlockState(doorPosition);
                 if (blockState.is(BlockRegistry.OAK_DOG_DOOR.get())) {
@@ -41,7 +41,7 @@ public class OpenDogDoorGoal extends Goal {
     @Override
     public void tick() {
         if (!blockState.getValue(DogDoorBlock.OPEN) && checkNullStates()) {
-            dogDoorBlock.setOpen(entity, entity.getLevel(), blockState, doorPosition, true);
+            dogDoorBlock.setOpen(entity, entity.level(), blockState, doorPosition, true);
             flag = true;
         }
     }
@@ -49,7 +49,7 @@ public class OpenDogDoorGoal extends Goal {
     @Override
     public void stop() {
         if (flag) {
-            dogDoorBlock.setOpen(entity, entity.getLevel(), blockState, doorPosition, false);
+            dogDoorBlock.setOpen(entity, entity.level(), blockState, doorPosition, false);
             blockState = null;
             doorPosition = null;
             dogDoorBlock = null;

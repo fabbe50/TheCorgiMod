@@ -43,12 +43,12 @@ public class StealMelonGoal extends MoveToBlockGoal {
     public void tick() {
         super.tick();
         this.corgi.setInSittingPose(this.isReachedTarget());
-        if (this.isReachedTarget() && this.corgi.isInSittingPose() && this.corgi.getLevel().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+        if (this.isReachedTarget() && this.corgi.isInSittingPose() && this.corgi.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
             if (ticks % 20 == 0) {
                 timeSitting--;
                 if (timeSitting <= 0) {
                     this.corgi.setInSittingPose(false);
-                    this.corgi.getLevel().destroyBlock(this.blockPos, this.corgi.isTame(), this.corgi, 512);
+                    this.corgi.level().destroyBlock(this.blockPos, this.corgi.isTame(), this.corgi, 512);
                 }
             }
             ticks++;

@@ -75,7 +75,7 @@ public class PirateCorgi extends Corgi {
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }
-            if (this.getLevel() instanceof ServerLevel serverLevel) {
+            if (this.level() instanceof ServerLevel serverLevel) {
                 this.setTreasurePos(serverLevel.findNearestMapStructure(StructureTags.ON_TREASURE_MAPS, this.getOnPos(), 100, true));
                 this.treasureCooldown = Utils.ticksFromSecond(600);
                 this.setHasTreasure(true);
@@ -97,13 +97,13 @@ public class PirateCorgi extends Corgi {
             boolean close = this.isOwnerCloseToTreasure();
             if (close && !this.hasVisited) {
                 this.hasVisited = true;
-                this.level.playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.PLAYER_LEVELUP, SoundSource.MASTER, 0.8f, 1, false);
+                this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.PLAYER_LEVELUP, SoundSource.MASTER, 0.8f, 1, false);
             }
             if (!close && this.hasVisited) {
                 this.setHasTreasure(false);
                 this.hasVisited = false;
             }
-            this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, temp.getX() + random.nextDouble() - 0.5D, temp.getY() + random.nextDouble(), temp.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
+            this.level().addParticle(ParticleTypes.HAPPY_VILLAGER, temp.getX() + random.nextDouble() - 0.5D, temp.getY() + random.nextDouble(), temp.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
         }
     }
 
@@ -145,9 +145,9 @@ public class PirateCorgi extends Corgi {
             double ds = Math.sqrt(dx * dx + dz * dz);
             double ty = player.getY();
             if (ds > 12) {
-                return new BlockPos(player.getX() + dx / ds * 12.0D, ty + 1, player.getZ() + dz / ds * 12.0D);
+                return new BlockPos((int)(player.getX() + dx / ds * 12.0D), (int)ty + 1, (int)(player.getZ() + dz / ds * 12.0D));
             } else {
-                return new BlockPos(tx, y, tz);
+                return new BlockPos((int) tx, y, (int) tz);
             }
         }
         return BlockPos.ZERO;

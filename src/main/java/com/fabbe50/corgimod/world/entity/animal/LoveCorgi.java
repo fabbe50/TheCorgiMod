@@ -41,7 +41,7 @@ public class LoveCorgi extends Corgi {
         super.tick();
         if (CorgiMod.config.general.corgiParticleEffects && this.hasBeenFed()) {
             if (random.nextInt(8) == 0) {
-                this.level.addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
+                this.level().addParticle(ParticleTypes.HEART, this.getX() + random.nextDouble() - 0.5D, this.getY() + random.nextDouble(), this.getZ() + random.nextDouble() - 0.5D, 0, 0.1D, 0);
             }
         }
     }
