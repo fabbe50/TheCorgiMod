@@ -3,14 +3,14 @@
 	"textures": {
 		"2": "minecraft:block/glass",
 		"3": "minecraft:block/gray_concrete",
-		"4": "minecraft:block/birch_planks",
-		"particle": "minecraft:block/birch_door_bottom"
+		"4": "minecraft:block/jungle_planks",
+		"particle": "minecraft:block/jungle_door_bottom"
 	},
 	"render_type": "cutout",
 	"elements": [
 		{
-			"from": [0, 0, 7],
-			"to": [2, 16, 9],
+			"from": [0, 0, 0],
+			"to": [2, 16, 2],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 16], "texture": "#4"},
@@ -22,8 +22,8 @@
 			}
 		},
 		{
-			"from": [2, 14, 7],
-			"to": [14, 16, 9],
+			"from": [2, 14, 0],
+			"to": [14, 16, 2],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 12, 2], "texture": "#4"},
@@ -35,8 +35,8 @@
 			}
 		},
 		{
-			"from": [14, 0, 7],
-			"to": [16, 16, 9],
+			"from": [14, 0, 0],
+			"to": [16, 16, 2],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 16], "texture": "#4"},
@@ -48,8 +48,8 @@
 			}
 		},
 		{
-			"from": [2, 0, 7.5],
-			"to": [3, 14, 8.5],
+			"from": [2, 0, 0.5],
+			"to": [3, 14, 1.5],
 			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14, 8]},
 			"faces": {
 				"north": {"uv": [2, 1, 14, 15], "texture": "#3"},
@@ -61,8 +61,8 @@
 			}
 		},
 		{
-			"from": [13, 0, 7.5],
-			"to": [14, 14, 8.5],
+			"from": [13, 0, 0.5],
+			"to": [14, 14, 1.5],
 			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14, 8]},
 			"faces": {
 				"north": {"uv": [2, 1, 14, 15], "texture": "#3"},
@@ -74,8 +74,8 @@
 			}
 		},
 		{
-			"from": [3, 13, 7.5],
-			"to": [13, 14, 8.5],
+			"from": [3, 13, 0.5],
+			"to": [13, 14, 1.5],
 			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14, 8]},
 			"faces": {
 				"north": {"uv": [2, 1, 14, 15], "texture": "#3"},
@@ -87,8 +87,8 @@
 			}
 		},
 		{
-			"from": [3, 0, 7.5],
-			"to": [13, 3, 8.5],
+			"from": [3, 0, 0.5],
+			"to": [13, 3, 1.5],
 			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14, 8]},
 			"faces": {
 				"north": {"uv": [2, 1, 14, 15], "texture": "#3"},
@@ -100,8 +100,8 @@
 			}
 		},
 		{
-			"from": [3, 3, 8],
-			"to": [13, 13, 8],
+			"from": [3, 3, 1],
+			"to": [13, 13, 1],
 			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},

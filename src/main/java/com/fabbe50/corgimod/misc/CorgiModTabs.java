@@ -4,7 +4,6 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -13,10 +12,23 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class CorgiModTabs {
     @SubscribeEvent
     public void registerCreativeTabs(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(new ResourceLocation(CorgiMod.MODID, "spawneggs"), builder ->
-            builder.title(Component.translatable("item_group." + CorgiMod.MODID + ".spawneggs"))
+        event.registerCreativeModeTab(new ResourceLocation(CorgiMod.MODID, "creative_tab"), builder ->
+            builder.title(Component.translatable("item_group." + CorgiMod.MODID + ".creative_tab"))
                     .icon(() -> new ItemStack(Items.BONE))
                     .displayItems((enabledFlags, populator, hasPermissions) -> {
+                        populator.accept(ItemRegistry.OAK_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.SPRUCE_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.BIRCH_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.JUNGLE_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.ACACIA_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.DARK_OAK_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.MANGROVE_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.CRIMSON_DOG_DOOR.get());
+                        populator.accept(ItemRegistry.WARPED_DOG_DOOR.get());
+
+                        populator.accept(ItemRegistry.URANIUM.get());
+                        populator.accept(ItemRegistry.SUNGLASSES.get());
+
                         populator.accept(ItemRegistry.SPAWN_EGG_RANDOM_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_NORMAL_CORGI.get());
                         populator.accept(ItemRegistry.SPAWN_EGG_ANTI_CORGI.get());
@@ -40,26 +52,5 @@ public class CorgiModTabs {
                         }
                     })
         );
-    }
-
-    @SubscribeEvent
-    public void addToCreativeTab(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ItemRegistry.URANIUM.get());
-        }
-        if (event.getTab() == CreativeModeTabs.REDSTONE_BLOCKS) {
-            event.accept(ItemRegistry.OAK_DOG_DOOR);
-            event.accept(ItemRegistry.SPRUCE_DOG_DOOR);
-            event.accept(ItemRegistry.BIRCH_DOG_DOOR);
-            event.accept(ItemRegistry.JUNGLE_DOG_DOOR);
-            event.accept(ItemRegistry.ACACIA_DOG_DOOR);
-            event.accept(ItemRegistry.DARK_OAK_DOG_DOOR);
-            event.accept(ItemRegistry.MANGROVE_DOG_DOOR);
-            event.accept(ItemRegistry.CRIMSON_DOG_DOOR);
-            event.accept(ItemRegistry.WARPED_DOG_DOOR);
-        }
-        if (event.getTab() == CreativeModeTabs.COMBAT) {
-            event.accept(ItemRegistry.SUNGLASSES.get());
-        }
     }
 }

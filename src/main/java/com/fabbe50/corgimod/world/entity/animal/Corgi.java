@@ -4,8 +4,10 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
+import com.fabbe50.corgimod.misc.CorgiModTags;
 import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import com.fabbe50.corgimod.world.entity.ai.*;
+import com.fabbe50.corgimod.world.level.block.BlockRegistry;
 import com.fabbe50.corgimod.world.level.block.DogDoorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -32,6 +34,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
@@ -117,21 +120,6 @@ public class Corgi extends Wolf {
         }
 
         Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_DAMAGE)).setBaseValue(8.0D);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (this.level.getBlockState(this.blockPosition()).getBlock() instanceof DogDoorBlock dogDoorBlockTemp) {
-            this.dogDoorBlock = dogDoorBlockTemp;
-            this.dogDoorBlockPos = this.blockPosition();
-            this.dogDoorBlock.setOpen(this, this.level, this.level.getBlockState(this.dogDoorBlockPos), this.dogDoorBlockPos, true);
-        }
-        if (dogDoorBlock != null && dogDoorBlockPos != null && !(this.level.getBlockState(this.blockPosition()).getBlock() instanceof DogDoorBlock)) {
-            this.dogDoorBlock.setOpen(this, this.level, this.level.getBlockState(this.dogDoorBlockPos), this.dogDoorBlockPos, false);
-            this.dogDoorBlock = null;
-            this.dogDoorBlockPos = null;
-        }
     }
 
     @Override

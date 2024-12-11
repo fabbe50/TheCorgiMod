@@ -21,12 +21,12 @@
       "y": 270
     },
     "facing=east,align_pos=back,open=false": {
-      "model": "corgimod:block/warped_dog_door_back",
+      "model": "corgimod:block/warped_dog_door_front",
       "uvlock": true,
       "y": 270
     },
     "facing=east,align_pos=back,open=true": {
-      "model": "corgimod:block/warped_dog_door_back_open",
+      "model": "corgimod:block/warped_dog_door_front_open",
       "uvlock": true,
       "y": 270
     },
@@ -51,12 +51,12 @@
       "y": 180
     },
     "facing=north,align_pos=back,open=false": {
-      "model": "corgimod:block/warped_dog_door_back",
+      "model": "corgimod:block/warped_dog_door_front",
       "uvlock": true,
       "y": 180
     },
     "facing=north,align_pos=back,open=true": {
-      "model": "corgimod:block/warped_dog_door_back_open",
+      "model": "corgimod:block/warped_dog_door_front_open",
       "uvlock": true,
       "y": 180
     },
@@ -81,12 +81,12 @@
       "y": 90
     },
     "facing=west,align_pos=back,open=false": {
-      "model": "corgimod:block/warped_dog_door_back",
+      "model": "corgimod:block/warped_dog_door_front",
       "uvlock": true,
       "y": 90
     },
     "facing=west,align_pos=back,open=true": {
-      "model": "corgimod:block/warped_dog_door_back_open",
+      "model": "corgimod:block/warped_dog_door_front_open",
       "uvlock": true,
       "y": 90
     },
@@ -107,11 +107,11 @@
       "uvlock": true
     },
     "facing=south,align_pos=back,open=false": {
-      "model": "corgimod:block/warped_dog_door_back",
+      "model": "corgimod:block/warped_dog_door_front",
       "uvlock": true
     },
     "facing=south,align_pos=back,open=true": {
-      "model": "corgimod:block/warped_dog_door_back_open",
+      "model": "corgimod:block/warped_dog_door_front_open",
       "uvlock": true
     }
   }
