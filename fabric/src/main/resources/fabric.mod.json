@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "thecorgimod",
+  "version": "${version}",
+  "name": "The Corgi Mod",
+  "description": "A mod that adds corgis with abilities",
+  "authors": [
+    "fabbe50"
+  ],
+  "contact": {
+    "homepage": "https://fabbe50.com"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/thecorgimod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.fabbe50.thecorgimod.fabric.TheCorgiModFabric"
+    ],
+    "client": [
+      "com.fabbe50.thecorgimod.fabric.client.TheCorgiModFabricClient"
+    ]
+  },
+  "mixins": [
+    "thecorgimod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
