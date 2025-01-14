@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 public class NameHandler {
-    private final String[] names = new String[] {"data/corgimod/names/female-dog-names.json", "data/corgimod/names/male-dog-names.json"};
+    private final String[] names = new String[] {"data/corgimod/corgi_names/female-dog-names.json", "data/corgimod/corgi_names/male-dog-names.json"};
     private final List<NameData> nameData = new ArrayList<>();
 
     public void init() {

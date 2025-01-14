@@ -16,6 +16,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 public class ItemRegistry {
     public static final DeferredRegister<Item> DEFERRED_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, CorgiMod.MODID);
 
@@ -54,7 +56,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SPAWN_EGG_SPY_CORGI = registerSpawnEgg("spawn_egg_corgi_spy", EntityRegistry.CORGI_SPY, 0x000000, 0x000000, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_RANDOM_CORGI = DEFERRED_REGISTER.register("spawn_egg_corgi_random", () -> new ItemRandomSpawnEgg(EntityRegistry.CORGI_NORMAL, Corgis.getNonHostileCorgiTypeRegistryObjects(), new Item.Properties()));
 
-    private static RegistryObject<Item> registerSpawnEgg(String registryName, RegistryObject<? extends EntityType<? extends Mob>> entityObject, int backgroundColor, int highlightColor, Item.Properties properties) {
+    private static RegistryObject<Item> registerSpawnEgg(String registryName, Supplier<? extends EntityType<? extends Mob>> entityObject, int backgroundColor, int highlightColor, Item.Properties properties) {
         return DEFERRED_REGISTER.register(registryName, () -> new ForgeSpawnEggItem(entityObject, backgroundColor, highlightColor, properties));
     }
 }

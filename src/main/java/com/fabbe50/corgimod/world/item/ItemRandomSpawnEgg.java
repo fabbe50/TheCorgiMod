@@ -13,9 +13,9 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 public class ItemRandomSpawnEgg extends ForgeSpawnEggItem {
-    private final List<RegistryObject<? extends EntityType<? extends Mob>>> types;
+    private final List<Supplier<? extends EntityType<? extends Mob>>> types;
 
-    public ItemRandomSpawnEgg(Supplier<? extends EntityType<? extends Mob>> defaultType, List<RegistryObject<? extends EntityType<? extends Mob>>> types, Properties props) {
+    public ItemRandomSpawnEgg(Supplier<? extends EntityType<? extends Mob>> defaultType, List<Supplier<? extends EntityType<? extends Mob>>> types, Properties props) {
         super(defaultType, 0, 0, props);
         this.types = types;
     }

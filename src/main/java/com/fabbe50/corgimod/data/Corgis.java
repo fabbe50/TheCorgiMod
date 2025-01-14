@@ -38,10 +38,10 @@ public enum Corgis {
     private final String name;
     private final String formattedName;
     private final ResourceLocation textureLocation;
-    private final RegistryObject<? extends EntityType<? extends Mob>> corgiType;
+    private final Supplier<? extends EntityType<? extends Mob>> corgiType;
     private final Class<? extends LivingEntity> extendingClass;
     private final boolean hostile;
-    Corgis(int id, String name, String formattedName, ResourceLocation textureLocation, RegistryObject<? extends EntityType<? extends Mob>> corgiType, Class<? extends LivingEntity> extendingClass, boolean hostile) {
+    Corgis(int id, String name, String formattedName, ResourceLocation textureLocation, Supplier<? extends EntityType<? extends Mob>> corgiType, Class<? extends LivingEntity> extendingClass, boolean hostile) {
         this.id = id;
         this.name = name;
         this.formattedName = formattedName;
@@ -67,7 +67,7 @@ public enum Corgis {
         return textureLocation;
     }
 
-    public RegistryObject<? extends EntityType<? extends Mob>> getCorgiTypeRegistryObject() {
+    public Supplier<? extends EntityType<? extends Mob>> getCorgiTypeRegistryObject() {
         return corgiType;
     }
     public EntityType<? extends Mob> getCorgiType() {
@@ -117,8 +117,8 @@ public enum Corgis {
         return tmp;
     }
 
-    public static List<RegistryObject<? extends EntityType<? extends Mob>>> getNonHostileCorgiTypeRegistryObjects() {
-        List<RegistryObject<? extends EntityType<? extends Mob>>> tmp = new ArrayList<>();
+    public static List<Supplier<? extends EntityType<? extends Mob>>> getNonHostileCorgiTypeRegistryObjects() {
+        List<Supplier<? extends EntityType<? extends Mob>>> tmp = new ArrayList<>();
         for (Corgis corgi : getNonHostileCorgis()) {
             tmp.add(corgi.getCorgiTypeRegistryObject());
         }

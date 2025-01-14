@@ -57,9 +57,7 @@ public abstract class BoatMixin extends Entity {
             }
 
             float s = 1f;
-            if (this.hasPassenger(entity -> {
-                return entity instanceof PirateCorgi && ((PirateCorgi) entity).isTame();
-            })) {
+            if (this.hasPassenger(entity -> entity instanceof PirateCorgi && ((PirateCorgi) entity).isTame())) {
                 s = CorgiMod.config.corgiAbilities.pirateCorgiBoatSpeed;
             }
 
