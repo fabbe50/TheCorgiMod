@@ -20,4 +20,6 @@ public interface ICorgi extends IPet, IAbility, IBeggingEntity {
     }
 
     boolean isTamingItem(ItemStack stack);
+
+    void corgiParticles();
 }

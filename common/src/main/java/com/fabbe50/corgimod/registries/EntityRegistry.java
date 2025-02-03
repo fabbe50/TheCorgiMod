@@ -6,10 +6,6 @@ import com.fabbe50.corgimod.world.entity.animal.CorgiVariant;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import dev.architectury.registry.registries.Registrar;
-import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
