@@ -25,7 +25,7 @@ public class CorgiVariant {
             return variant.tame;
         }), ResourceLocation.CODEC.fieldOf("corgi_angry").forGetter(variant -> {
             return variant.angry;
-        }), RegistryCodecs.homogeneousList(Registries.BIOME).fieldOf("biomes").forGetter(CorgiVariant::biomes)).apply(instance, CorgiVariant::new);
+        })).apply(instance, CorgiVariant::new);
     });
     public static final StreamCodec<RegistryFriendlyByteBuf, CorgiVariant> DIRECT_STREAM_CODEC;
     public static final Codec<Holder<CorgiVariant>> CODEC;
@@ -38,16 +38,13 @@ public class CorgiVariant {
     private final ResourceLocation angry;
     private final ResourceLocation angryFull;
 
-    private final HolderSet<Biome> biomes;
-
-    public CorgiVariant(ResourceLocation wildTexture, ResourceLocation tameTexture, ResourceLocation angryTexture, HolderSet<Biome> biomes) {
+    public CorgiVariant(ResourceLocation wildTexture, ResourceLocation tameTexture, ResourceLocation angryTexture) {
         this.wild = wildTexture;
         this.wildFull = fullTextureId(wildTexture);
         this.tame = tameTexture;
         this.tameFull = fullTextureId(tameTexture);
         this.angry = angryTexture;
         this.angryFull = fullTextureId(angryTexture);
-        this.biomes = biomes;
     }
 
     private static ResourceLocation fullTextureId(ResourceLocation resourceLocation) {
@@ -68,10 +65,6 @@ public class CorgiVariant {
         return this.angryFull;
     }
 
-    public HolderSet<Biome> biomes() {
-        return this.biomes;
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -87,12 +80,11 @@ public class CorgiVariant {
         i = 31 * i + this.wild.hashCode();
         i = 31 * i + this.tame.hashCode();
         i = 31 * i + this.angry.hashCode();
-        i = 31 * i + this.biomes.hashCode();
         return i;
     }
 
     static {
-        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, CorgiVariant::wildTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::tameTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::angryTexture, ByteBufCodecs.holderSet(Registries.BIOME), CorgiVariant::biomes, CorgiVariant::new);
+        DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, CorgiVariant::wildTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::tameTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::angryTexture, CorgiVariant::new);
         CODEC = RegistryFileCodec.create(ModRegistries.CORGI_VARIANT, DIRECT_CODEC);
         STREAM_CODEC = ByteBufCodecs.holder(ModRegistries.CORGI_VARIANT, DIRECT_STREAM_CODEC);
     }

@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.*;
 
 import java.awt.*;
-import java.lang.Math;
 
 public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractCorgiModel<T>> extends MobRenderer<T, M> {
     private int rotationAngle;

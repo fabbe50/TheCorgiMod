@@ -1,0 +1,5 @@
+{
+  "angry_texture": "corgimod:entity/corgi/corgi_farmer_angry",
+  "tame_texture": "corgimod:entity/corgi/corgi_farmer_tame",
+  "wild_texture": "corgimod:entity/corgi/corgi_farmer"
+}
