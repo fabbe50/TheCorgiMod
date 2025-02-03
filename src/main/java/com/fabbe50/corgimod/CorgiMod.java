@@ -6,6 +6,7 @@ import com.fabbe50.corgimod.handlers.EventHandler;
 import com.fabbe50.corgimod.handlers.NameHandler;
 import com.fabbe50.corgimod.misc.CorgiModTabs;
 import com.fabbe50.corgimod.world.CorgiSpawnBiomeModifier;
+import com.fabbe50.corgimod.world.CorgiSpawnStructureModifier;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.fabbe50.corgimod.world.entity.animal.HeroCorgi;
@@ -22,6 +23,7 @@ import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.common.world.StructureModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -71,6 +73,10 @@ public class CorgiMod {
         final DeferredRegister<Codec<? extends BiomeModifier>> biomeModifiers = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MODID);
         biomeModifiers.register(modEventBus);
         biomeModifiers.register("corgi_mod_spawns", CorgiSpawnBiomeModifier::createCodec);
+
+        final DeferredRegister<Codec<? extends StructureModifier>> structureModifiers = DeferredRegister.create(ForgeRegistries.Keys.STRUCTURE_MODIFIER_SERIALIZERS, MODID);
+        structureModifiers.register(modEventBus);
+        structureModifiers.register("corgi_mod_structure_spawns", CorgiSpawnStructureModifier::createCodec);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

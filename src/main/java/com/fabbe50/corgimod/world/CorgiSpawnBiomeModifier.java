@@ -11,6 +11,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.random.Weight;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
@@ -48,6 +49,9 @@ public class CorgiSpawnBiomeModifier implements BiomeModifier {
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_CREEPER.get(), Weight.of(CREEPER_CORGI_SPAWN_WEIGHT), 1, 3));
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ZOMBIE.get(), Weight.of(ZOMBIE_CORGI_SPAWN_WEIGHT), 2, 4));
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(SKELETON_CORGI_SPAWN_WEIGHT), 1, 2));
+            }
+            if (holder.is(Biomes.SOUL_SAND_VALLEY)) {
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(SKELETON_CORGI_SPAWN_WEIGHT), 3, 4));
             }
         }
     }
