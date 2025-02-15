@@ -1,8 +1,13 @@
 package com.fabbe50.corgimod;
 
+import com.fabbe50.corgimod.world.item.ItemRegistry;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+
+import java.util.List;
 
 @Config(name = CorgiMod.MODID)
 public class ModConfig implements ConfigData {
@@ -42,6 +47,10 @@ public class ModConfig implements ConfigData {
         public double spyCorgiRange = 16.0d;
         @ConfigEntry.Gui.Tooltip
         public int spyCorgiExposeTime = 5;
+        @ConfigEntry.Gui.Tooltip
+        public boolean fabbe50CorgiDoRandomDrops = true;
+        @ConfigEntry.Gui.Tooltip
+        public boolean fabbe50CorgiDoRandomDropEvents = true;
     }
 
     public enum NamingMode {
