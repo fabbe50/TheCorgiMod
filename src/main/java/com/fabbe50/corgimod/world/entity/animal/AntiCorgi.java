@@ -6,18 +6,23 @@ import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class AntiCorgi extends Cat {
     public AntiCorgi(EntityType<? extends Cat> entityType, Level level) {
@@ -25,15 +30,17 @@ public class AntiCorgi extends Cat {
     }
 
     @Override
-    public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
-            return Component.literal(Corgis.ANTI.getFormattedName());
-        } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
-            if (!this.hasCustomName()) {
+    public SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor level, @NotNull DifficultyInstance difficulty, @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
+        if (!this.hasCustomName()) {
+            if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
+                System.out.println("Corgi does not have a name. Assigning default...");
+                this.setCustomName(Component.literal(Corgis.NORMAL.getFormattedName()));
+            } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
+                System.out.println("Corgi does not have a name. Assigning random...");
                 this.setCustomName(Component.literal(NameHandler.getRandomName(random.nextBoolean())));
             }
         }
-        return super.getDisplayName();
+        return super.finalizeSpawn(level, difficulty, spawnType, groupData, tag);
     }
 
     @Override

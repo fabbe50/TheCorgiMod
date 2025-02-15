@@ -4,11 +4,8 @@ import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
-import com.fabbe50.corgimod.misc.CorgiModTags;
 import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import com.fabbe50.corgimod.world.entity.ai.*;
-import com.fabbe50.corgimod.world.level.block.BlockRegistry;
-import com.fabbe50.corgimod.world.level.block.DogDoorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -40,7 +37,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
@@ -86,8 +82,17 @@ public class Corgi extends Wolf {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_) {
-        return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
+    public @NotNull SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor level, @NotNull DifficultyInstance difficulty, @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
+        if (!this.hasCustomName()) {
+            if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
+                System.out.println("Corgi does not have a name. Assigning default...");
+                this.setCustomName(Component.literal(Corgis.NORMAL.getFormattedName()));
+            } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
+                System.out.println("Corgi does not have a name. Assigning random...");
+                this.setCustomName(Component.literal(NameHandler.getRandomName(random.nextBoolean())));
+            }
+        }
+        return super.finalizeSpawn(level, difficulty, spawnType, groupData, tag);
     }
 
     @Override
@@ -119,12 +124,12 @@ public class Corgi extends Wolf {
     }
 
     @Override
-    public float getWalkTargetValue(BlockPos p_27573_, LevelReader p_27574_) {
-        return super.getWalkTargetValue(p_27573_, p_27574_);
+    public float getWalkTargetValue(@NotNull BlockPos pos, @NotNull LevelReader level) {
+        return super.getWalkTargetValue(pos, level);
     }
 
     @Override
-    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
+    public boolean checkSpawnRules(@NotNull LevelAccessor level, @NotNull MobSpawnType spawnType) {
         return super.checkSpawnRules(level, spawnType);
     }
 
@@ -217,18 +222,6 @@ public class Corgi extends Wolf {
                 }
             }
         }
-    }
-
-    @Override
-    public @NotNull Component getDisplayName() {
-        if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
-            return Component.literal(Corgis.NORMAL.getFormattedName());
-        } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
-            if (!this.hasCustomName()) {
-                this.setCustomName(Component.literal(NameHandler.getRandomName(random.nextBoolean())));
-            }
-        }
-        return super.getDisplayName();
     }
 
     @Override
