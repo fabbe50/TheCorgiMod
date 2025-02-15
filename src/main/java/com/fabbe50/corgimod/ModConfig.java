@@ -30,6 +30,9 @@ public class ModConfig implements ConfigData {
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public BreedingMode breedingMode;
 
+        @ConfigEntry.Gui.Tooltip
+        public boolean allowUraniumTNTBoosting = true;
+
         public General() {
             this.namingMode = NamingMode.RANDOM_NAMES;
             this.breedingMode = BreedingMode.PARENTS;

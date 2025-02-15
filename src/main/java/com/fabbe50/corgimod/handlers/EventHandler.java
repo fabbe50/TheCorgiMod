@@ -1,11 +1,24 @@
 package com.fabbe50.corgimod.handlers;
 
+import com.fabbe50.corgimod.CorgiMod;
+import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraftforge.common.data.ForgeItemTagsProvider;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.level.ExplosionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.ArrayList;
@@ -33,6 +46,23 @@ public class EventHandler {
                     break;
                 }
                 i++;
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onExplode(ExplosionEvent event) {
+        if (CorgiMod.config.general.allowUraniumTNTBoosting) {
+            Level level = event.getLevel();
+            Entity source = event.getExplosion().getExploder();
+            if (source instanceof PrimedTnt tnt) {
+                List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, new AABB(tnt.blockPosition().offset(-1, -1, -1), tnt.blockPosition().offset(1, 1, 1)));
+                for (ItemEntity item : items) {
+                    if (item.getItem().is(ItemRegistry.URANIUM.get())) {
+                        level.explode(null, tnt.getX(), tnt.getY(0.0625F), tnt.getZ(), 30, Level.ExplosionInteraction.TNT);
+                        break;
+                    }
+                }
             }
         }
     }
