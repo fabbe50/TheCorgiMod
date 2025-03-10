@@ -81,6 +81,8 @@
 
 
   "text.autoconfig.corgimod.option.corgiAbilities": "Corgi Abilities",
+  "text.autoconfig.corgimod.option.corgiAbilities.businessCorgiVillagerDiscount": "Business Corgi Villager Discount",
+  "text.autoconfig.corgimod.option.corgiAbilities.businessCorgiVillagerDiscount.@Tooltip": "The discount in percent that get applied when a tamed business corgi is nearby.",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange": "Love Corgi Effect Range",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange.@Tooltip": "Set the maximum radius the love corgi checks for when activating breeding for them",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiMaxEntityCount": "Love Corgi Max Entity Count",

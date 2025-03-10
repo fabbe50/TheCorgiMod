@@ -58,6 +58,9 @@ public class ModConfig implements ConfigData {
 
     public static class CorgiAbilities {
         @ConfigEntry.Gui.Tooltip
+        @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
+        public int businessCorgiVillagerDiscount = 50;
+        @ConfigEntry.Gui.Tooltip
         public int loveCorgiEffectRange = 5;
         @ConfigEntry.Gui.Tooltip
         public int loveCorgiMaxEntityCount = 16;

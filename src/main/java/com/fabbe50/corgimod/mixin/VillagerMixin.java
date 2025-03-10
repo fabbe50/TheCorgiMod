@@ -1,5 +1,6 @@
 package com.fabbe50.corgimod.mixin;
 
+import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.world.entity.animal.BusinessCorgi;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +20,7 @@ import java.util.List;
 public abstract class VillagerMixin extends AbstractVillagerMixin {
     @Shadow @Final private static Logger LOGGER;
 
-    @Inject(method = "updateSpecialPrices", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "updateSpecialPrices", at = @At("TAIL"))
     public void injectUpdateSpecialPrices(Player player, CallbackInfo ci) {
         LOGGER.debug("Attempting to add business corgi discount...");
         List<BusinessCorgi> corgis = player.level().getEntitiesOfClass(BusinessCorgi.class, new AABB(player.getOnPos().offset(-5, -5, -5), player.getOnPos().offset(5, 5, 5)));
@@ -27,7 +28,8 @@ public abstract class VillagerMixin extends AbstractVillagerMixin {
             if (corgi.isOwnedBy(player)) {
                 for (MerchantOffer merchantOffer : this.getOffers()) {
                     int cost = merchantOffer.getCostA().getCount();
-                    int discount = cost / 2;
+                    int discount = (int)(cost * (CorgiMod.config.corgiAbilities.businessCorgiVillagerDiscount / 100d));
+
                     merchantOffer.setSpecialPriceDiff(-discount);
                     LOGGER.debug("Merchant Offer Update: { Original Cost: {}, Discount: {}, New Cost: {} }", cost, discount, cost - discount);
                 }
