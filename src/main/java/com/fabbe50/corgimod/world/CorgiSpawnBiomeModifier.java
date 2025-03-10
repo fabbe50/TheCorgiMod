@@ -5,7 +5,6 @@ import com.fabbe50.corgimod.misc.CorgiModTags;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.random.Weight;

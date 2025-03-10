@@ -2,13 +2,15 @@ package com.fabbe50.corgimod.data;
 
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import com.fabbe50.corgimod.world.entity.animal.*;
+import com.fabbe50.corgimod.world.entity.monster.CreeperCorgi;
+import com.fabbe50.corgimod.world.entity.monster.EnderCorgi;
+import com.fabbe50.corgimod.world.entity.monster.SkeletonCorgi;
+import com.fabbe50.corgimod.world.entity.monster.ZombieCorgi;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.Wolf;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,6 +82,15 @@ public enum Corgis {
 
     public static List<Corgis> getCorgis() {
         return Arrays.stream(Corgis.values()).toList();
+    }
+
+    public static Corgis getVariantFromCorgi(Corgi corgi) {
+        for (Corgis corgis : getCorgis()) {
+            if (corgis.getCorgiClass().equals(corgi.getClass())) {
+                return corgis;
+            }
+        }
+        return NORMAL;
     }
 
     public static EntityType<? extends Mob> getCorgiTypeFromParent(Corgi parent) {

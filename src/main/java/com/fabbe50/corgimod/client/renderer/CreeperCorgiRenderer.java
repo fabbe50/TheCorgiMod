@@ -4,7 +4,7 @@ import com.fabbe50.corgimod.client.model.CreeperCorgiModel;
 import com.fabbe50.corgimod.client.model.geom.ModelLayers;
 import com.fabbe50.corgimod.client.renderer.layer.CreeperCorgiPowerLayer;
 import com.fabbe50.corgimod.data.Corgis;
-import com.fabbe50.corgimod.world.entity.animal.CreeperCorgi;
+import com.fabbe50.corgimod.world.entity.monster.CreeperCorgi;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

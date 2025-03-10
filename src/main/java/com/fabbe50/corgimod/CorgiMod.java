@@ -56,7 +56,6 @@ public class CorgiMod {
 
         nameHandler.init();
 
-        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setupEntityModelLayers);
 
         EntityRegistry.DEFERRED_REGISTER.register(modEventBus);

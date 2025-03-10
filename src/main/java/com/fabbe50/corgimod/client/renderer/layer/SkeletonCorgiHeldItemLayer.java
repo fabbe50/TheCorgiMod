@@ -1,7 +1,7 @@
 package com.fabbe50.corgimod.client.renderer.layer;
 
 import com.fabbe50.corgimod.client.model.SkeletonCorgiModel;
-import com.fabbe50.corgimod.world.entity.animal.SkeletonCorgi;
+import com.fabbe50.corgimod.world.entity.monster.SkeletonCorgi;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.geom.builders.LayerDefinition;

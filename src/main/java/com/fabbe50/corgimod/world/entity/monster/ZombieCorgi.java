@@ -1,14 +1,16 @@
-package com.fabbe50.corgimod.world.entity.animal;
+package com.fabbe50.corgimod.world.entity.monster;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.EntityRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -18,11 +20,14 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NaturalSpawner;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.event.entity.living.ZombieEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ZombieCorgi extends Zombie {
@@ -39,6 +44,11 @@ public class ZombieCorgi extends Zombie {
         return entityDimensions.height * 0.85F;
     }
 
+    @Override
+    public double getPassengersRidingOffset() {
+        return this.getDimensions(this.getPose()).height * 0.28;
+    }
+
     public float getTailAngle() {
         return ((float)Math.PI / 5F);
     }
@@ -48,6 +58,30 @@ public class ZombieCorgi extends Zombie {
         if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES))
             return Component.literal(Corgis.ZOMBIE.getFormattedName());
         return super.getDisplayName();
+    }
+
+    @Override
+    public @Nullable SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor level, @NotNull DifficultyInstance difficulty, @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag compoundTag) {
+        SpawnGroupData data = super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData, compoundTag);
+
+        if (data instanceof ZombieGroupData zombieGroupData) {
+            if (!zombieGroupData.isBaby) {
+                if (zombieGroupData.canSpawnJockey) {
+                    if (random.nextFloat() < ((float) CorgiMod.config.general.zombieCorgiJockeySpawnChance / 100)) {
+                        Zombie zombie = EntityType.ZOMBIE.create(this.level());
+                        if (zombie != null) {
+                            zombie.setBaby(true);
+                            zombie.moveTo(this.getX(), this.getY(), this.getZ());
+                            zombie.finalizeSpawn(level, difficulty, MobSpawnType.JOCKEY, null, null);
+                            zombie.startRiding(this);
+                            level.addFreshEntity(zombie);
+                        }
+                    }
+                }
+            }
+        }
+
+        return data;
     }
 
     public static class ZombieEvents {

@@ -1,9 +1,8 @@
 package com.fabbe50.corgimod.client.renderer.layer;
 
-import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.client.model.CreeperCorgiModel;
 import com.fabbe50.corgimod.client.model.geom.ModelLayers;
-import com.fabbe50.corgimod.world.entity.animal.CreeperCorgi;
+import com.fabbe50.corgimod.world.entity.monster.CreeperCorgi;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.PartPose;

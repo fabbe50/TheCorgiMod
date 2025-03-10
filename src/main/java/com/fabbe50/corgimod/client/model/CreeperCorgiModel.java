@@ -4,7 +4,7 @@ package com.fabbe50.corgimod.client.model;
 // Paste this class into your mod and generate all required imports
 
 
-import com.fabbe50.corgimod.world.entity.animal.CreeperCorgi;
+import com.fabbe50.corgimod.world.entity.monster.CreeperCorgi;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.ColorableAgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;

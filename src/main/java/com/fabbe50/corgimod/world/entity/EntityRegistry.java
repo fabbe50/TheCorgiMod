@@ -2,9 +2,11 @@ package com.fabbe50.corgimod.world.entity;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.world.entity.animal.*;
-import net.minecraft.util.RandomSource;
+import com.fabbe50.corgimod.world.entity.monster.CreeperCorgi;
+import com.fabbe50.corgimod.world.entity.monster.EnderCorgi;
+import com.fabbe50.corgimod.world.entity.monster.SkeletonCorgi;
+import com.fabbe50.corgimod.world.entity.monster.ZombieCorgi;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

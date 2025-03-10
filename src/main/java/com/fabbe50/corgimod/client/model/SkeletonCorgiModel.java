@@ -1,6 +1,6 @@
 package com.fabbe50.corgimod.client.model;
 
-import com.fabbe50.corgimod.world.entity.animal.SkeletonCorgi;
+import com.fabbe50.corgimod.world.entity.monster.SkeletonCorgi;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,6 +1,6 @@
 package com.fabbe50.corgimod.world.item;
 
-import com.fabbe50.corgimod.utils.Utils;
+import com.fabbe50.corgimod.utils.Utilities;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -13,6 +13,6 @@ public class ItemUranium extends Item {
 
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-        return Utils.getTickTimeForSmeltingItem(12);
+        return Utilities.getTickTimeForSmeltingItem(12);
     }
 }

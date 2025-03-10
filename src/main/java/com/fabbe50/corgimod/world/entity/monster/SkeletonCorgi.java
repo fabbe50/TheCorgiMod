@@ -1,4 +1,4 @@
-package com.fabbe50.corgimod.world.entity.animal;
+package com.fabbe50.corgimod.world.entity.monster;
 
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
