@@ -45,6 +45,7 @@ public class CorgiModTabs {
                 output.accept(ItemRegistry.SPAWN_EGG_SPY_CORGI.get());
                 output.accept(ItemRegistry.SPAWN_EGG_SUNGLASSES_CORGI.get());
                 output.accept(ItemRegistry.SPAWN_EGG_ZOMBIE_CORGI.get());
+                output.accept(ItemRegistry.SPAWN_EGG_ENDER_CORGI.get());
 
                 if (CorgiMod.config.general.enableWorkInProgressFeatures) {
                     output.accept(ItemRegistry.SPAWN_EGG_FABBE50_CORGI.get());

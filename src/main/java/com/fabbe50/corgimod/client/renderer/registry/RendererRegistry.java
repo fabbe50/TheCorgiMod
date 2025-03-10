@@ -27,5 +27,6 @@ public class RendererRegistry {
         EntityRenderers.register(EntityRegistry.CORGI_SPY.get(), SpyCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_SUNGLASSES.get(), SunglassesCorgiRenderer::new);
         EntityRenderers.register(EntityRegistry.CORGI_ZOMBIE.get(), ZombieCorgiRenderer::new);
+        EntityRenderers.register(EntityRegistry.CORGI_ENDER.get(), EnderCorgiRenderer::new);
     }
 }

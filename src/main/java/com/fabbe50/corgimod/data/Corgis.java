@@ -34,7 +34,8 @@ public enum Corgis {
     SKELETON(13, "skeleton", "Skeleton Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_skeleton.png"), EntityRegistry.CORGI_SKELETON, SkeletonCorgi.class, true),
     SPY(14, "spy", "Spy Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_spy.png"), EntityRegistry.CORGI_SPY, SpyCorgi.class, false),
     SUNGLASSES(15, "sunglasses", "Sunglasses Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_sunglasses.png"), EntityRegistry.CORGI_SUNGLASSES, SunglassesCorgi.class, false),
-    ZOMBIE(16, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), EntityRegistry.CORGI_ZOMBIE, ZombieCorgi.class, true);
+    ZOMBIE(16, "zombie", "Zombie Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_zombie.png"), EntityRegistry.CORGI_ZOMBIE, ZombieCorgi.class, true),
+    ENDER(17, "ender", "Ender Corgi", new ResourceLocation("corgimod", "textures/entity/corgi/corgi_ender.png"), EntityRegistry.CORGI_ENDER, EnderCorgi.class, true);
 
     private final int id;
     private final String name;

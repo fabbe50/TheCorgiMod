@@ -37,6 +37,7 @@ public class EntityRegistry {
     public static final Supplier<EntityType<SpyCorgi>> CORGI_SPY =                  DEFERRED_REGISTER.register("corgi_spy",         () -> EntityType.Builder.of(SpyCorgi::new,          MobCategory.CREATURE).sized(0.8f, 0.6f).build("corgi_spy"));
     public static final Supplier<EntityType<SunglassesCorgi>> CORGI_SUNGLASSES =    DEFERRED_REGISTER.register("corgi_sunglasses",  () -> EntityType.Builder.of(SunglassesCorgi::new,   MobCategory.CREATURE).sized(0.8f, 0.6f).build("corgi_sunglasses"));
     public static final Supplier<EntityType<ZombieCorgi>> CORGI_ZOMBIE =            DEFERRED_REGISTER.register("corgi_zombie",      () -> EntityType.Builder.of(ZombieCorgi::new,       MobCategory.MONSTER) .sized(0.8f, 0.6f).build("corgi_zombie"));
+    public static final Supplier<EntityType<EnderCorgi>> CORGI_ENDER =              DEFERRED_REGISTER.register("corgi_ender",       () -> EntityType.Builder.of(EnderCorgi::new,        MobCategory.MONSTER) .sized(0.8f, 0.6f).build("corgi_ender"));
 
     public static <T extends Mob> void registerSpawn(Supplier<EntityType<T>> entityType, SpawnPlacements.Type type, Heightmap.Types types, SpawnPlacements.SpawnPredicate<T> spawnPredicate) {
         SpawnPlacements.register(entityType.get(), type, types, spawnPredicate);
@@ -61,6 +62,7 @@ public class EntityRegistry {
         registerSpawn(CORGI_SPY, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SpyCorgi::checkCorgiSpawnRules);
         registerSpawn(CORGI_SUNGLASSES, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, SunglassesCorgi::checkCorgiSpawnRules);
         registerSpawn(CORGI_ZOMBIE, SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZombieCorgi::checkMonsterSpawnRules);
+        registerSpawn(CORGI_ENDER, SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EnderCorgi::checkMonsterSpawnRules);
         event.put(CORGI_NORMAL.get(), Corgi.createAttributes().build());
         event.put(CORGI_ANTI.get(), AntiCorgi.createAttributes().build());
         event.put(CORGI_BODYGUARD.get(), BodyguardCorgi.createAttributes().build());
@@ -78,5 +80,6 @@ public class EntityRegistry {
         event.put(CORGI_SPY.get(), SpyCorgi.createAttributes().build());
         event.put(CORGI_SUNGLASSES.get(), SunglassesCorgi.createAttributes().build());
         event.put(CORGI_ZOMBIE.get(), ZombieCorgi.createAttributes().build());
+        event.put(CORGI_ENDER.get(), EnderCorgi.createAttributes().build());
     }
 }

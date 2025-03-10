@@ -18,6 +18,7 @@
   "item.corgimod.spawn_egg_corgi_spy": "Spy Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_sunglasses": "Sunglasses Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_zombie": "Zombie Corgi Spawn Egg",
+  "item.corgimod.spawn_egg_corgi_ender": "Ender Corgi Spawn Egg",
   "item.corgimod.spawn_egg_corgi_random": "Random Corgi Spawn Egg",
 
   "item.corgimod.uranium": "Uranium",
@@ -54,6 +55,7 @@
   "entity.corgimod.corgi_spy": "Spy Corgi",
   "entity.corgimod.corgi_sunglasses": "Sunglasses Corgi",
   "entity.corgimod.corgi_zombie": "Zombie Corgi",
+  "entity.corgimod.corgi_ender": "Ender Corgi",
 
   "text.autoconfig.corgimod.title": "The Corgi Mod",
   "text.autoconfig.corgimod.option.general": "General",

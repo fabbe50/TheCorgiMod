@@ -54,6 +54,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SPAWN_EGG_FARMER_CORGI = registerSpawnEgg("spawn_egg_corgi_farmer", EntityRegistry.CORGI_FARMER, 0xE0BC8D, 0x89644E, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_NERD_CORGI = registerSpawnEgg("spawn_egg_corgi_nerd", EntityRegistry.CORGI_NERD, 0xffffff, 0x000000, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_SPY_CORGI = registerSpawnEgg("spawn_egg_corgi_spy", EntityRegistry.CORGI_SPY, 0x000000, 0x000000, new Item.Properties());
+    public static final RegistryObject<Item> SPAWN_EGG_ENDER_CORGI = registerSpawnEgg("spawn_egg_corgi_ender", EntityRegistry.CORGI_ENDER, 0x160f1a, 0x281830, new Item.Properties());
     public static final RegistryObject<Item> SPAWN_EGG_RANDOM_CORGI = DEFERRED_REGISTER.register("spawn_egg_corgi_random", () -> new ItemRandomSpawnEgg(EntityRegistry.CORGI_NORMAL, Corgis.getNonHostileCorgiTypeRegistryObjects(), new Item.Properties()));
 
     private static RegistryObject<Item> registerSpawnEgg(String registryName, Supplier<? extends EntityType<? extends Mob>> entityObject, int backgroundColor, int highlightColor, Item.Properties properties) {

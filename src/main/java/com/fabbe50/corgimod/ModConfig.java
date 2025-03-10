@@ -40,6 +40,9 @@ public class ModConfig implements ConfigData {
         public int creeperCorgiSpawnWeight = 25;
 
         @ConfigEntry.Gui.Tooltip
+        public int enderCorgiSpawnWeight = 8;
+
+        @ConfigEntry.Gui.Tooltip
         public int skeletonCorgiSpawnWeight = 25;
 
         @ConfigEntry.Gui.Tooltip

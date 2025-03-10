@@ -16,7 +16,6 @@ public class ModelLayers {
 
     private static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
 
-
     public static final ModelLayerLocation CORGI_NORMAL = register("corgi_normal");
     public static final ModelLayerLocation CORGI_ANTI = register("corgi_anti");
     public static final ModelLayerLocation CORGI_BODYGUARD = register("corgi_bodyguard");
@@ -36,6 +35,8 @@ public class ModelLayers {
     public static final ModelLayerLocation CORGI_SPY = register("corgi_spy");
     public static final ModelLayerLocation CORGI_SUNGLASSES = register("corgi_sunglasses");
     public static final ModelLayerLocation CORGI_ZOMBIE = register("corgi_zombie");
+    public static final ModelLayerLocation CORGI_ENDER = register("corgi_ender");
+    public static final ModelLayerLocation CORGI_ENDER_EYES = register("corgi_ender_eyes");
 
     private static ModelLayerLocation register(String name) {
         return register(name, DEFAULT_LAYER);
@@ -74,5 +75,7 @@ public class ModelLayers {
         event.registerLayerDefinition(CORGI_SPY, SpyCorgiModel::createBodyLayer);
         event.registerLayerDefinition(CORGI_SUNGLASSES, SunglassesCorgiModel::createBodyLayer);
         event.registerLayerDefinition(CORGI_ZOMBIE, ZombieCorgiModel::createBodyLayer);
+        event.registerLayerDefinition(CORGI_ENDER, EnderCorgiModel::createBodyLayer);
+        event.registerLayerDefinition(CORGI_ENDER_EYES, EnderCorgiModel::createBodyLayer);
     }
 }

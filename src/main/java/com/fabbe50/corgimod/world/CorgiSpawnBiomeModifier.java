@@ -40,8 +40,12 @@ public class CorgiSpawnBiomeModifier implements BiomeModifier {
             }
             if (holder.is(BiomeTags.IS_OVERWORLD)) {
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_CREEPER.get(), Weight.of(CorgiMod.config.general.creeperCorgiSpawnWeight), 1, 3));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ENDER.get(), Weight.of(CorgiMod.config.general.enderCorgiSpawnWeight), 1, 2));
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ZOMBIE.get(), Weight.of(CorgiMod.config.general.zombieCorgiSpawnWeight), 2, 4));
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(CorgiMod.config.general.skeletonCorgiSpawnWeight), 1, 2));
+            }
+            if (holder.is(BiomeTags.IS_END)) {
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ENDER.get(), Weight.of(CorgiMod.config.general.enderCorgiSpawnWeight * 6), 2, 4));
             }
             if (holder.is(Biomes.SOUL_SAND_VALLEY)) {
                 builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(CorgiMod.config.general.skeletonCorgiSpawnWeight), 3, 4));
