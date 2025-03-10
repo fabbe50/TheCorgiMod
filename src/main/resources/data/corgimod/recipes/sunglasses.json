@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "n": {
+      "item": "minecraft:iron_nugget"
+    },
+    "g": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "pattern": [
+    "n n",
+    "n n",
+    "gng"
+  ],
+  "result": {
+    "count": 1,
+    "item": "corgimod:sunglasses"
+  },
+  "show_notification": true
+}
