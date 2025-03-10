@@ -33,10 +33,7 @@ import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
@@ -49,6 +46,7 @@ public class Corgi extends Wolf {
     private static final EntityDataAccessor<Boolean> ASKED_TO_STAY = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_HAS_BEEN_FED = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Long> DATA_TIME_WHEN_FED = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.LONG);
+    private static final EntityDataAccessor<Boolean> DATA_COLLAR_GLOW = SynchedEntityData.defineId(Corgi.class, EntityDataSerializers.BOOLEAN);
     public final float bobs;
 
     public Corgi(EntityType<? extends Wolf> entityType, Level level) {
@@ -85,10 +83,8 @@ public class Corgi extends Wolf {
     public @NotNull SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor level, @NotNull DifficultyInstance difficulty, @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
         if (!this.hasCustomName()) {
             if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.DEFAULT_NAMES)) {
-                System.out.println("Corgi does not have a name. Assigning default...");
                 this.setCustomName(Component.literal(Corgis.NORMAL.getFormattedName()));
             } else if (CorgiMod.config.general.namingMode.equals(ModConfig.NamingMode.RANDOM_NAMES)) {
-                System.out.println("Corgi does not have a name. Assigning random...");
                 this.setCustomName(Component.literal(NameHandler.getRandomName(random.nextBoolean())));
             }
         }
@@ -101,6 +97,7 @@ public class Corgi extends Wolf {
         this.entityData.define(ASKED_TO_STAY, false);
         this.entityData.define(DATA_HAS_BEEN_FED, false);
         this.entityData.define(DATA_TIME_WHEN_FED, 0L);
+        this.entityData.define(DATA_COLLAR_GLOW, false);
     }
 
     @Override
@@ -109,6 +106,7 @@ public class Corgi extends Wolf {
         compoundTag.putBoolean("AskedToStay", isAskedToStay());
         compoundTag.putBoolean("HasBeenFed", this.hasBeenFed());
         compoundTag.putLong("TimeWhenFed", this.getTimeWhenFed());
+        compoundTag.putBoolean("collarGlow", this.isCollarGlow());
     }
 
     @Override
@@ -117,6 +115,17 @@ public class Corgi extends Wolf {
         this.setAskedToStay(compoundTag.getBoolean("AskedToStay"));
         this.setHasBeenFed(compoundTag.getBoolean("HasBeenFed"));
         this.setTimeWhenFed(compoundTag.getLong("TimeWhenFed"));
+        if (compoundTag.contains("collarGlow")) {
+            this.setCollarGlow(compoundTag.getBoolean("collarGlow"));
+        }
+    }
+
+    public void setCollarGlow(boolean glow) {
+        this.entityData.set(DATA_COLLAR_GLOW, glow);
+    }
+
+    public boolean isCollarGlow() {
+        return this.entityData.get(DATA_COLLAR_GLOW);
     }
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
@@ -186,6 +195,13 @@ public class Corgi extends Wolf {
                     }
                     this.setTimeWhenFed(System.currentTimeMillis());
                     this.setHasBeenFed(true);
+                }
+                if (itemStack.is(Items.GLOW_INK_SAC) && !this.isCollarGlow()) {
+                    if (!player.getAbilities().instabuild) {
+                        itemStack.shrink(1);
+                    }
+                    this.setCollarGlow(true);
+                    return InteractionResult.SUCCESS;
                 }
                 if (player.isCrouching()) {
                     this.setAskedToStay(!this.isAskedToStay());

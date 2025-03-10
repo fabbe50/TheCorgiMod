@@ -3,7 +3,7 @@ package com.fabbe50.corgimod.world.entity.animal;
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
-import com.fabbe50.corgimod.utils.Utils;
+import com.fabbe50.corgimod.utils.Utilities;
 import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -14,7 +14,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -67,7 +66,7 @@ public class HeroCorgi extends Corgi {
                 return InteractionResult.SUCCESS;
             }
         } else if (player.getItemInHand(hand).is(ItemRegistry.URANIUM.get())) {
-            this.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, Utils.ticksFromSecond(30), 0));
+            this.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, Utilities.ticksFromSecond(30), 0));
         }
         return super.mobInteract(player, hand);
     }
@@ -124,17 +123,17 @@ public class HeroCorgi extends Corgi {
                         for (int i = 0; i < 8; i++) {
                             player.level().addParticle(ParticleTypes.HEART, player.position().x + player.getRandom().nextDouble() - 0.5D, player.position().y + player.getRandom().nextInt(2) + player.getRandom().nextDouble() - 0.5D, player.position().z + player.getRandom().nextDouble() - 0.5D, 0, 0.1f, 0);
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, Utils.ticksFromSecond(20), 2, false, true));
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, Utils.ticksFromSecond(5), 3, false, true));
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, Utils.ticksFromSecond(20), 2, false, true));
+                        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, Utilities.ticksFromSecond(20), 2, false, true));
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, Utilities.ticksFromSecond(5), 3, false, true));
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, Utilities.ticksFromSecond(20), 2, false, true));
                         if (event.getSource().is(DamageTypes.ON_FIRE)) {
-                            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Utils.ticksFromSecond(20), 0, false, true));
+                            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Utilities.ticksFromSecond(20), 0, false, true));
                         }
                         if (event.getSource().is(DamageTypes.DROWN)) {
-                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, Utils.ticksFromSecond(20), 0, false, true));
+                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, Utilities.ticksFromSecond(20), 0, false, true));
                         }
                         corgi.setHasBeenFed(false);
-                        corgi.setPlayerSavingCooldown(Utils.ticksFromSecond(corgi.getRandom().nextInt(600) + 2400));
+                        corgi.setPlayerSavingCooldown(Utilities.ticksFromSecond(corgi.getRandom().nextInt(600) + 2400));
                         break;
                     }
                 }

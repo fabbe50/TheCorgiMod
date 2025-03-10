@@ -3,21 +3,16 @@ package com.fabbe50.corgimod.world.entity.animal;
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
-import com.fabbe50.corgimod.utils.Utils;
+import com.fabbe50.corgimod.utils.Utilities;
 import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Wolf;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,11 +26,11 @@ public class SpyCorgi extends Corgi implements IAbility {
 
     @Override
     public void runAbilityWhileFed() {
-        if (this.level().getGameTime() % Utils.ticksFromSecond(30) == 0 && !this.isInSittingPose()) {
+        if (this.level().getGameTime() % Utilities.ticksFromSecond(30) == 0 && !this.isInSittingPose()) {
             List<LivingEntity> entities = this.level().getNearbyEntities(LivingEntity.class, TARGETING_CONDITIONS, this, this.getBoundingBox().inflate(CorgiMod.config.corgiAbilities.spyCorgiRange));
             for (LivingEntity entity : entities) {
                 if (entity != null && entity.isAlive() && entity instanceof Enemy) {
-                    entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, Utils.ticksFromSecond(CorgiMod.config.corgiAbilities.spyCorgiExposeTime)));
+                    entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, Utilities.ticksFromSecond(CorgiMod.config.corgiAbilities.spyCorgiExposeTime)));
                 }
             }
         }

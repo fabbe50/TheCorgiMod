@@ -46,12 +46,12 @@ public class Fabbe50Corgi extends Corgi {
     }
 
     @Override
-    protected void dropCustomDeathLoot(@NotNull DamageSource source, int i, boolean b) {
+    protected void dropCustomDeathLoot(@NotNull DamageSource damageSource, int damageAmount, boolean overrideDropChance) {
         if (CorgiMod.config.corgiAbilities.fabbe50CorgiDoRandomDrops) {
             ItemLike dropItem = fabbe50RandomCorgiDrops.get(random.nextInt(0, fabbe50RandomCorgiDrops.size()));
             if (dropItem != null) {
                 boolean doDrop = true;
-                if (CorgiMod.config.corgiAbilities.fabbe50CorgiDoRandomDropEvents && source.getEntity() instanceof Player) {
+                if (CorgiMod.config.corgiAbilities.fabbe50CorgiDoRandomDropEvents && damageSource.getEntity() instanceof Player) {
                     if (this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
                         if (dropItem == Items.TNT) {
                             PrimedTnt tnt = new PrimedTnt(this.level(), this.getX(), this.getY(), this.getZ(), this);
@@ -102,7 +102,7 @@ public class Fabbe50Corgi extends Corgi {
                 }
             }
         }
-        super.dropCustomDeathLoot(source, i, b);
+        super.dropCustomDeathLoot(damageSource, damageAmount, overrideDropChance);
     }
 
     private void dropItem(ItemLike item) {

@@ -3,15 +3,9 @@ package com.fabbe50.corgimod.world.entity.animal;
 import com.fabbe50.corgimod.CorgiMod;
 import com.fabbe50.corgimod.ModConfig;
 import com.fabbe50.corgimod.data.Corgis;
-import com.fabbe50.corgimod.utils.Utils;
-import com.mojang.datafixers.util.Pair;
-import net.minecraft.commands.arguments.ResourceOrTagKeyArgument;
+import com.fabbe50.corgimod.utils.Utilities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -29,10 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.structure.Structure;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Optional;
 
 public class PirateCorgi extends Corgi {
     private static final EntityDataAccessor<Boolean> HAS_TREASURE = SynchedEntityData.defineId(PirateCorgi.class, EntityDataSerializers.BOOLEAN);
@@ -77,7 +68,7 @@ public class PirateCorgi extends Corgi {
             }
             if (this.level() instanceof ServerLevel serverLevel) {
                 this.setTreasurePos(serverLevel.findNearestMapStructure(StructureTags.ON_TREASURE_MAPS, this.getOnPos(), 100, true));
-                this.treasureCooldown = Utils.ticksFromSecond(600);
+                this.treasureCooldown = Utilities.ticksFromSecond(600);
                 this.setHasTreasure(true);
                 return InteractionResult.SUCCESS;
             }

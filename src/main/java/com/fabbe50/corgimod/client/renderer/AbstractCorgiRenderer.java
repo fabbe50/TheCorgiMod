@@ -1,6 +1,7 @@
 package com.fabbe50.corgimod.client.renderer;
 
 import com.fabbe50.corgimod.client.model.AbstractCorgiModel;
+import com.fabbe50.corgimod.client.renderer.layer.CorgiCollarLayer;
 import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.world.entity.animal.Corgi;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -23,6 +24,7 @@ public abstract class AbstractCorgiRenderer<T extends Corgi, M extends AbstractC
 
     public AbstractCorgiRenderer(EntityRendererProvider.Context context, M model) {
         super(context, model, 0.5f);
+        this.addLayer(new CorgiCollarLayer<>(this));
         this.context = context;
     }
 
