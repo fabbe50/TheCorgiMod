@@ -14,9 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum Armors implements ArmorMaterial {
-    SUNGLASSES(CorgiMod.MODID + ":sunglasses", 10, new int[]{0, 0, 0, 0}, 5, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, () -> {
-        return Ingredient.of(Items.GLASS_PANE);
-    });
+    SUNGLASSES(CorgiMod.MODID + ":sunglasses", 10, new int[]{0, 0, 0, 0}, 5, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, () -> Ingredient.of(Items.TINTED_GLASS));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
