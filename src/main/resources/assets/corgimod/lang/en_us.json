@@ -64,6 +64,22 @@
   "text.autoconfig.corgimod.option.general.breedingMode": "Breeding Mode",
   "text.autoconfig.corgimod.option.general.breedingMode.@Tooltip[0]": "Parents: Breeding two corgis together spawns a child based on one of the parents.",
   "text.autoconfig.corgimod.option.general.breedingMode.@Tooltip[1]": "Random: Breeding two corgis together spawns a completely random child corgi.",
+  "text.autoconfig.corgimod.option.general.allowUraniumTNTBoosting": "Uranium TNT Boosting",
+  "text.autoconfig.corgimod.option.general.allowUraniumTNTBoosting.@Tooltip": "Blowing up TNT next to a uranium ingot boosts the explosion.",
+  "text.autoconfig.corgimod.option.general.passiveCorgiSpawnWeight": "Passive Corgi Spawn Weight",
+  "text.autoconfig.corgimod.option.general.passiveCorgiSpawnWeight.@Tooltip": "The weight of the passive corgi spawns. Default: 5. NOTE: The weight is applied per corgi as they are all separate entities.",
+  "text.autoconfig.corgimod.option.general.creeperCorgiSpawnWeight": "Creeper Corgi Spawn Weight",
+  "text.autoconfig.corgimod.option.general.creeperCorgiSpawnWeight.@Tooltip": "The weight of the creeper corgi spawns. Default: 35 (Normal creepers have a weight of 100)",
+  "text.autoconfig.corgimod.option.general.enderCorgiSpawnWeight": "Ender Corgi Spawn Weight",
+  "text.autoconfig.corgimod.option.general.enderCorgiSpawnWeight.@Tooltip": "The weight of the ender corgi spawns. Default: 8 (Normal enderman have a weight of 10)",
+  "text.autoconfig.corgimod.option.general.skeletonCorgiSpawnWeight": "Skeleton Corgi Spawn Weight",
+  "text.autoconfig.corgimod.option.general.skeletonCorgiSpawnWeight.@Tooltip": "The weight of the skeleton corgi spawns. Default: 25 (Normal skeletons have a weight of 80)",
+  "text.autoconfig.corgimod.option.general.zombieCorgiSpawnWeight": "Zombie Corgi Spawn Weight",
+  "text.autoconfig.corgimod.option.general.zombieCorgiSpawnWeight.@Tooltip": "The weight of the zombie corgi spawns. Default: 35 (Normal zombies have a weight of 100)",
+  "text.autoconfig.corgimod.option.general.zombieCorgiJockeySpawnChance": "Zombie Corgi Jockey Spawn Chance",
+  "text.autoconfig.corgimod.option.general.zombieCorgiJockeySpawnChance.@Tooltip": "The chance in percent that a zombie corgi will spawn with a baby zombie on it's back.",
+
+
   "text.autoconfig.corgimod.option.corgiAbilities": "Corgi Abilities",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange": "Love Corgi Effect Range",
   "text.autoconfig.corgimod.option.corgiAbilities.loveCorgiEffectRange.@Tooltip": "Set the maximum radius the love corgi checks for when activating breeding for them",
@@ -74,5 +90,11 @@
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange": "Spy Corgi Reveal Range",
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiRange.@Tooltip": "Set the maximum radius the spy corgi will apply the glow effect to mobs around it.",
   "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime": "Spy Corgi Reveal Time",
-  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime.@Tooltip": "Set the amount of time in seconds that the glow effect will apply on the mobs."
+  "text.autoconfig.corgimod.option.corgiAbilities.spyCorgiExposeTime.@Tooltip": "Set the amount of time in seconds that the glow effect will apply on the mobs.",
+  "text.autoconfig.corgimod.option.corgiAbilities.fabbe50CorgiDoRandomDrops": "Fabbe50 Corgi do Random Drops",
+  "text.autoconfig.corgimod.option.corgiAbilities.fabbe50CorgiDoRandomDrops.@Tooltip": "If the fabbe50 corgi should drop random items on death.",
+  "text.autoconfig.corgimod.option.corgiAbilities.fabbe50CorgiDoRandomDropEvents": "Fabbe50 Corgi do Random Drop Events",
+  "text.autoconfig.corgimod.option.corgiAbilities.fabbe50CorgiDoRandomDropEvents.@Tooltip": "If the fabbe50 corgi when dropping items should perform events based on the item drop.",
+
+  "curios.identifier.face": "Face"
 }

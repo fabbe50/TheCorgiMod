@@ -33,6 +33,23 @@ public class ModConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip
         public boolean allowUraniumTNTBoosting = true;
 
+        @ConfigEntry.Gui.Tooltip
+        public int passiveCorgiSpawnWeight = 5;
+
+        @ConfigEntry.Gui.Tooltip
+        public int creeperCorgiSpawnWeight = 25;
+
+        @ConfigEntry.Gui.Tooltip
+        public int skeletonCorgiSpawnWeight = 25;
+
+        @ConfigEntry.Gui.Tooltip
+        public int zombieCorgiSpawnWeight = 35;
+
+        @ConfigEntry.Gui.Tooltip
+        @ConfigEntry.BoundedDiscrete(min = 0, max = 100)
+        public int zombieCorgiJockeySpawnChance = 5;
+
+
         public General() {
             this.namingMode = NamingMode.RANDOM_NAMES;
             this.breedingMode = BreedingMode.PARENTS;

@@ -20,37 +20,31 @@ import net.minecraftforge.registries.RegistryObject;
 public class CorgiSpawnBiomeModifier implements BiomeModifier {
     private static final RegistryObject<Codec<? extends BiomeModifier>> SERIALIZER = RegistryObject.create(new ResourceLocation(CorgiMod.MODID, "corgi_mod_spawns"), ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, CorgiMod.MODID);
 
-    private static final int PASSIVE_CORGI_SPAWN_WEIGHT = 8;
-
-    private static final int CREEPER_CORGI_SPAWN_WEIGHT = 20;
-    private static final int ZOMBIE_CORGI_SPAWN_WEIGHT = 40;
-    private static final int SKELETON_CORGI_SPAWN_WEIGHT = 20;
-
     @Override
     public void modify(Holder<Biome> holder, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (phase == Phase.ADD) {
             if (holder.is(CorgiModTags.CORGI_SPAWN_BIOMES)) {
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_NORMAL.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ANTI.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_BODYGUARD.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_BUSINESS.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_FABBE50.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_HERO.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_LOVE.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_MELON.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_NERD.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_PIRATE.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_RADIOACTIVE.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SPY.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SUNGLASSES.get(), Weight.of(PASSIVE_CORGI_SPAWN_WEIGHT), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_NORMAL.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ANTI.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_BODYGUARD.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_BUSINESS.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_FABBE50.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_HERO.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_LOVE.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_MELON.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_NERD.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_PIRATE.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_RADIOACTIVE.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SPY.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SUNGLASSES.get(), Weight.of(CorgiMod.config.general.passiveCorgiSpawnWeight), 3, 6));
             }
             if (holder.is(BiomeTags.IS_OVERWORLD)) {
-                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_CREEPER.get(), Weight.of(CREEPER_CORGI_SPAWN_WEIGHT), 1, 3));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ZOMBIE.get(), Weight.of(ZOMBIE_CORGI_SPAWN_WEIGHT), 2, 4));
-                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(SKELETON_CORGI_SPAWN_WEIGHT), 1, 2));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_CREEPER.get(), Weight.of(CorgiMod.config.general.creeperCorgiSpawnWeight), 1, 3));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_ZOMBIE.get(), Weight.of(CorgiMod.config.general.zombieCorgiSpawnWeight), 2, 4));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(CorgiMod.config.general.skeletonCorgiSpawnWeight), 1, 2));
             }
             if (holder.is(Biomes.SOUL_SAND_VALLEY)) {
-                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(SKELETON_CORGI_SPAWN_WEIGHT), 3, 4));
+                builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(EntityRegistry.CORGI_SKELETON.get(), Weight.of(CorgiMod.config.general.skeletonCorgiSpawnWeight), 3, 4));
             }
         }
     }
