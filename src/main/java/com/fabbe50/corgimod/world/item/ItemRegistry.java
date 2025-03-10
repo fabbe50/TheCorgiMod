@@ -23,6 +23,7 @@ public class ItemRegistry {
     //Items
     public static final RegistryObject<Item> URANIUM = DEFERRED_REGISTER.register("uranium", () -> new ItemUranium(new Item.Properties()));
     public static final RegistryObject<Item> SUNGLASSES = DEFERRED_REGISTER.register("sunglasses", () -> new ItemSunglasses(Armors.SUNGLASSES, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> CORGI_SOUL = DEFERRED_REGISTER.register("corgi_soul", () -> new ItemCorgiSoul(new Item.Properties()));
 
     //Blocks
     public static final RegistryObject<Item> ACACIA_DOG_DOOR = DEFERRED_REGISTER.register("acacia_dog_door", () -> new BlockItem(BlockRegistry.ACACIA_DOG_DOOR.get(), new Item.Properties()));

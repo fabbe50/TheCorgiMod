@@ -6,6 +6,8 @@ import com.fabbe50.corgimod.data.Corgis;
 import com.fabbe50.corgimod.handlers.NameHandler;
 import com.fabbe50.corgimod.world.entity.ability.IAbility;
 import com.fabbe50.corgimod.world.entity.ai.*;
+import com.fabbe50.corgimod.world.item.ItemCorgiSoul;
+import com.fabbe50.corgimod.world.item.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -225,6 +227,21 @@ public class Corgi extends Wolf {
             }
         }
         return super.hurt(damageSource, v);
+    }
+
+    @Override
+    protected void dropCustomDeathLoot(@NotNull DamageSource damageSource, int damageAmount, boolean overrideDropChance) {
+        if (this.isTame()) {
+            ItemStack soulStack = new ItemStack(ItemRegistry.CORGI_SOUL.get());
+            ItemCorgiSoul soulItem = (ItemCorgiSoul) soulStack.getItem();
+            soulItem.addCorgi(soulStack, this);
+            this.dropItem(this, soulStack);
+        }
+        super.dropCustomDeathLoot(damageSource, damageAmount, overrideDropChance);
+    }
+
+    protected void dropItem(Corgi entity, ItemStack stack) {
+        entity.spawnAtLocation(stack);
     }
 
     public static class CorgiEvents {

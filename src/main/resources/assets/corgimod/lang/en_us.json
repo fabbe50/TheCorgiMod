@@ -22,6 +22,10 @@
 
   "item.corgimod.uranium": "Uranium",
   "item.corgimod.sunglasses": "Sunglasses",
+  "item.corgimod.corgi_soul": "Corgi Soul",
+  "item.corgimod.corgi_soul.tooltip": "Contains: %s",
+  "item.corgimod.corgi_soul.tooltip-inactive": "Not Activated, right click a %s and a %s to activate.",
+  "item.corgimod.corgi_soul.tooltip-active": "Activated, right click on the ground to summon.",
 
   "block.corgimod.acacia_dog_door": "Acacia Dog Door",
   "block.corgimod.birch_dog_door": "Birch Dog Door",
