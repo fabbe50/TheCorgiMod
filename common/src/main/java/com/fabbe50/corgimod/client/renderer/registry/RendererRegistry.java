@@ -25,6 +25,7 @@ public class RendererRegistry {
         EntityRendererRegistry.register(EntityRegistry.CREEPER_CORGI, CreeperCorgiRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ENDER_CORGI, EnderCorgiRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.SKELETON_CORGI, SkeletonCorgiRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.SPIDER_CORGI, SpiderCorgiRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ZOMBIE_CORGI, ZombieCorgiRenderer::new);
     }
 
