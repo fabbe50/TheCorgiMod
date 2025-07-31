@@ -2,6 +2,18 @@ plugins {
     id 'com.github.johnrengelman.shadow'
 }
 
+def generatedResources = project(":common").file("src/main/generated/resources")
+
+sourceSets {
+    main {
+        resources.srcDir generatedResources
+    }
+}
+
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+}
+
 architectury {
     platformSetupLoomIde()
     fabric()
@@ -24,12 +36,28 @@ configurations {
     }
 }
 
+repositories {
+    maven {
+        name = "Ladysnake Libs"
+        url = 'https://maven.ladysnake.org/releases'
+    }
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
 
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
+
+    modImplementation "com.terraformersmc:modmenu:${mod_menu_version}" transitive false
+    modImplementation "me.shedaniel.cloth:cloth-config:${cloth_config_version}"
+    modImplementation "me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}" transitive false
+
+    modLocalRuntime "dev.emi:emi-fabric:${emi_version}"
+    modImplementation "vazkii.patchouli:Patchouli:${patchouli_version_fabric}"
+    modImplementation "dev.emi:trinkets:${trinkets_version}"
+    modRuntimeOnly( "maven.modrinth:spark:${spark_version}-fabric" )
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')

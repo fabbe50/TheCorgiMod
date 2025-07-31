@@ -1,4 +1,4 @@
-package com.fabbe50.corgimod.world.entity.animal;
+package com.fabbe50.corgimod.world.entity.interfaces;
 
 import net.minecraft.world.entity.player.Player;
 

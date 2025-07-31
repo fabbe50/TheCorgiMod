@@ -1,23 +1,19 @@
 package com.fabbe50.corgimod.world.entity.animal;
 
-import com.fabbe50.corgimod.registries.ModRegistries;
+import com.fabbe50.corgimod.world.entity.interfaces.IVariant;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.RegistryCodecs;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.RegistryFileCodec;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biome;
 
 import java.util.Objects;
 
 @SuppressWarnings("CodeBlock2Expr")
-public class CorgiVariant {
+public class CorgiVariant implements IVariant {
     public static final Codec<CorgiVariant> DIRECT_CODEC = RecordCodecBuilder.create(instance -> {
         return instance.group(ResourceLocation.CODEC.fieldOf("corgi_normal").forGetter(variant -> {
             return variant.wild;
@@ -45,12 +41,6 @@ public class CorgiVariant {
         this.tameFull = fullTextureId(tameTexture);
         this.angry = angryTexture;
         this.angryFull = fullTextureId(angryTexture);
-    }
-
-    private static ResourceLocation fullTextureId(ResourceLocation resourceLocation) {
-        return resourceLocation.withPath((string) -> {
-            return "textures/" + string + ".png";
-        });
     }
 
     public ResourceLocation wildTexture() {
@@ -85,7 +75,7 @@ public class CorgiVariant {
 
     static {
         DIRECT_STREAM_CODEC = StreamCodec.composite(ResourceLocation.STREAM_CODEC, CorgiVariant::wildTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::tameTexture, ResourceLocation.STREAM_CODEC, CorgiVariant::angryTexture, CorgiVariant::new);
-        CODEC = RegistryFileCodec.create(ModRegistries.CORGI_VARIANT, DIRECT_CODEC);
-        STREAM_CODEC = ByteBufCodecs.holder(ModRegistries.CORGI_VARIANT, DIRECT_STREAM_CODEC);
+        CODEC = RegistryFileCodec.create(CorgiVariants.CORGI_VARIANTS_REGISTRY.key(), DIRECT_CODEC);
+        STREAM_CODEC = ByteBufCodecs.holder(CorgiVariants.CORGI_VARIANTS_REGISTRY.key(), DIRECT_STREAM_CODEC);
     }
 }

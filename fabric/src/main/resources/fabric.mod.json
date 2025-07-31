@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.fabbe50.thecorgimod.fabric.TheCorgiModFabric"
+      "com.fabbe50.corgimod.fabric.TheCorgiModFabric"
     ],
     "client": [
       "com.fabbe50.thecorgimod.fabric.client.TheCorgiModFabricClient"
@@ -24,6 +24,7 @@
   "mixins": [
     "thecorgimod.mixins.json"
   ],
+  "accessWidener": "thecorgimod.accesswidener",
   "depends": {
     "fabricloader": ">=0.16.9",
     "minecraft": "~1.21.1",
