@@ -26,6 +26,12 @@ public class PlatformImpl {
         return FabricLoader.getInstance().isModLoaded(modId);
     }
 
+    public static void openPatchouliBook(ServerPlayer player, ResourceLocation location) {
+        if (isModLoaded("patchouli")) {
+            Patchouli.openBook(player, location);
+        }
+    }
+
     public static boolean isWearingSunglassesTrinketOrCurio(Player player) {
         if (isModLoaded("trinkets")) {
             return Trinkets.isPlayerWearingSunglasses(player);

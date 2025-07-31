@@ -27,6 +27,12 @@ public class PlatformImpl {
         return ModList.get().isLoaded(modId);
     }
 
+    public static void openPatchouliBook(ServerPlayer player, ResourceLocation location) {
+        if (isModLoaded("patchouli")) {
+            Patchouli.openBook(player, location);
+        }
+    }
+
     public static boolean isWearingSunglassesTrinketOrCurio(Player player) {
         if (TheCorgiModNeoForge.isCuriosLoaded()) {
             return Curios.isPlayerWearingSunglasses(player);

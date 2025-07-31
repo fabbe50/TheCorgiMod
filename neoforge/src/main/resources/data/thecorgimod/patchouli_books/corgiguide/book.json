@@ -1,0 +1,9 @@
+{
+  "name": "Corgis",
+  "landing_text": "The Corgi Guide",
+  "model": "thecorgimod:guide_book",
+  "creative_tab": "thecorgimod:corgi_tab",
+  "version": 3,
+  "show_progress": false,
+  "use_resource_pack": true
+}

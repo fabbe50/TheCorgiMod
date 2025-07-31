@@ -27,6 +27,11 @@ public class Platform {
     }
 
     @ExpectPlatform
+    public static void openPatchouliBook(ServerPlayer player, ResourceLocation location) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
     public static boolean isWearingSunglassesTrinketOrCurio(Player player) {
         throw new AssertionError();
     }
