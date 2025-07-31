@@ -37,9 +37,13 @@ public enum Corgis {
     SUNGLASSES(15, "sunglasses", "Sunglasses Corgi", TheCorgiMod.location("textures/entity/corgi/corgi_sunglasses.png"), CorgiVariants.SUNGLASSES, new SunglassesCorgiFeaturePack(), EntityRegistry.CORGI.get(), false, registerLootTable("sunglasses")),
 
     // HOSTILE CORGIS
+    BOGGED(19, "bogged", "Bogged Corgi", TheCorgiMod.location("textures/entity/bogged_corgi.png"), null, null, EntityRegistry.BOGGED_CORGI.get(), true, null),
     CREEPER(4, "creeper", "Creeper Corgi", TheCorgiMod.location("textures/entity/creeper_corgi.png"), null, null, EntityRegistry.CREEPER_CORGI.get(), true, null),
     ENDER(17, "ender", "Ender Corgi", TheCorgiMod.location("textures/entity/ender_corgi.png"), null, null, EntityRegistry.ENDER_CORGI.get(), true, null),
     SKELETON(13, "skeleton", "Skeleton Corgi", TheCorgiMod.location("textures/entity/skeleton_corgi.png"), null, null, EntityRegistry.SKELETON_CORGI.get(), true, null),
+    SPIDER(18, "spider", "Spider Corgi", TheCorgiMod.location("textures/entity/spider_corgi.png"), null, null, EntityRegistry.SPIDER_CORGI.get(), true, null),
+    STRAY(20, "stray", "Stray Corgi", TheCorgiMod.location("textures/entity/stray_corgi.png"), null, null, EntityRegistry.STRAY_CORGI.get(), true, null),
+    WITHER_SKELETON(21, "wither_skeleton", "Wither Skeleton Corgi", TheCorgiMod.location("textures/entity/wither_skeleton_corgi.png"), null, null, EntityRegistry.WITHER_SKELETON_CORGI.get(), true, null),
     ZOMBIE(16, "zombie", "Zombie Corgi", TheCorgiMod.location("textures/entity/zombie_corgi.png"), null, null, EntityRegistry.ZOMBIE_CORGI.get(), true, null)
     ;
 
