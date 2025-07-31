@@ -29,6 +29,8 @@ public class RendererRegistry {
         EntityRendererRegistry.register(EntityRegistry.STRAY_CORGI, SkeletonCorgiRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.WITHER_SKELETON_CORGI, WitherSkeletonCorgiRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ZOMBIE_CORGI, ZombieCorgiRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.DROWNED_CORGI, ZombieCorgiRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.HUSK_CORGI, ZombieCorgiRenderer::new);
     }
 
     public static void registerScreens() {
