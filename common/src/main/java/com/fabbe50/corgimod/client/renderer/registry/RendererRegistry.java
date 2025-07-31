@@ -13,6 +13,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 
 public class RendererRegistry {
+    private static final Registrar<MenuType<?>> MENU_TYPES = TheCorgiMod.MANAGER.get().get(Registries.MENU);
+
+    private static final MenuType<PetBowlMenu> PET_BOWL_MENU = MenuRegistry.of(PetBowlMenu::new);
+    public static final RegistrySupplier<MenuType<PetBowlMenu>> PET_BOWL_MENU_SUPPLIER = MENU_TYPES.register(TheCorgiMod.location("pet_bowl_menu"), () -> PET_BOWL_MENU);
+
     public static void init() {
         EntityRendererRegistry.register(EntityRegistry.CORGI, CorgiRenderer::new);
 
@@ -22,5 +27,7 @@ public class RendererRegistry {
         EntityRendererRegistry.register(EntityRegistry.ZOMBIE_CORGI, ZombieCorgiRenderer::new);
     }
 
+    public static void registerScreens() {
+        MenuRegistry.registerScreenFactory(PET_BOWL_MENU, PetBowlScreen::new);
     }
 }
