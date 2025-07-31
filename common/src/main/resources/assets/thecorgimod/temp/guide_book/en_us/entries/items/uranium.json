@@ -1,0 +1,12 @@
+{
+  "name": "Uranium",
+  "icon": "thecorgimod:uranium",
+  "category": "thecorgimod:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "thecorgimod:uranium",
+      "text": "A fuel type that can smelt 12 items per uranium when used in a furnace."
+    }
+  ]
+}

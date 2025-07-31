@@ -1,0 +1,20 @@
+{
+  "name": "entity.thecorgimod.corgi_anti",
+  "icon": "thecorgimod:spawn_egg_corgi_anti",
+  "category": "thecorgimod:corgis",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entity.thecorgimod.corgi_anti.stats"
+    },
+    {
+      "type": "patchouli:entity",
+      "name": "entity.thecorgimod.corgi_anti",
+      "entity": "thecorgimod:corgi{corgi_variant:\"corgi_anti\"}",
+      "rotate": false,
+      "default_rotation": 30,
+      "scale": 0.85,
+      "text": "entity.thecorgimod.corgi_anti.desc"
+    }
+  ]
+}

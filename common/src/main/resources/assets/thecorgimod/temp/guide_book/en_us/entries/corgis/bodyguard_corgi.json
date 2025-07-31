@@ -1,0 +1,20 @@
+{
+  "name": "Bodyguard Corgi",
+  "icon": "thecorgimod:spawn_egg_corgi_bodyguard",
+  "category": "thecorgimod:corgis",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Stats:$(br)8x $(#f00)♥$()$(br)Base Attack Damage: 8$(br2)Stats(When Tamed):$(br)30x $(#f00)♥$()$(br)Base Attack Damage: 12$(br2)Abilities:$(br)More health & more damage"
+    },
+    {
+      "type": "patchouli:entity",
+      "name": "Bodyguard Corgi",
+      "entity": "thecorgimod:corgi{corgi_variant:\"corgi_bodyguard\"}",
+      "rotate": false,
+      "default_rotation": 30,
+      "scale": 0.85,
+      "text": "The bodyguard corgi will serve and protect."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Taming",
+  "icon": "minecraft:bone",
+  "category": "thecorgimod:taming",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "You can tame all corgis with bones except the hostile corgis and the Anti Corgi. The Anti Corgi is tamed with raw fish."
+    }
+  ]
+}

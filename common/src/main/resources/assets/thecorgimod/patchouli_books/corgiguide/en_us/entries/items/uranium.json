@@ -1,0 +1,12 @@
+{
+  "name": "Uranium",
+  "icon": "thecorgimod:uranium",
+  "category": "thecorgimod:items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "thecorgimod:uranium",
+      "text": "Placing uranium next to an explosion may cause more damage."
+    }
+  ]
+}

@@ -38,8 +38,15 @@ public class EntityDrops extends EntityLootSubProvider {
         // Creating a basic loot table with multiple weighted drop options.
         add(EntityRegistry.CORGI.get(), createLootTable().withPool(createLootPool(1.0f, SimpleLootEntryBuilder.create(Items.BONE).applyLooting(this.registries, 0.0f, 1.0f).build(1000)).add(SimpleLootEntryBuilder.create(Items.BAKED_POTATO).makePlayerKillLoot().build(1))));
         add(EntityRegistry.ZOMBIE_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.ZOMBIE.getDefaultLootTable()))));
+        add(EntityRegistry.HUSK_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.HUSK.getDefaultLootTable()))));
+        add(EntityRegistry.DROWNED_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.DROWNED.getDefaultLootTable()))));
         add(EntityRegistry.SKELETON_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.SKELETON.getDefaultLootTable()))));
+        add(EntityRegistry.BOGGED_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.BOGGED.getDefaultLootTable()))));
+        add(EntityRegistry.STRAY_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.STRAY.getDefaultLootTable()))));
+        add(EntityRegistry.WITHER_SKELETON_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.WITHER_SKELETON.getDefaultLootTable()))));
+        add(EntityRegistry.SPIDER_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.SPIDER.getDefaultLootTable()))));
         add(EntityRegistry.CREEPER_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.CREEPER.getDefaultLootTable()))));
+        add(EntityRegistry.ENDER_CORGI.get(), createLootTable().withPool(createLootPool(1.0f, NestedLootTable.lootTableReference(EntityType.ENDERMAN.getDefaultLootTable()))));
 
 
         // Creating a loot table for a specific location. These tables are
