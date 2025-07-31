@@ -38,6 +38,7 @@ public enum Corgis {
 
     // HOSTILE CORGIS
     CREEPER(4, "creeper", "Creeper Corgi", TheCorgiMod.location("textures/entity/creeper_corgi.png"), null, null, EntityRegistry.CREEPER_CORGI.get(), true, null),
+    ENDER(17, "ender", "Ender Corgi", TheCorgiMod.location("textures/entity/ender_corgi.png"), null, null, EntityRegistry.ENDER_CORGI.get(), true, null),
     SKELETON(13, "skeleton", "Skeleton Corgi", TheCorgiMod.location("textures/entity/skeleton_corgi.png"), null, null, EntityRegistry.SKELETON_CORGI.get(), true, null),
     ZOMBIE(16, "zombie", "Zombie Corgi", TheCorgiMod.location("textures/entity/zombie_corgi.png"), null, null, EntityRegistry.ZOMBIE_CORGI.get(), true, null)
     ;
