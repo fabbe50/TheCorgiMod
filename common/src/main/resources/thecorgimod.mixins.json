@@ -6,6 +6,11 @@
   "client": [
   ],
   "mixins": [
+    "AbstractVillagerMixin",
+    "BoatMixin",
+    "EnderManMixin",
+    "MobMixin",
+    "VillagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

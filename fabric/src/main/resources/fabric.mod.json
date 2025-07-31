@@ -11,14 +11,17 @@
     "homepage": "https://fabbe50.com"
   },
   "license": "LGPL-3.0",
-  "icon": "assets/thecorgimod/icon.png",
+  "icon": "assets/thecorgimod/textures/icons/patrol.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "com.fabbe50.corgimod.fabric.TheCorgiModFabric"
     ],
     "client": [
-      "com.fabbe50.thecorgimod.fabric.client.TheCorgiModFabricClient"
+      "com.fabbe50.corgimod.fabric.client.TheCorgiModFabricClient"
+    ],
+    "modmenu": [
+      "com.fabbe50.corgimod.fabric.integration.ModMenu"
     ]
   },
   "mixins": [
