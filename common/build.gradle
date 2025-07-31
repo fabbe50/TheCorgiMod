@@ -2,6 +2,10 @@ architectury {
     common rootProject.enabled_platforms.split(',')
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/thecorgimod.accesswidener")
+}
+
 dependencies {
     // We depend on Fabric Loader here to use the Fabric @Environment annotations,
     // which get remapped to the correct annotations on each platform.
@@ -9,4 +13,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+    modImplementation "me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}"
+
+    modCompileOnly "dev.emi:emi-xplat-intermediary:${emi_version}:api"
 }
