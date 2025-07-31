@@ -1,6 +1,6 @@
-package com.fabbe50.corgimod.world.entity.ai;
+package com.fabbe50.corgimod.world.entity.ai.overrides;
 
-import com.fabbe50.corgimod.world.entity.animal.IPet;
+import com.fabbe50.corgimod.world.entity.interfaces.pets.IPet;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 
@@ -14,11 +14,11 @@ public class CustomFollowOwnerGoal<T extends TamableAnimal & IPet> extends Follo
 
     @Override
     public boolean canUse() {
-        return super.canUse() && !entity.isAskedToStay();
+        return super.canUse() && !entity.isAskedToStay() && !entity.isSleeping();
     }
 
     @Override
     public boolean canContinueToUse() {
-        return super.canContinueToUse() && !entity.isAskedToStay();
+        return super.canContinueToUse() && !entity.isAskedToStay() && !entity.isSleeping();
     }
 }

@@ -1,13 +1,13 @@
-package com.fabbe50.corgimod.world.entity.ai;
+package com.fabbe50.corgimod.world.entity.ai.overrides;
 
-import com.fabbe50.corgimod.world.entity.animal.IPet;
-import net.minecraft.world.entity.PathfinderMob;
+import com.fabbe50.corgimod.world.entity.interfaces.pets.IPet;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
-public class CustomWaterAvoidingRandomStrollGoal<T extends PathfinderMob & IPet> extends WaterAvoidingRandomStrollGoal {
+public class CustomWaterAvoidingRandomStrollGoal<T extends TamableAnimal & IPet> extends WaterAvoidingRandomStrollGoal {
     private final T entity;
     private final int wanderingRange;
 
@@ -25,9 +25,9 @@ public class CustomWaterAvoidingRandomStrollGoal<T extends PathfinderMob & IPet>
     @Override
     protected Vec3 getPosition() {
         if (entity.isAskedToStay()) {
-            Vec3 origin = entity.getOriginStay().getBottomCenter();
-            if (entity.position().distanceTo(origin) > wanderingRange) {
-                return LandRandomPos.getPosTowards(entity, 10, 7, origin);
+            BlockPos origin = entity.getOriginStay();
+            if (!entity.isWithinRangeOfOrigin()) {
+                return BlockPos.randomInCube(entity.getRandom(), 1, origin, wanderingRange).iterator().next().getBottomCenter();
             }
         }
         return super.getPosition();

@@ -1,55 +1,64 @@
 package com.fabbe50.corgimod.world.entity.ai.abilities;
 
-import com.fabbe50.corgimod.world.entity.animal.IAbility;
+import com.fabbe50.corgimod.world.entity.ai.extended.ExtMoveToBlockGoal;
+import com.fabbe50.corgimod.world.entity.animal.TamableAnimalExtension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class StealMelonGoal<T extends TamableAnimal & IAbility> extends MoveToBlockGoal {
-    private final T entity;
+public class StealMelonGoal<T extends TamableAnimalExtension> extends ExtMoveToBlockGoal<T> {
     private int timeSitting = 20;
     private int ticks = 0;
 
     public StealMelonGoal(T entity, double speedModifier, int searchRange) {
-        super(entity, speedModifier, searchRange);
-        this.entity = entity;
+        this(entity, speedModifier, searchRange, 1);
+    }
+
+    public StealMelonGoal(T entity, double speedModifier, int searchRange, int verticalSearchRange) {
+        super(entity, speedModifier, searchRange, verticalSearchRange);
     }
 
     @Override
     public boolean canUse() {
-        return !this.entity.isOrderedToSit() && super.canUse();
+        return !this.getPet().isOrderedToSit() && super.canUse();
     }
 
     @Override
     public void start() {
         super.start();
-        this.entity.setInSittingPose(false);
-        this.timeSitting = this.entity.getRandom().nextInt(10) + 10;
+        this.getPet().setInSittingPose(false);
+        this.timeSitting = this.getPet().getRandom().nextInt(10) + 10;
         this.ticks = 0;
     }
 
     @Override
     public void stop() {
         super.stop();
-        this.entity.setInSittingPose(false);
+        this.getPet().setInSittingPose(false);
+    }
+
+    @Override
+    protected BlockPos getTargetBlock() {
+        return getMoveToTarget();
     }
 
     @Override
     public void tick() {
         super.tick();
-        this.entity.setInSittingPose(this.isReachedTarget());
-        if (this.isReachedTarget() && this.entity.isInSittingPose() && this.entity.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+        this.getPet().setInSittingPose(this.isReachedTarget());
+        if (this.isReachedTarget() && this.getPet().isInSittingPose()) {
             if (ticks % 20 == 0) {
                 timeSitting--;
                 if (timeSitting <= 0) {
-                    this.entity.setInSittingPose(false);
-                    this.entity.level().destroyBlock(this.blockPos, this.entity.isTame(), this.entity, 512);
+                    this.getPet().setInSittingPose(false);
+                    if (this.getPet().level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+                        this.getPet().level().destroyBlock(this.blockPos, this.getPet().isTame(), this.getPet(), 512);
+                    }
                 }
             }
             ticks++;
@@ -59,9 +68,8 @@ public class StealMelonGoal<T extends TamableAnimal & IAbility> extends MoveToBl
     @Override
     protected boolean isValidTarget(@NotNull LevelReader reader, @NotNull BlockPos pos) {
         if (reader.isEmptyBlock(pos.above())) {
-            BlockState blockState = reader.getBlockState(pos);
-            Block block = blockState.getBlock();
-            return block == Blocks.MELON;
+            BlockState state = reader.getBlockState(pos);
+            return state.is(Blocks.MELON);
         }
         return false;
     }

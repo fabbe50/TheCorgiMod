@@ -1,7 +1,6 @@
-package com.fabbe50.corgimod.world.entity.ai;
+package com.fabbe50.corgimod.world.entity.ai.overrides;
 
-import com.fabbe50.corgimod.world.entity.animal.IBeggingEntity;
-import net.minecraft.world.entity.LivingEntity;
+import com.fabbe50.corgimod.world.entity.interfaces.IBeggingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
