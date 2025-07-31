@@ -1,0 +1,390 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:pet_bowl",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "color": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:pet_bowl_pink"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "thecorgimod:blocks/pet_bowl"
+}

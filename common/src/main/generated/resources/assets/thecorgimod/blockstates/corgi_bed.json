@@ -1,0 +1,532 @@
+{
+  "variants": {
+    "wood_type=acacia,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_acacia_black"
+    },
+    "wood_type=acacia,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_acacia_blue"
+    },
+    "wood_type=acacia,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_acacia_brown"
+    },
+    "wood_type=acacia,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_acacia_cyan"
+    },
+    "wood_type=acacia,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_acacia_gray"
+    },
+    "wood_type=acacia,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_acacia_green"
+    },
+    "wood_type=acacia,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_acacia_light_blue"
+    },
+    "wood_type=acacia,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_acacia_light_gray"
+    },
+    "wood_type=acacia,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_acacia_lime"
+    },
+    "wood_type=acacia,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_acacia_magenta"
+    },
+    "wood_type=acacia,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_acacia_orange"
+    },
+    "wood_type=acacia,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_acacia_pink"
+    },
+    "wood_type=acacia,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_acacia_purple"
+    },
+    "wood_type=acacia,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_acacia_red"
+    },
+    "wood_type=acacia,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_acacia_white"
+    },
+    "wood_type=acacia,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_acacia_yellow"
+    },
+    "wood_type=bamboo,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_black"
+    },
+    "wood_type=bamboo,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_blue"
+    },
+    "wood_type=bamboo,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_brown"
+    },
+    "wood_type=bamboo,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_cyan"
+    },
+    "wood_type=bamboo,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_gray"
+    },
+    "wood_type=bamboo,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_green"
+    },
+    "wood_type=bamboo,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_light_blue"
+    },
+    "wood_type=bamboo,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_light_gray"
+    },
+    "wood_type=bamboo,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_lime"
+    },
+    "wood_type=bamboo,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_magenta"
+    },
+    "wood_type=bamboo,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_orange"
+    },
+    "wood_type=bamboo,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_pink"
+    },
+    "wood_type=bamboo,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_purple"
+    },
+    "wood_type=bamboo,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_red"
+    },
+    "wood_type=bamboo,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_white"
+    },
+    "wood_type=bamboo,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_bamboo_yellow"
+    },
+    "wood_type=birch,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_birch_black"
+    },
+    "wood_type=birch,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_birch_blue"
+    },
+    "wood_type=birch,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_birch_brown"
+    },
+    "wood_type=birch,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_birch_cyan"
+    },
+    "wood_type=birch,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_birch_gray"
+    },
+    "wood_type=birch,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_birch_green"
+    },
+    "wood_type=birch,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_birch_light_blue"
+    },
+    "wood_type=birch,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_birch_light_gray"
+    },
+    "wood_type=birch,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_birch_lime"
+    },
+    "wood_type=birch,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_birch_magenta"
+    },
+    "wood_type=birch,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_birch_orange"
+    },
+    "wood_type=birch,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_birch_pink"
+    },
+    "wood_type=birch,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_birch_purple"
+    },
+    "wood_type=birch,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_birch_red"
+    },
+    "wood_type=birch,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_birch_white"
+    },
+    "wood_type=birch,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_birch_yellow"
+    },
+    "wood_type=cherry,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_cherry_black"
+    },
+    "wood_type=cherry,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_cherry_blue"
+    },
+    "wood_type=cherry,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_cherry_brown"
+    },
+    "wood_type=cherry,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_cherry_cyan"
+    },
+    "wood_type=cherry,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_cherry_gray"
+    },
+    "wood_type=cherry,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_cherry_green"
+    },
+    "wood_type=cherry,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_cherry_light_blue"
+    },
+    "wood_type=cherry,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_cherry_light_gray"
+    },
+    "wood_type=cherry,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_cherry_lime"
+    },
+    "wood_type=cherry,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_cherry_magenta"
+    },
+    "wood_type=cherry,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_cherry_orange"
+    },
+    "wood_type=cherry,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_cherry_pink"
+    },
+    "wood_type=cherry,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_cherry_purple"
+    },
+    "wood_type=cherry,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_cherry_red"
+    },
+    "wood_type=cherry,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_cherry_white"
+    },
+    "wood_type=cherry,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_cherry_yellow"
+    },
+    "wood_type=crimson,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_crimson_black"
+    },
+    "wood_type=crimson,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_crimson_blue"
+    },
+    "wood_type=crimson,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_crimson_brown"
+    },
+    "wood_type=crimson,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_crimson_cyan"
+    },
+    "wood_type=crimson,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_crimson_gray"
+    },
+    "wood_type=crimson,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_crimson_green"
+    },
+    "wood_type=crimson,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_crimson_light_blue"
+    },
+    "wood_type=crimson,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_crimson_light_gray"
+    },
+    "wood_type=crimson,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_crimson_lime"
+    },
+    "wood_type=crimson,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_crimson_magenta"
+    },
+    "wood_type=crimson,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_crimson_orange"
+    },
+    "wood_type=crimson,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_crimson_pink"
+    },
+    "wood_type=crimson,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_crimson_purple"
+    },
+    "wood_type=crimson,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_crimson_red"
+    },
+    "wood_type=crimson,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_crimson_white"
+    },
+    "wood_type=crimson,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_crimson_yellow"
+    },
+    "wood_type=dark_oak,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_black"
+    },
+    "wood_type=dark_oak,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_blue"
+    },
+    "wood_type=dark_oak,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_brown"
+    },
+    "wood_type=dark_oak,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_cyan"
+    },
+    "wood_type=dark_oak,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_gray"
+    },
+    "wood_type=dark_oak,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_green"
+    },
+    "wood_type=dark_oak,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_light_blue"
+    },
+    "wood_type=dark_oak,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_light_gray"
+    },
+    "wood_type=dark_oak,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_lime"
+    },
+    "wood_type=dark_oak,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_magenta"
+    },
+    "wood_type=dark_oak,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_orange"
+    },
+    "wood_type=dark_oak,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_pink"
+    },
+    "wood_type=dark_oak,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_purple"
+    },
+    "wood_type=dark_oak,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_red"
+    },
+    "wood_type=dark_oak,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_white"
+    },
+    "wood_type=dark_oak,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_dark_oak_yellow"
+    },
+    "wood_type=jungle,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_jungle_black"
+    },
+    "wood_type=jungle,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_jungle_blue"
+    },
+    "wood_type=jungle,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_jungle_brown"
+    },
+    "wood_type=jungle,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_jungle_cyan"
+    },
+    "wood_type=jungle,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_jungle_gray"
+    },
+    "wood_type=jungle,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_jungle_green"
+    },
+    "wood_type=jungle,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_jungle_light_blue"
+    },
+    "wood_type=jungle,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_jungle_light_gray"
+    },
+    "wood_type=jungle,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_jungle_lime"
+    },
+    "wood_type=jungle,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_jungle_magenta"
+    },
+    "wood_type=jungle,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_jungle_orange"
+    },
+    "wood_type=jungle,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_jungle_pink"
+    },
+    "wood_type=jungle,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_jungle_purple"
+    },
+    "wood_type=jungle,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_jungle_red"
+    },
+    "wood_type=jungle,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_jungle_white"
+    },
+    "wood_type=jungle,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_jungle_yellow"
+    },
+    "wood_type=mangrove,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_black"
+    },
+    "wood_type=mangrove,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_blue"
+    },
+    "wood_type=mangrove,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_brown"
+    },
+    "wood_type=mangrove,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_cyan"
+    },
+    "wood_type=mangrove,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_gray"
+    },
+    "wood_type=mangrove,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_green"
+    },
+    "wood_type=mangrove,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_light_blue"
+    },
+    "wood_type=mangrove,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_light_gray"
+    },
+    "wood_type=mangrove,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_lime"
+    },
+    "wood_type=mangrove,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_magenta"
+    },
+    "wood_type=mangrove,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_orange"
+    },
+    "wood_type=mangrove,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_pink"
+    },
+    "wood_type=mangrove,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_purple"
+    },
+    "wood_type=mangrove,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_red"
+    },
+    "wood_type=mangrove,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_white"
+    },
+    "wood_type=mangrove,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_mangrove_yellow"
+    },
+    "wood_type=oak,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_oak_black"
+    },
+    "wood_type=oak,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_oak_blue"
+    },
+    "wood_type=oak,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_oak_brown"
+    },
+    "wood_type=oak,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_oak_cyan"
+    },
+    "wood_type=oak,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_oak_gray"
+    },
+    "wood_type=oak,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_oak_green"
+    },
+    "wood_type=oak,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_oak_light_blue"
+    },
+    "wood_type=oak,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_oak_light_gray"
+    },
+    "wood_type=oak,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_oak_lime"
+    },
+    "wood_type=oak,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_oak_magenta"
+    },
+    "wood_type=oak,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_oak_orange"
+    },
+    "wood_type=oak,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_oak_pink"
+    },
+    "wood_type=oak,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_oak_purple"
+    },
+    "wood_type=oak,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_oak_red"
+    },
+    "wood_type=oak,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_oak_white"
+    },
+    "wood_type=oak,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_oak_yellow"
+    },
+    "wood_type=spruce,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_spruce_black"
+    },
+    "wood_type=spruce,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_spruce_blue"
+    },
+    "wood_type=spruce,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_spruce_brown"
+    },
+    "wood_type=spruce,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_spruce_cyan"
+    },
+    "wood_type=spruce,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_spruce_gray"
+    },
+    "wood_type=spruce,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_spruce_green"
+    },
+    "wood_type=spruce,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_spruce_light_blue"
+    },
+    "wood_type=spruce,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_spruce_light_gray"
+    },
+    "wood_type=spruce,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_spruce_lime"
+    },
+    "wood_type=spruce,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_spruce_magenta"
+    },
+    "wood_type=spruce,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_spruce_orange"
+    },
+    "wood_type=spruce,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_spruce_pink"
+    },
+    "wood_type=spruce,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_spruce_purple"
+    },
+    "wood_type=spruce,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_spruce_red"
+    },
+    "wood_type=spruce,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_spruce_white"
+    },
+    "wood_type=spruce,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_spruce_yellow"
+    },
+    "wood_type=warped,wool=black": {
+      "model": "thecorgimod:block/corgi_bed_warped_black"
+    },
+    "wood_type=warped,wool=blue": {
+      "model": "thecorgimod:block/corgi_bed_warped_blue"
+    },
+    "wood_type=warped,wool=brown": {
+      "model": "thecorgimod:block/corgi_bed_warped_brown"
+    },
+    "wood_type=warped,wool=cyan": {
+      "model": "thecorgimod:block/corgi_bed_warped_cyan"
+    },
+    "wood_type=warped,wool=gray": {
+      "model": "thecorgimod:block/corgi_bed_warped_gray"
+    },
+    "wood_type=warped,wool=green": {
+      "model": "thecorgimod:block/corgi_bed_warped_green"
+    },
+    "wood_type=warped,wool=light_blue": {
+      "model": "thecorgimod:block/corgi_bed_warped_light_blue"
+    },
+    "wood_type=warped,wool=light_gray": {
+      "model": "thecorgimod:block/corgi_bed_warped_light_gray"
+    },
+    "wood_type=warped,wool=lime": {
+      "model": "thecorgimod:block/corgi_bed_warped_lime"
+    },
+    "wood_type=warped,wool=magenta": {
+      "model": "thecorgimod:block/corgi_bed_warped_magenta"
+    },
+    "wood_type=warped,wool=orange": {
+      "model": "thecorgimod:block/corgi_bed_warped_orange"
+    },
+    "wood_type=warped,wool=pink": {
+      "model": "thecorgimod:block/corgi_bed_warped_pink"
+    },
+    "wood_type=warped,wool=purple": {
+      "model": "thecorgimod:block/corgi_bed_warped_purple"
+    },
+    "wood_type=warped,wool=red": {
+      "model": "thecorgimod:block/corgi_bed_warped_red"
+    },
+    "wood_type=warped,wool=white": {
+      "model": "thecorgimod:block/corgi_bed_warped_white"
+    },
+    "wood_type=warped,wool=yellow": {
+      "model": "thecorgimod:block/corgi_bed_warped_yellow"
+    }
+  }
+}

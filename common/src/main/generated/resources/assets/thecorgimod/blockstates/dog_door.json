@@ -1,0 +1,840 @@
+{
+  "variants": {
+    "facing=east,open=false,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=false,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,open=false,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=false,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,open=false,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true
+    },
+    "facing=south,open=false,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true
+    },
+    "facing=south,open=true,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true
+    },
+    "facing=west,open=false,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=false,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=false,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=acacia": {
+      "model": "thecorgimod:block/dog_door_acacia_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=bamboo": {
+      "model": "thecorgimod:block/dog_door_bamboo_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=birch": {
+      "model": "thecorgimod:block/dog_door_birch_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=cherry": {
+      "model": "thecorgimod:block/dog_door_cherry_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=crimson": {
+      "model": "thecorgimod:block/dog_door_crimson_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=dark_oak": {
+      "model": "thecorgimod:block/dog_door_dark_oak_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=jungle": {
+      "model": "thecorgimod:block/dog_door_jungle_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=mangrove": {
+      "model": "thecorgimod:block/dog_door_mangrove_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=oak": {
+      "model": "thecorgimod:block/dog_door_oak_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=spruce": {
+      "model": "thecorgimod:block/dog_door_spruce_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true,powered=true,wood_type=warped": {
+      "model": "thecorgimod:block/dog_door_warped_open",
+      "uvlock": true,
+      "y": 90
+    }
+  }
+}

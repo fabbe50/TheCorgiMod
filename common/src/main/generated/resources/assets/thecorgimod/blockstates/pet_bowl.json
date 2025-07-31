@@ -1,0 +1,484 @@
+{
+  "variants": {
+    "color=black,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_black",
+      "y": 270
+    },
+    "color=black,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_black_full",
+      "y": 270
+    },
+    "color=black,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_black",
+      "y": 180
+    },
+    "color=black,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_black_full",
+      "y": 180
+    },
+    "color=black,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_black"
+    },
+    "color=black,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_black_full"
+    },
+    "color=black,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_black",
+      "y": 90
+    },
+    "color=black,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_black_full",
+      "y": 90
+    },
+    "color=blue,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_blue",
+      "y": 270
+    },
+    "color=blue,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_blue_full",
+      "y": 270
+    },
+    "color=blue,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_blue",
+      "y": 180
+    },
+    "color=blue,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_blue_full",
+      "y": 180
+    },
+    "color=blue,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_blue"
+    },
+    "color=blue,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_blue_full"
+    },
+    "color=blue,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_blue",
+      "y": 90
+    },
+    "color=blue,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_blue_full",
+      "y": 90
+    },
+    "color=brown,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_brown",
+      "y": 270
+    },
+    "color=brown,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_brown_full",
+      "y": 270
+    },
+    "color=brown,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_brown",
+      "y": 180
+    },
+    "color=brown,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_brown_full",
+      "y": 180
+    },
+    "color=brown,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_brown"
+    },
+    "color=brown,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_brown_full"
+    },
+    "color=brown,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_brown",
+      "y": 90
+    },
+    "color=brown,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_brown_full",
+      "y": 90
+    },
+    "color=cyan,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_cyan",
+      "y": 270
+    },
+    "color=cyan,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_cyan_full",
+      "y": 270
+    },
+    "color=cyan,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_cyan",
+      "y": 180
+    },
+    "color=cyan,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_cyan_full",
+      "y": 180
+    },
+    "color=cyan,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_cyan"
+    },
+    "color=cyan,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_cyan_full"
+    },
+    "color=cyan,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_cyan",
+      "y": 90
+    },
+    "color=cyan,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_cyan_full",
+      "y": 90
+    },
+    "color=gray,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_gray",
+      "y": 270
+    },
+    "color=gray,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_gray_full",
+      "y": 270
+    },
+    "color=gray,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_gray",
+      "y": 180
+    },
+    "color=gray,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_gray_full",
+      "y": 180
+    },
+    "color=gray,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_gray"
+    },
+    "color=gray,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_gray_full"
+    },
+    "color=gray,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_gray",
+      "y": 90
+    },
+    "color=gray,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_gray_full",
+      "y": 90
+    },
+    "color=green,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_green",
+      "y": 270
+    },
+    "color=green,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_green_full",
+      "y": 270
+    },
+    "color=green,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_green",
+      "y": 180
+    },
+    "color=green,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_green_full",
+      "y": 180
+    },
+    "color=green,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_green"
+    },
+    "color=green,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_green_full"
+    },
+    "color=green,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_green",
+      "y": 90
+    },
+    "color=green,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_green_full",
+      "y": 90
+    },
+    "color=light_blue,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_blue",
+      "y": 270
+    },
+    "color=light_blue,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_blue_full",
+      "y": 270
+    },
+    "color=light_blue,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_blue",
+      "y": 180
+    },
+    "color=light_blue,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_blue_full",
+      "y": 180
+    },
+    "color=light_blue,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_blue"
+    },
+    "color=light_blue,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_blue_full"
+    },
+    "color=light_blue,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_blue",
+      "y": 90
+    },
+    "color=light_blue,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_blue_full",
+      "y": 90
+    },
+    "color=light_gray,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_gray",
+      "y": 270
+    },
+    "color=light_gray,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_gray_full",
+      "y": 270
+    },
+    "color=light_gray,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_gray",
+      "y": 180
+    },
+    "color=light_gray,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_gray_full",
+      "y": 180
+    },
+    "color=light_gray,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_gray"
+    },
+    "color=light_gray,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_gray_full"
+    },
+    "color=light_gray,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_light_gray",
+      "y": 90
+    },
+    "color=light_gray,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_light_gray_full",
+      "y": 90
+    },
+    "color=lime,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_lime",
+      "y": 270
+    },
+    "color=lime,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_lime_full",
+      "y": 270
+    },
+    "color=lime,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_lime",
+      "y": 180
+    },
+    "color=lime,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_lime_full",
+      "y": 180
+    },
+    "color=lime,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_lime"
+    },
+    "color=lime,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_lime_full"
+    },
+    "color=lime,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_lime",
+      "y": 90
+    },
+    "color=lime,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_lime_full",
+      "y": 90
+    },
+    "color=magenta,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_magenta",
+      "y": 270
+    },
+    "color=magenta,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_magenta_full",
+      "y": 270
+    },
+    "color=magenta,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_magenta",
+      "y": 180
+    },
+    "color=magenta,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_magenta_full",
+      "y": 180
+    },
+    "color=magenta,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_magenta"
+    },
+    "color=magenta,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_magenta_full"
+    },
+    "color=magenta,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_magenta",
+      "y": 90
+    },
+    "color=magenta,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_magenta_full",
+      "y": 90
+    },
+    "color=orange,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_orange",
+      "y": 270
+    },
+    "color=orange,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_orange_full",
+      "y": 270
+    },
+    "color=orange,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_orange",
+      "y": 180
+    },
+    "color=orange,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_orange_full",
+      "y": 180
+    },
+    "color=orange,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_orange"
+    },
+    "color=orange,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_orange_full"
+    },
+    "color=orange,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_orange",
+      "y": 90
+    },
+    "color=orange,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_orange_full",
+      "y": 90
+    },
+    "color=pink,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_pink",
+      "y": 270
+    },
+    "color=pink,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_pink_full",
+      "y": 270
+    },
+    "color=pink,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_pink",
+      "y": 180
+    },
+    "color=pink,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_pink_full",
+      "y": 180
+    },
+    "color=pink,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_pink"
+    },
+    "color=pink,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_pink_full"
+    },
+    "color=pink,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_pink",
+      "y": 90
+    },
+    "color=pink,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_pink_full",
+      "y": 90
+    },
+    "color=purple,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_purple",
+      "y": 270
+    },
+    "color=purple,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_purple_full",
+      "y": 270
+    },
+    "color=purple,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_purple",
+      "y": 180
+    },
+    "color=purple,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_purple_full",
+      "y": 180
+    },
+    "color=purple,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_purple"
+    },
+    "color=purple,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_purple_full"
+    },
+    "color=purple,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_purple",
+      "y": 90
+    },
+    "color=purple,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_purple_full",
+      "y": 90
+    },
+    "color=red,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_red",
+      "y": 270
+    },
+    "color=red,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_red_full",
+      "y": 270
+    },
+    "color=red,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_red",
+      "y": 180
+    },
+    "color=red,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_red_full",
+      "y": 180
+    },
+    "color=red,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_red"
+    },
+    "color=red,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_red_full"
+    },
+    "color=red,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_red",
+      "y": 90
+    },
+    "color=red,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_red_full",
+      "y": 90
+    },
+    "color=white,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_white",
+      "y": 270
+    },
+    "color=white,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_white_full",
+      "y": 270
+    },
+    "color=white,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_white",
+      "y": 180
+    },
+    "color=white,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_white_full",
+      "y": 180
+    },
+    "color=white,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_white"
+    },
+    "color=white,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_white_full"
+    },
+    "color=white,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_white",
+      "y": 90
+    },
+    "color=white,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_white_full",
+      "y": 90
+    },
+    "color=yellow,facing=east,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_yellow",
+      "y": 270
+    },
+    "color=yellow,facing=east,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_yellow_full",
+      "y": 270
+    },
+    "color=yellow,facing=north,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_yellow",
+      "y": 180
+    },
+    "color=yellow,facing=north,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_yellow_full",
+      "y": 180
+    },
+    "color=yellow,facing=south,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_yellow"
+    },
+    "color=yellow,facing=south,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_yellow_full"
+    },
+    "color=yellow,facing=west,food_in_bowl=false": {
+      "model": "thecorgimod:block/pet_bowl_yellow",
+      "y": 90
+    },
+    "color=yellow,facing=west,food_in_bowl=true": {
+      "model": "thecorgimod:block/pet_bowl_yellow_full",
+      "y": 90
+    }
+  }
+}

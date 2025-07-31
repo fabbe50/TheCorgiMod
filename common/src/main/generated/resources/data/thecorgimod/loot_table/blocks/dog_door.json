@@ -1,0 +1,270 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_oak"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_spruce"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_birch"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_jungle"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_acacia"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_dark_oak"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_mangrove"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_cherry"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_bamboo"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_crimson"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:dog_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:dog_door_warped"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "thecorgimod:blocks/dog_door"
+}

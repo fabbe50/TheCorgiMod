@@ -1,0 +1,7 @@
+{
+  "parent": "thecorgimod:block/dog_door",
+  "textures": {
+    "4": "minecraft:block/spruce_planks",
+    "particle": "minecraft:block/spruce_planks"
+  }
+}

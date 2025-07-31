@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "thecorgimodpet_bowl",
+  "key": {
+    "D": {
+      "item": "minecraft:white_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "IDI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "thecorgimod:pet_bowl_white"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "thecorgimod:block/pet_bowl",
+  "textures": {
+    "1": "minecraft:block/blue_concrete",
+    "particle": "minecraft:block/blue_concrete"
+  }
+}

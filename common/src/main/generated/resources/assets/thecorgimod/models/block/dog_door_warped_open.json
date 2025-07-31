@@ -1,0 +1,7 @@
+{
+  "parent": "thecorgimod:block/dog_door_open",
+  "textures": {
+    "4": "minecraft:block/warped_planks",
+    "particle": "minecraft:block/warped_planks"
+  }
+}

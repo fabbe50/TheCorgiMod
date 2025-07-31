@@ -1,0 +1,4406 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "oak",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_oak_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "spruce",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_spruce_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "birch",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_birch_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "jungle",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_jungle_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "acacia",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_acacia_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "dark_oak",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_dark_oak_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "mangrove",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_mangrove_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "cherry",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_cherry_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "bamboo",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_bamboo_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "crimson",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_crimson_pink"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "white"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_white"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "light_gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_light_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "gray"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_gray"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "black"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_black"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "brown"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_brown"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "red"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_red"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "orange"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_orange"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "yellow"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "lime"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_lime"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "green"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "cyan"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_cyan"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "light_blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_light_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "blue"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_blue"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "purple"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_purple"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "magenta"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_magenta"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "thecorgimod:corgi_bed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "wood_type": "warped",
+                "wool": "pink"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "thecorgimod:corgi_bed_warped_pink"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "thecorgimod:blocks/corgi_bed"
+}

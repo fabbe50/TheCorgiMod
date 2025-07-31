@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "thecorgimod_dog_doors",
+  "key": {
+    "G": {
+      "tag": "c:glass_blocks"
+    },
+    "S": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SGS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "thecorgimod:dog_door_crimson"
+  }
+}

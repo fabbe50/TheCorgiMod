@@ -1,0 +1,28 @@
+{
+  "values": [
+    "thecorgimod:spawn_egg_corgi_normal",
+    "thecorgimod:spawn_egg_corgi_anti",
+    "thecorgimod:spawn_egg_corgi_bodyguard",
+    "thecorgimod:spawn_egg_corgi_business",
+    "thecorgimod:spawn_egg_corgi_fabbe50",
+    "thecorgimod:spawn_egg_corgi_farmer",
+    "thecorgimod:spawn_egg_corgi_hero",
+    "thecorgimod:spawn_egg_corgi_love",
+    "thecorgimod:spawn_egg_corgi_melon",
+    "thecorgimod:spawn_egg_corgi_nerd",
+    "thecorgimod:spawn_egg_corgi_pirate",
+    "thecorgimod:spawn_egg_corgi_radioactive",
+    "thecorgimod:spawn_egg_corgi_spy",
+    "thecorgimod:spawn_egg_corgi_sunglasses",
+    "thecorgimod:spawn_egg_corgi_bogged",
+    "thecorgimod:spawn_egg_corgi_creeper",
+    "thecorgimod:spawn_egg_corgi_drowned",
+    "thecorgimod:spawn_egg_corgi_ender",
+    "thecorgimod:spawn_egg_corgi_husk",
+    "thecorgimod:spawn_egg_corgi_skeleton",
+    "thecorgimod:spawn_egg_corgi_spider",
+    "thecorgimod:spawn_egg_corgi_stray",
+    "thecorgimod:spawn_egg_corgi_wither_skeleton",
+    "thecorgimod:spawn_egg_corgi_zombie"
+  ]
+}
